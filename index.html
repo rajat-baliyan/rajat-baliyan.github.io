@@ -92,8 +92,13 @@ nav.top .wrap { display: flex; align-items: center; gap: 16px; height: 56px; }
 .btn.solid:hover { background: var(--accent); border-color: var(--accent); }
 .icon-btn { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
 .icon-btn svg { width: 18px; height: 18px; }
-@media (max-width: 760px) { .links { display: none; } .actions { margin-left: auto; } }
-@media (max-width: 400px) { .btn.solid .lbl { display: none; } }
+@media (max-width: 760px) {
+  nav.top .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; gap: 6px 12px; }
+  .actions { margin-left: auto; }
+  .links { order: 3; flex-basis: 100%; margin: 0 -6px; padding-bottom: 8px; }
+  .links a { font-size: 13.5px; padding: 5px 8px; }
+  html { scroll-padding-top: 104px; }
+}
 
 /* header */
 header.hero { border-bottom: 2px solid var(--ink);
@@ -208,9 +213,20 @@ main .wrap { display: flex; flex-direction: column; gap: 44px; padding-block: 44
 @media (max-width: 760px) { .also { grid-template-columns: 1fr; } }
 
 .cta { background: var(--ink); color: var(--bg); }
-.cta .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
-.cta h2 { font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: var(--bg); }
-.cta p { color: var(--bg); opacity: .75; margin-top: 6px; }
+.cta .wrap { padding-block: 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px 40px; align-items: start; }
+.cta-head { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.cta .eyebrow { color: #FF8A4C; }
+.cta h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; color: var(--bg); }
+.cta p { color: var(--bg); opacity: .75; }
+.contact-list { margin: 0; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.18); min-width: 0; }
+.contact-list div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.18); align-items: center; }
+.contact-list dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--bg); opacity: .6; }
+.contact-list dd { margin: 0; color: var(--bg); font-size: 17px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; overflow-wrap: anywhere; }
+.contact-list a { color: var(--bg); text-decoration: underline; text-decoration-color: #FF8A4C; text-underline-offset: 4px; }
+.contact-list a:hover { color: #FF8A4C; }
+.mini { font: 500 12px var(--font-mono); color: var(--bg); background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+.cta .row { grid-column: 2; }
+@media (max-width: 760px) { .cta .wrap { grid-template-columns: 1fr; } .cta .row { grid-column: auto; } }
 .cta .row { display: flex; flex-wrap: wrap; gap: 10px; }
 .cta .btn { border-color: var(--bg); }
 .cta .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -243,9 +259,6 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
       <a href="#contact">Contact</a>
     </div>
     <div class="actions">
-      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      </button>
       <a class="btn solid" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg><span class="lbl">Resume</span>
       </a>
@@ -261,7 +274,8 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
     <p class="lede">I run programs end to end at a home-construction tech startup, find what is breaking in the funnel with data, and build the fix myself: processes, reports and automations that a sales and advisory team uses every day.</p>
     <div class="contact">
       <span class="chip">Delhi, India</span>
-      <button class="chip copy" type="button" data-copy="rajatbaliyan9999@gmail.com" title="Copy email">rajatbaliyan9999@gmail.com <span aria-hidden="true">⧉</span></button>
+      <span class="chip"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com ↗</a></span>
+      <span class="chip"><a href="tel:+919999514895">+91 99995 14895</a></span>
       <span class="chip"><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999 ↗</a></span>
     </div>
     <div class="stats">
@@ -403,10 +417,20 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
 
 <section class="cta gutter" id="contact">
   <div class="wrap">
-    <div><h2>Let's talk about your next program.</h2><p>Open to Program Manager and Business Operations roles.</p></div>
+    <div class="cta-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk about your next program.</h2>
+      <p>Open to Program Manager and Business Operations roles.</p>
+    </div>
+    <dl class="contact-list">
+      <div><dt>Email</dt><dd><a class="mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com</a>
+        <button class="mini copy" type="button" data-copy="rajatbaliyan9999@gmail.com" aria-label="Copy email">Copy</button></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+919999514895">+91 99995 14895</a></dd></div>
+      <div><dt>Location</dt><dd>Delhi, India · open to remote</dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999 ↗</a></dd></div>
+    </dl>
     <div class="row">
-      <button class="btn solid copy" type="button" data-copy="rajatbaliyan9999@gmail.com">Copy email</button>
-      <a class="btn ghost" href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn solid" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">Email me</a>
       <a class="btn ghost" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">Download resume</a>
     </div>
   </div>
@@ -417,22 +441,11 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
 <div class="tip" id="tip" hidden></div>
 
 <script>
-// Theme toggle: explicit choice wins over the system setting and is remembered per browser.
-(function () {
-  const root = document.documentElement, btn = document.getElementById("theme");
-  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
-  btn.addEventListener("click", () => {
-    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    root.dataset.theme = dark ? "light" : "dark";
-    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
-  });
-})();
-
-// Copy email buttons
+// Copy email button
 document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", async () => {
   const old = b.innerHTML;
   try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied ✓"; }
-  catch (e) { b.textContent = b.dataset.copy; }
+  catch (e) { b.textContent = "Select & copy"; }
   setTimeout(() => { b.innerHTML = old; }, 1600);
 }));
 
