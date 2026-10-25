@@ -95,8 +95,9 @@ nav.top .wrap { display: flex; align-items: center; gap: 16px; height: 56px; }
 @media (max-width: 760px) {
   nav.top .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; gap: 6px 12px; }
   .actions { margin-left: auto; }
-  .links { order: 3; flex-basis: 100%; margin: 0 -6px; padding-bottom: 8px; }
-  .links a { font-size: 13.5px; padding: 5px 8px; }
+  .links { order: 3; flex-basis: 100%; margin: 0 -6px; padding-bottom: 8px; justify-content: space-between; }
+  .links a { font-size: 13.5px; padding: 5px 6px; }
+  .stat b { font-size: 24px; }
   html { scroll-padding-top: 104px; }
 }
 
@@ -252,8 +253,8 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
   <div class="wrap">
     <a class="brand" href="#top"><i>RB</i>Rajat Baliyan</a>
     <div class="links">
-      <a href="#booking">Booking system</a>
-      <a href="#noshow">No-show RCA</a>
+      <a href="#booking">Booking</a>
+      <a href="#noshow">No-shows</a>
       <a href="#webinars">Webinars</a>
       <a href="#reporting">Reporting</a>
       <a href="#contact">Contact</a>
