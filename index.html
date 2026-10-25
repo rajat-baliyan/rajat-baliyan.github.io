@@ -272,7 +272,7 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
     <span class="eyebrow">Portfolio · Program management &amp; operations</span>
     <h1>Rajat Baliyan</h1>
     <p class="role">Program Manager</p>
-    <p class="lede">I run programs end to end at a home-construction tech startup, find what is breaking in the funnel with data, and build the fix myself: processes, reports and automations that a sales and advisory team uses every day.</p>
+    <p class="lede">I run programs end to end, find what's breaking with data, and build the fix myself.</p>
     <div class="contact">
       <span class="chip">Delhi, India</span>
       <span class="chip"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com ↗</a></span>
@@ -298,9 +298,9 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
     <dl class="meta"><div><dt>Role</dt><dd>Owner: spec, build, rollout</dd></div><div><dt>Stack</dt><dd>n8n · Google Calendar · WhatsApp API · Sheets · Slack</dd></div><div><dt>Users</dt><dd>Pre-sales agents, 3 advisors</dd></div></dl>
   </div>
   <div class="body">
-    <section><span class="k">Problem</span><p>Agents booked homeowner consultations by hand from calendar links and WhatsApp. That caused double bookings, missed reminders and no single record of what was scheduled.</p></section>
-    <section><span class="k">What I did</span><ul><li>Built a booking page that shows each advisor's live availability from Google Calendar.</li><li>One click creates the meeting, sends WhatsApp confirmation and 1-hour / 5-minute reminders, logs the CRM row and alerts Slack.</li><li>A sync job picks up reschedules and cancellations every 10 minutes; high-intent leads get held priority slots.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>Manual scheduling removed</strong> for 3 advisors. Every booking now has one record, automatic reminders and an owner.</p></section>
+    <section><span class="k">Problem</span><p>Bookings done by hand. Double bookings, missed reminders, no single record.</p></section>
+    <section><span class="k">What I did</span><ul><li>Live advisor availability from Google Calendar</li><li>One click: invite, WhatsApp, reminders, CRM row, Slack</li><li>Reschedules sync back every 10 min</li></ul></section>
+    <section class="result"><span class="k">Result</span><p><strong>Manual scheduling removed</strong> for 3 advisors.</p></section>
   </div>
   <div class="ba">
     <div><span class="k">Before · agent does it by hand</span>
@@ -325,9 +325,9 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
     <dl class="meta"><div><dt>Role</dt><dd>Analysis and recommendations</dd></div><div><dt>Data</dt><dd>91 meetings, 2-week window</dd></div><div><dt>Tools</dt><dd>Google Sheets · Python · CRM data</dd></div></dl>
   </div>
   <div class="body">
-    <section><span class="k">Problem</span><p>Only 43% of booked consultations showed as completed. The team assumed homeowners were not interested.</p></section>
-    <section><span class="k">What I did</span><ul><li>Checked data quality first: 36 of 52 "no-shows" were meetings whose status was never updated.</li><li>Split show-up by how far ahead the meeting was booked, by agent, by time slot and by webinar watch time.</li><li>Found that only lead time and 60+ minutes of webinar watch time predicted show-up.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>Booking window cut to the next working day</strong>, a status-update nudge added, and later an automated confirmation call 30 minutes before each meeting.</p></section>
+    <section><span class="k">Problem</span><p>Only 43% of consultations showed as completed.</p></section>
+    <section><span class="k">What I did</span><ul><li>Checked the data first: most "no-shows" were never updated</li><li>Split show-up by lead time, agent, slot, watch time</li><li>Only lead time and 60+ min watch time mattered</li></ul></section>
+    <section class="result"><span class="k">Result</span><p><strong>Booking window cut to next working day</strong>, plus an automated confirmation call.</p></section>
   </div>
   <div class="chartbox">
     <span class="k">Finding 1 · what the 52 recorded no-shows really were</span>
@@ -343,7 +343,7 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
   <div class="flows">
     <div class="flowhead"><h3>Workflow: 30-minute confirmation call</h3><span class="k">n8n · runs every minute · voice + WhatsApp</span></div>
     <div class="canvas"><svg data-flow="confirm" role="img" aria-label="n8n workflow diagram of the confirmation call"></svg></div>
-    <p class="note">Built after a follow-up analysis showed every no-show had received all WhatsApp reminders but nobody had called them. International numbers go to the agent on Slack because the voice provider cannot dial them.</p>
+    <p class="note">Added after we found no-shows got every WhatsApp reminder, but no call.</p>
   </div>
 </article>
 
@@ -354,9 +354,9 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
     <dl class="meta"><div><dt>Role</dt><dd>Ran operations and reporting</dd></div><div><dt>Scale</dt><dd>22+ events · 4,100+ registrations</dd></div><div><dt>Tools</dt><dd>WhatsApp API · Voice · Email · Sheets</dd></div></dl>
   </div>
   <div class="body">
-    <section><span class="k">Problem</span><p>Most registrants never joined, and nobody could see where people dropped between registering, attending, booking a consultation and buying.</p></section>
-    <section><span class="k">What I did</span><ul><li>Re-sequenced WhatsApp, voice and email reminders and used one tracked join link.</li><li>Built a nightly funnel: registered → attended 30+ min → consultation → converted, plus cohort analysis across 28+ webinars.</li><li>Tested a registration cut on small homes: meetings stayed at ~11% of registrants, so I showed the real disqualifier was construction already started, which led to a form change.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p>Attendance rose from <strong>~35% to a peak of 71%</strong>. Leadership reviews one funnel view every morning instead of asking for numbers.</p></section>
+    <section><span class="k">Problem</span><p>Most registrants never joined. Drop-offs were invisible.</p></section>
+    <section><span class="k">What I did</span><ul><li>Re-timed WhatsApp, voice and email reminders</li><li>Nightly funnel + cohorts across 28+ webinars</li><li>Proved build stage, not house size, drove disqualification</li></ul></section>
+    <section class="result"><span class="k">Result</span><p>Attendance <strong>~35% → 71%</strong> at peak.</p></section>
   </div>
   <div class="chartbox">
     <span class="k">Webinar attendance rate</span>
@@ -378,9 +378,9 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
     <dl class="meta"><div><dt>Role</dt><dd>Designed and built</dd></div><div><dt>Cadence</dt><dd>2 PM status · 8 PM summary · nightly report</dd></div><div><dt>Stack</dt><dd>n8n · Call-log API · OpenAI · Slack · Sheets</dd></div></dl>
   </div>
   <div class="body">
-    <section><span class="k">Problem</span><p>Managers asked agents for call counts and meeting status several times a day. Support issues lived in chat threads and were lost by evening.</p></section>
-    <section><span class="k">What I did</span><ul><li>Mid-day and end-of-day reports per agent: calls, connected, talk time, meetings booked and done, with a 2-week trend chart.</li><li>An 8 PM AI summary of the day's support issues that I approve or edit before it posts to the team channel.</li><li>Kept reports in a sheet tab and sent only a short summary to Slack, after feedback that alerts were crowding the channel.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>No more manual status requests.</strong> Every team-wide message from automation passes a human check first.</p></section>
+    <section><span class="k">Problem</span><p>Managers chased agents for numbers. Support issues got lost.</p></section>
+    <section><span class="k">What I did</span><ul><li>Auto mid-day and end-of-day reports per agent</li><li>8 PM AI support summary, approved by me</li><li>Full report in Sheets, short summary in Slack</li></ul></section>
+    <section class="result"><span class="k">Result</span><p><strong>No more manual status requests.</strong></p></section>
   </div>
   <div class="chartbox">
     <span class="k">Before · status gathered by asking, any time of day</span>
@@ -408,9 +408,9 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
   <h2>Operations groundwork</h2>
 </section>
 <div class="also reveal">
-  <div><h3>First SOPs</h3><p>Wrote the company's first SOPs for support, refunds, fraud investigation and content moderation. Execution errors fell 15%.</p></div>
-  <div><h3>Team leadership</h3><p>Led 3–5 ops staff and 6–8 calling agents: rosters, shifts, weekly reviews and coaching. Team efficiency up ~25%.</p></div>
-  <div><h3>Build vs. buy</h3><p>Cost models for an AI voice-calling agent and WhatsApp calling for international leads (about 90% cheaper than ISD).</p></div>
+  <div><h3>First SOPs</h3><p>Support, refunds, fraud, moderation. Errors down 15%.</p></div>
+  <div><h3>Team leadership</h3><p>3–5 ops staff, 6–8 agents. Efficiency up ~25%.</p></div>
+  <div><h3>Build vs. buy</h3><p>Cost models for AI calling and WhatsApp calling (~90% cheaper than ISD).</p></div>
 </div>
 
 </div>
@@ -437,7 +437,7 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
   </div>
 </section>
 
-<footer class="gutter"><div class="wrap">Diagrams are redrawn from live n8n workflows with names, IDs, phone numbers and credentials removed. Figures are percentages or counts from internal reports; no customer data is shown.</div></footer>
+<footer class="gutter"><div class="wrap">Diagrams redrawn from live workflows; names, IDs and customer data removed.</div></footer>
 
 <div class="tip" id="tip" hidden></div>
 
