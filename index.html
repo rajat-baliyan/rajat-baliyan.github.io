@@ -4,405 +4,617 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rajat Baliyan · Program Manager</title>
-<meta name="description" content="Program Manager portfolio: four case studies in program design, root cause analysis, event operations and automation, with workflow diagrams.">
+<meta name="description" content="Program Manager portfolio drawn as a set of blueprints: show-up system, booking, webinar backstage, growth, WhatsApp bots, reporting and automation.">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rajat-baliyan.github.io/">
 <meta property="og:title" content="Rajat Baliyan · Program Manager">
-<meta property="og:description" content="Case studies in program design, root cause analysis and automation: booking system, no-show RCA, webinar program, daily reporting.">
+<meta property="og:description" content="Seven programs, drawn as blueprints: show-up system, booking, webinar backstage, growth, bots, reporting, automation.">
 <meta property="og:image" content="https://rajat-baliyan.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rajat-baliyan.github.io/og.png">
-<meta name="theme-color" content="#14213D">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213D'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23FF8A4C' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#163E9E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23163E9E'/%3E%3Crect x='8' y='8' width='48' height='48' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%23FFD84D' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&family=Architects+Daughter&display=swap">
 <style>
-/* Layout: drafting-sheet column. Sticky nav, header with number strip, then one "sheet" per case study:
-   title block → problem / work / result → before-after visual → animated workflow drawings. */
+/* Concept: a drawing set. The hero is a blueprint floor plan of Rajat's work (one room per program, the rooms are the navigation).
+   Each case study is a whiteprint sheet with a title block; old processes appear as red-line revisions.
+   Single deliberate look: cyanotype blue + white linework for hero/contact, blue ink on drafting paper for sheets. */
 :root {
-  --bg: #F5F7F9;
-  --paper: #FFFFFF;
-  --ink: #14213D;
-  --muted: #56627A;
-  --line: #D5DCE6;
-  --grid: #E7ECF2;
-  --accent: #D9480F;
-  --accent-soft: #FFF0E6;
-  --good: #2B8A3E;
-  --good-soft: #EAF6EC;
-  --nav-bg: rgba(245, 247, 249, .88);
-  --n-trigger: #D9480F;
-  --n-data: #1C7ED6;
-  --n-logic: #7048E8;
-  --n-send: #2B8A3E;
-  --n-ai: #C2255C;
-  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --blue: #163E9E;
+  --blue-deep: #0E2B73;
+  --wline: rgba(255,255,255,.92);
+  --wgrid: rgba(255,255,255,.07);
+  --wgrid2: rgba(255,255,255,.14);
+  --paper: #F6F7FA;
+  --sheet: #FFFFFF;
+  --ink: #12245C;
+  --muted: #5A6788;
+  --rule: #C7D0E6;
+  --pgrid: #E6EAF4;
+  --hi: #FFD84D;
+  --red: #E5484D;
+  --green: #18936A;
+  --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --hand: "Architects Daughter", "Comic Sans MS", cursive;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0E131B; --paper: #151C27; --ink: #E6EBF2; --muted: #9AA6B8; --line: #2A3445; --grid: #1B2330;
-    --accent: #FF8A4C; --accent-soft: #2A1C14; --good: #5CC27A; --good-soft: #13261A; --nav-bg: rgba(14, 19, 27, .88);
-    --n-trigger: #FF8A4C; --n-data: #5AA9F0; --n-logic: #9C84F5; --n-send: #5CC27A; --n-ai: #F06595;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0E131B; --paper: #151C27; --ink: #E6EBF2; --muted: #9AA6B8; --line: #2A3445; --grid: #1B2330;
-  --accent: #FF8A4C; --accent-soft: #2A1C14; --good: #5CC27A; --good-soft: #13261A; --nav-bg: rgba(14, 19, 27, .88);
-  --n-trigger: #FF8A4C; --n-data: #5AA9F0; --n-logic: #9C84F5; --n-send: #5CC27A; --n-ai: #F06595;
-  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body {
-  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
-  -webkit-text-size-adjust: 100%;
-}
-h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; -webkit-text-size-adjust: 100%; }
+h1, h2, h3 { margin: 0; font-family: var(--display); line-height: 1; text-wrap: balance; }
 p { margin: 0; }
-a { color: var(--accent); }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--hi); outline-offset: 3px; }
 .gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.wrap { max-width: 960px; margin: 0 auto; }
-.eyebrow, .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
-.eyebrow { color: var(--accent); }
-.k { color: var(--muted); }
+.wrap { max-width: 1200px; margin: 0 auto; }
+.mono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
+.hand { font-family: var(--hand); }
 
 /* nav */
-nav.top { position: sticky; top: 0; z-index: 20; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
-  border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
-nav.top .wrap { display: flex; align-items: center; gap: 16px; height: 56px; }
-.brand { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--ink); text-decoration: none; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
-.brand i { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); color: var(--accent); font-style: normal; font-size: 12px; display: grid; place-items: center; }
-.links { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; min-width: 0; }
-.links::-webkit-scrollbar { display: none; }
-.links a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
-.links a:hover, .links a.on { color: var(--ink); background: var(--grid); }
-.actions { display: flex; gap: 8px; align-items: center; }
-.btn { display: inline-flex; align-items: center; gap: 6px; font: 600 14px var(--font-body); text-decoration: none; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--ink); cursor: pointer; white-space: nowrap; }
-.btn.solid { background: var(--ink); color: var(--bg); }
-.btn.ghost { background: transparent; color: var(--ink); }
-.btn.solid:hover { background: var(--accent); border-color: var(--accent); }
-.icon-btn { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
-.icon-btn svg { width: 18px; height: 18px; }
-@media (max-width: 760px) {
-  nav.top .wrap { gap: 8px; }
-  .links a { font-size: 14px; padding: 6px 8px; }
-  .stat b { font-size: 24px; }
+nav.top { position: sticky; top: 0; z-index: 20; background: var(--blue); color: #fff; border-bottom: 2px solid var(--wline); padding-top: env(safe-area-inset-top, 0px); }
+nav.top .wrap { display: flex; align-items: center; gap: 14px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 17px; font-variation-settings: "wdth" 85; }
+.brand i { width: 34px; height: 34px; border: 2px solid #fff; display: grid; place-items: center; font: 800 13px var(--display); font-style: normal; color: var(--hi); }
+.navr { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.navr a.plain { text-decoration: none; font-weight: 700; padding: 6px 10px; }
+.navr a.plain:hover { text-decoration: underline; text-underline-offset: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 800 15px var(--body); text-decoration: none; padding: 9px 15px; border: 2px solid var(--hi); background: var(--hi); color: var(--blue-deep); cursor: pointer; white-space: nowrap; }
+.btn:hover { background: #fff; border-color: #fff; }
+.btn.ghost { background: transparent; color: #fff; border-color: #fff; }
+.btn.ghost:hover { background: rgba(255,255,255,.12); }
+@media (max-width: 420px) { .brand span { display: none; } }
+
+/* blueprint surfaces */
+.bp { background-color: var(--blue); color: #fff;
+  background-image: linear-gradient(var(--wgrid2) 1px, transparent 1px), linear-gradient(90deg, var(--wgrid2) 1px, transparent 1px),
+                    linear-gradient(var(--wgrid) 1px, transparent 1px), linear-gradient(90deg, var(--wgrid) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px; }
+
+/* hero */
+.hero .wrap { padding-block: 44px 36px; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px 44px; align-items: start; }
+.hero .left { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding-top: 8px; }
+.hero .mono { color: var(--hi); }
+h1 { font-size: clamp(64px, 9vw, 128px); font-weight: 900; font-variation-settings: "wdth" 70; letter-spacing: -.01em; line-height: .84; text-transform: uppercase; }
+h1 span { display: block; }
+.role { display: flex; align-items: center; gap: 12px; }
+.role b { font: 800 22px var(--display); font-variation-settings: "wdth" 85; letter-spacing: .04em; text-transform: uppercase; }
+.role .dim { flex: 1; height: 0; border-top: 2px solid var(--wline); position: relative; min-width: 40px; }
+.role .dim::before, .role .dim::after { content: ""; position: absolute; top: -8px; height: 14px; border-left: 2px solid var(--wline); }
+.role .dim::before { left: 0; } .role .dim::after { right: 0; }
+.lede { font-size: 21px; line-height: 1.4; max-width: 30ch; font-weight: 500; }
+.note-hand { font-family: var(--hand); color: var(--hi); font-size: 18px; transform: rotate(-2deg); width: fit-content; }
+.contacts { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 600 13.5px var(--mono); }
+.contacts a { text-decoration: none; border-bottom: 1.5px solid rgba(255,255,255,.6); }
+.contacts a:hover { color: var(--hi); border-color: var(--hi); }
+
+/* floor plan */
+.plan { min-width: 0; }
+.plan .ptop { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin-bottom: 10px; }
+.dimline { position: relative; height: 22px; margin: 0 0 8px; border-bottom: 1.5px solid var(--wline); }
+.dimline::before, .dimline::after { content: ""; position: absolute; bottom: -7px; height: 12px; border-left: 1.5px solid var(--wline); }
+.dimline::before { left: 0; } .dimline::after { right: 0; }
+.dimline span { position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%); font: 600 12px var(--mono); background: var(--blue); padding: 0 8px; white-space: nowrap; }
+.rooms { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: minmax(96px, auto);
+  grid-template-areas: "show show book back back back" "show show book back back back" "grow bots bots rep rep auto";
+  border: 5px solid var(--wline); background: rgba(14,43,115,.55); }
+.room { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; padding: 12px 14px; text-decoration: none; color: #fff;
+  border: 2px solid var(--wline); margin: -1px; min-width: 0; transition: background .2s; }
+.room:hover, .room:focus-visible { background: rgba(255,216,77,.16); }
+.room .no { font: 600 11px var(--mono); letter-spacing: .1em; color: var(--hi); }
+.room h3 { font-size: 19px; font-weight: 800; font-variation-settings: "wdth" 80; text-transform: uppercase; letter-spacing: .02em; line-height: 1.05; }
+.room .m { font: 600 13px var(--mono); color: rgba(255,255,255,.85); }
+.room .door { position: absolute; width: 26px; height: 26px; border: 2px solid var(--wline); border-top: 0; border-right: 0; border-radius: 0 0 0 26px; right: 10px; bottom: -2px; background: transparent; opacity: .7; }
+.room.big h3 { font-size: clamp(22px, 2.6vw, 30px); }
+.room.show { grid-area: show; } .room.book { grid-area: book; } .room.back { grid-area: back; } .room.grow { grid-area: grow; }
+.room.bots { grid-area: bots; } .room.rep { grid-area: rep; } .room.auto { grid-area: auto; }
+.room .pulse { position: absolute; top: 12px; right: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--hi); box-shadow: 0 0 0 0 rgba(255,216,77,.7); animation: pulse 2.4s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 12px rgba(255,216,77,0); } 100% { box-shadow: 0 0 0 0 rgba(255,216,77,0); } }
+.tblock { display: grid; grid-template-columns: repeat(4, auto); justify-content: end; margin-top: 10px; border: 2px solid var(--wline); width: fit-content; margin-left: auto; font: 600 11px var(--mono); }
+.tblock div { padding: 6px 10px; border-right: 2px solid var(--wline); display: flex; flex-direction: column; gap: 1px; }
+.tblock div:last-child { border-right: 0; }
+.tblock span { color: rgba(255,255,255,.6); font-size: 9.5px; letter-spacing: .12em; }
+@media (max-width: 960px) { .hero .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 620px) {
+  .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "back back" "show book" "show book" "grow bots" "rep auto"; }
+  .room h3 { font-size: 16px; } .room.big h3 { font-size: 22px; }
+  .tblock { grid-template-columns: repeat(2, auto); } .tblock div:nth-child(2) { border-right: 0; } .tblock div:nth-child(-n+2) { border-bottom: 2px solid var(--wline); }
 }
 
-/* header */
-header.hero { border-bottom: 2px solid var(--ink);
-  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 24px 24px; background-position: -1px -1px; }
-header.hero .wrap { padding-block: 56px 36px; display: flex; flex-direction: column; gap: 16px; }
-header h1 { font-size: clamp(44px, 8vw, 76px); font-weight: 800; letter-spacing: -.02em; }
-.role { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); font-weight: 600; color: var(--accent); margin-top: -6px; }
-.lede { font-size: 19px; max-width: 62ch; }
-.contact { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
-.chip { font-family: var(--font-mono); font-size: 13px; color: var(--muted); border: 1px solid var(--line); background: var(--paper); padding: 4px 10px; border-radius: 999px; display: inline-flex; gap: 6px; align-items: center; }
-button.chip { cursor: pointer; }
-.chip a { color: inherit; text-decoration: none; }
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--paper); margin-top: 8px; }
-.stat { padding: 16px 18px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.stat:last-child { border-right: 0; }
-.stat b { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
-.stat span { font-size: 13px; color: var(--muted); line-height: 1.35; }
-@media (max-width: 640px) {
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat:nth-child(2) { border-right: 0; }
-  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .stat { padding: 14px 14px; }
-  .stat b { font-size: 23px; white-space: nowrap; }
-}
-
-main .wrap { display: flex; flex-direction: column; gap: 44px; padding-block: 44px 56px; }
+/* key numbers */
+.keys { background: var(--blue-deep); color: #fff; border-block: 2px solid var(--wline); }
+.keys .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.key { padding: 20px 18px; border-right: 1px dashed rgba(255,255,255,.35); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.key:last-child { border-right: 0; }
+.key b { font: 900 clamp(30px, 3.6vw, 46px) var(--display); font-variation-settings: "wdth" 72; color: var(--hi); white-space: nowrap; }
+.key span { font-size: 14px; color: rgba(255,255,255,.82); line-height: 1.35; }
+@media (max-width: 760px) { .keys .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); } .key:nth-child(2) { border-right: 0; } .key:nth-child(-n+2) { border-bottom: 1px dashed rgba(255,255,255,.35); } }
 
 /* sheets */
-.sheet { background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; }
-.titleblock { display: grid; grid-template-columns: 1fr auto; border-bottom: 1px solid var(--line); }
-.titleblock .name { padding: 22px 24px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.titleblock h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 800; }
-.titleblock .one { color: var(--muted); }
-.meta { border-left: 1px solid var(--line); display: grid; font-size: 13px; min-width: 220px; margin: 0; }
-.meta div { padding: 8px 16px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; }
-.meta div:last-child { border-bottom: 0; }
-.meta dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.meta dd { margin: 0; font-weight: 500; }
-@media (max-width: 680px) { .titleblock { grid-template-columns: 1fr; } .meta { border-left: 0; border-top: 1px solid var(--line); min-width: 0; } }
-.body { padding: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.body section { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.body ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
-.result { background: var(--good-soft); margin: -8px; padding: 8px 10px; border-left: 3px solid var(--good); }
-.result strong { color: var(--good); }
-@media (max-width: 760px) { .body { grid-template-columns: 1fr; } }
+main .wrap { display: flex; flex-direction: column; gap: 56px; padding-block: 56px 72px; }
+.sheet { background: var(--sheet); border: 2px solid var(--ink); position: relative; scroll-margin-top: 76px;
+  background-image: linear-gradient(var(--pgrid) 1px, transparent 1px), linear-gradient(90deg, var(--pgrid) 1px, transparent 1px); background-size: 24px 24px; }
+.sheet::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--rule); pointer-events: none; }
+.sh-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; border-bottom: 2px solid var(--ink); background: var(--sheet); position: relative; }
+.sh-no { background: var(--blue); color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 16px 20px; min-width: 120px; }
+.sh-no span { font: 600 10px var(--mono); letter-spacing: .14em; color: var(--hi); }
+.sh-no b { font: 900 44px var(--display); font-variation-settings: "wdth" 70; line-height: 1; }
+.sh-title { padding: 16px 22px; display: flex; flex-direction: column; justify-content: center; gap: 6px; min-width: 0; }
+.sh-title .mono { color: var(--muted); }
+.sh-title h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 900; font-variation-settings: "wdth" 75; text-transform: uppercase; letter-spacing: .005em; }
+.sh-meta { border-left: 2px solid var(--ink); display: grid; font: 600 11.5px var(--mono); min-width: 210px; }
+.sh-meta div { padding: 6px 14px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px; }
+.sh-meta div:last-child { border-bottom: 0; }
+.sh-meta span { color: var(--muted); letter-spacing: .08em; }
+.live { color: var(--green); }
+@media (max-width: 760px) { .sh-head { grid-template-columns: auto minmax(0, 1fr); } .sh-meta { grid-column: 1 / -1; border-left: 0; border-top: 2px solid var(--ink); min-width: 0; } .sh-no { min-width: 0; padding: 14px; } .sh-no b { font-size: 34px; } }
+.sh-body { position: relative; padding: 26px; display: flex; flex-direction: column; gap: 26px; }
+.pwr { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr) minmax(0, .9fr); gap: 0; border: 2px solid var(--ink); background: var(--sheet); }
+.pwr > section { padding: 18px 20px; border-right: 2px solid var(--ink); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.pwr > section:last-child { border-right: 0; }
+.pwr .mono { color: var(--muted); }
+.prob p { font-size: 20px; font-weight: 700; line-height: 1.3; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; font-weight: 500; line-height: 1.35; }
+.steps li::before { content: counter(s, decimal-leading-zero); font: 600 11px var(--mono); color: #fff; background: var(--blue); height: 22px; display: grid; place-items: center; }
+.res { background: var(--hi); }
+.res p { font-size: 21px; font-weight: 800; line-height: 1.25; }
+.res .mono { color: var(--ink); }
+@media (max-width: 860px) { .pwr { grid-template-columns: 1fr; } .pwr > section { border-right: 0; border-bottom: 2px solid var(--ink); } .pwr > section:last-child { border-bottom: 0; } }
 
-/* before / after */
-.ba { margin: 0 24px 24px; border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; }
-.ba > div { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.ba .arrow { display: grid; place-items: center; padding: 0 6px; color: var(--muted); border-inline: 1px dashed var(--line); font-size: 20px; }
-.ba .after { background: var(--good-soft); }
-.ba .after .k { color: var(--good); }
-.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
-.steps li { display: flex; gap: 8px; align-items: baseline; }
-.steps li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--muted); transform: translateY(-1px); }
-.after .steps li::before { background: var(--good); }
-@media (max-width: 640px) { .ba { grid-template-columns: 1fr; } .ba .arrow { border-inline: 0; border-block: 1px dashed var(--line); padding: 4px; transform: rotate(90deg); } }
+/* redline revision (old vs new) */
+.rev { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 2px solid var(--ink); background: var(--sheet); }
+.rev > div { padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.rev .r0 { border-right: 2px solid var(--ink); }
+.rev .tag { font: 600 11px var(--mono); letter-spacing: .1em; width: fit-content; padding: 3px 8px; border: 1.5px solid currentColor; }
+.rev .r0 .tag { color: var(--red); }
+.rev .r1 .tag { color: var(--green); }
+.rev ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.rev li { font-size: 15.5px; display: flex; gap: 10px; align-items: baseline; }
+.rev .r0 li { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.rev .r0 li::before { content: "✕"; color: var(--red); font-weight: 800; text-decoration: none; display: inline-block; }
+.rev .r1 li::before { content: "✓"; color: var(--green); font-weight: 800; }
+.rev .r0 .hand { color: var(--red); font-size: 16px; transform: rotate(-1.5deg); }
+@media (max-width: 680px) { .rev { grid-template-columns: 1fr; } .rev .r0 { border-right: 0; border-bottom: 2px solid var(--ink); } }
 
+/* figures */
+.fig { border: 2px solid var(--ink); background: var(--sheet); padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.figcap { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.figcap .mono { color: var(--muted); }
+.figcap h3 { font-size: 20px; font-weight: 800; font-variation-settings: "wdth" 85; }
+.figrow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; }
+@media (max-width: 860px) { .figrow { grid-template-columns: 1fr; } }
 .bars { display: flex; flex-direction: column; gap: 10px; }
-.bar { display: grid; grid-template-columns: 140px minmax(0, 1fr) 52px; align-items: center; gap: 10px; font-size: 14px; }
-.bar .track { background: var(--grid); height: 20px; overflow: hidden; }
-.bar .fill { height: 100%; background: var(--muted); width: var(--w); transform-origin: left; }
-.bar.hi .fill { background: var(--accent); }
-.bar.ok .fill { background: var(--good); }
-.bar .v { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; font-weight: 500; }
-@media (max-width: 480px) { .bar { grid-template-columns: 96px minmax(0, 1fr) 44px; font-size: 13px; } }
-.split { height: 22px; display: flex; font-family: var(--font-mono); font-size: 11.5px; color: #fff; }
-.split span { display: flex; align-items: center; padding-left: 8px; white-space: nowrap; overflow: hidden; }
-.chartbox { margin: 0 24px 24px; border: 1px solid var(--line); padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; }
-.legend-inline { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--muted); }
-.legend-inline i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.bar { display: grid; grid-template-columns: 132px minmax(0, 1fr) 64px; gap: 12px; align-items: center; font-weight: 600; font-size: 15px; }
+.track { height: 22px; border: 2px solid var(--ink); background: var(--paper); }
+.fill { height: 100%; width: var(--w); background: repeating-linear-gradient(45deg, #9AA6C4 0 6px, #B6C0D8 6px 12px); transform-origin: left; }
+.bar.hi .fill { background: var(--blue); }
+.bar .v { font: 600 16px var(--mono); text-align: right; }
+@media (max-width: 520px) { .bar { grid-template-columns: 92px minmax(0, 1fr) 54px; font-size: 13.5px; } }
+.split { display: flex; height: 32px; border: 2px solid var(--ink); font: 600 12.5px var(--mono); }
+.split span { display: flex; align-items: center; padding-left: 10px; white-space: nowrap; overflow: hidden; }
+.split .a { background: repeating-linear-gradient(45deg, #9AA6C4 0 6px, #B6C0D8 6px 12px); border-right: 2px solid var(--ink); }
+.split .b { background: var(--red); color: #fff; }
 
-/* day strip */
-.day { position: relative; height: 64px; margin: 8px 6px 0; }
-.day .axis { position: absolute; left: 0; right: 0; top: 30px; height: 2px; background: var(--line); }
-.day .tick { position: absolute; top: 40px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); transform: translateX(-50%); }
-.day .ev { position: absolute; top: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.day .ev b { font-size: 12px; font-weight: 600; white-space: nowrap; background: var(--paper); padding: 0 4px; }
-.day .ev i { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--accent); }
-.day.before .ev i { background: var(--muted); box-shadow: 0 0 0 1px var(--muted); }
-@media (max-width: 520px) { .day .ev b { font-size: 10.5px; } }
+/* touchpoint timeline */
+.tl { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; padding-top: 6px; }
+.tl::before { content: ""; position: absolute; left: 4%; right: 4%; top: 28px; border-top: 3px solid var(--blue); }
+.tp { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 0 6px; min-width: 0; }
+.tp i { width: 44px; height: 44px; border: 3px solid var(--blue); background: var(--sheet); display: grid; place-items: center; font-style: normal; font: 800 12px var(--mono); color: var(--blue); position: relative; z-index: 1; }
+.tp.voice i { background: var(--hi); }
+.tp.meet i { background: var(--blue); color: #fff; }
+.tp > div { display: flex; flex-direction: column; gap: 2px; }
+.tp b { font-size: 14.5px; font-weight: 800; line-height: 1.2; }
+.tp span { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+@media (max-width: 760px) {
+  .tl { grid-template-columns: 1fr; gap: 12px; }
+  .tl::before { left: 22px; right: auto; top: 10px; bottom: 10px; border-top: 0; border-left: 3px solid var(--blue); }
+  .tp { flex-direction: row; text-align: left; align-items: center; gap: 12px; }
+  .tp > div { display: flex; flex-direction: column; }
+}
+
+/* backstage floor plan */
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .55fr) minmax(0, 1.25fr); border: 4px solid var(--ink); background: var(--sheet); }
+.zone { padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; border-right: 4px solid var(--ink); }
+.zone:last-child { border-right: 0; }
+.zone > .mono { color: var(--blue); font-weight: 600; }
+.zone.live { background: var(--blue); color: #fff; justify-content: center; text-align: center; }
+.zone.live > .mono { color: var(--hi); }
+.zone.live h4 { font: 900 30px var(--display); font-variation-settings: "wdth" 70; text-transform: uppercase; margin: 0; }
+.zone.live p { font-size: 14px; color: rgba(255,255,255,.85); }
+.cell { border: 2px solid var(--ink); padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; background: var(--paper); }
+.cell b { font-size: 15px; font-weight: 800; line-height: 1.25; }
+.cell span { font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+.cell.key { background: #FFF4C2; }
+.cells2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+@media (max-width: 900px) { .stage { grid-template-columns: 1fr; } .zone { border-right: 0; border-bottom: 4px solid var(--ink); } .zone:last-child { border-bottom: 0; } }
+@media (max-width: 520px) { .cells2 { grid-template-columns: 1fr; } }
+
+/* push matrix */
+.matrix { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.matrix th, .matrix td { border: 2px solid var(--ink); padding: 8px 10px; text-align: left; vertical-align: top; }
+.matrix th { font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; background: var(--paper); color: var(--muted); }
+.matrix td b { display: block; font-weight: 800; }
+.matrix td span { color: var(--muted); font-size: 13px; }
+.tablewrap { overflow-x: auto; }
 
 /* workflow drawings */
-.flows { display: flex; flex-direction: column; gap: 14px; padding: 0 24px 24px; }
-.flowhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; border-top: 1px dashed var(--line); padding-top: 18px; }
-.flowhead h3 { font-size: 18px; font-weight: 600; }
-.hint { font-size: 13px; color: var(--muted); }
-.canvas { position: relative; overflow-x: auto; border: 1px solid var(--line); background-color: var(--bg);
-  background-image: radial-gradient(var(--line) 1px, transparent 1.2px); background-size: 18px 18px; }
+.canvas { position: relative; overflow-x: auto; border: 2px solid var(--ink); background-color: var(--paper);
+  background-image: linear-gradient(var(--pgrid) 1px, transparent 1px), linear-gradient(90deg, var(--pgrid) 1px, transparent 1px); background-size: 18px 18px; }
 .canvas svg { display: block; }
-.canvas text { font-family: var(--font-body); fill: var(--ink); pointer-events: none; }
+.canvas text { font-family: var(--body); fill: var(--ink); pointer-events: none; }
 .canvas .sub { fill: var(--muted); font-size: 10.5px; }
-.canvas .elabel { font-family: var(--font-mono); font-size: 10px; fill: var(--muted); }
-.canvas .wire { fill: none; stroke: var(--line); stroke-width: 1.6; }
-.canvas .flow { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 14; stroke-linecap: round; animation: run 1.4s linear infinite; opacity: .9; }
-.canvas .arrowhead { fill: var(--muted); }
+.canvas .elabel { font-family: var(--mono); font-size: 10px; fill: var(--red); }
+.canvas .wire { fill: none; stroke: #9AA6C4; stroke-width: 1.8; }
+.canvas .flow { fill: none; stroke: var(--blue); stroke-width: 2.4; stroke-dasharray: 6 14; stroke-linecap: round; animation: run 1.4s linear infinite; }
+.canvas .arrowhead { fill: var(--ink); }
 .canvas g.node { cursor: pointer; outline: none; }
-.canvas g.node rect.box { transition: stroke-width .15s, filter .15s; }
-.canvas g.node:hover rect.box, .canvas g.node:focus rect.box, .canvas g.node.sel rect.box { stroke-width: 3; }
+.canvas g.node:hover rect.box, .canvas g.node:focus rect.box, .canvas g.node.sel rect.box { stroke-width: 3.5; }
 @keyframes run { to { stroke-dashoffset: -20; } }
-.tip { position: fixed; z-index: 30; max-width: 260px; background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.45; padding: 8px 10px; border-radius: 6px; pointer-events: none; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
-.tip b { display: block; font-size: 12px; font-family: var(--font-mono); letter-spacing: .04em; opacity: .75; margin-bottom: 2px; }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); }
-.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; border-radius: 2px; }
-.note { font-size: 14px; color: var(--muted); max-width: 70ch; }
+.kinds { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.kinds i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid var(--ink); }
+.hint { font-size: 14px; color: var(--muted); }
+.tip { position: fixed; z-index: 30; max-width: 260px; background: var(--ink); color: #fff; font-size: 13.5px; line-height: 1.45; padding: 9px 11px; pointer-events: none; border: 2px solid var(--hi); }
+.tip b { display: block; font: 600 10.5px var(--mono); letter-spacing: .08em; color: var(--hi); margin-bottom: 2px; text-transform: uppercase; }
+.annot { font-family: var(--hand); color: var(--red); font-size: 17px; line-height: 1.3; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { font: 600 12px var(--mono); border: 1.5px solid var(--ink); padding: 4px 9px; background: var(--sheet); }
 
-.section-title { display: flex; flex-direction: column; gap: 6px; }
-.section-title h2 { font-size: 30px; font-weight: 800; }
+/* also */
 .also { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.also div { border-top: 2px solid var(--ink); padding-top: 10px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.also h3 { font-size: 17px; font-weight: 600; font-family: var(--font-body); }
-.also p { font-size: 14.5px; color: var(--muted); }
+.also div { background: var(--sheet); border: 2px solid var(--ink); padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.also h3 { font-size: 20px; font-weight: 800; font-variation-settings: "wdth" 85; }
+.also p { color: var(--muted); font-size: 15.5px; }
 @media (max-width: 760px) { .also { grid-template-columns: 1fr; } }
 
-.cta { background: var(--ink); color: var(--bg); }
-.cta .wrap { padding-block: 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px 40px; align-items: start; }
-.cta-head { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.cta .eyebrow { color: #FF8A4C; }
-.cta h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; color: var(--bg); }
-.cta p { color: var(--bg); opacity: .75; }
-.contact-list { margin: 0; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.18); min-width: 0; }
-.contact-list div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.18); align-items: center; }
-.contact-list dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--bg); opacity: .6; }
-.contact-list dd { margin: 0; color: var(--bg); font-size: 17px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; overflow-wrap: anywhere; }
-.contact-list a { color: var(--bg); text-decoration: underline; text-decoration-color: #FF8A4C; text-underline-offset: 4px; }
-.contact-list a:hover { color: #FF8A4C; }
-.mini { font: 500 12px var(--font-mono); color: var(--bg); background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
-.cta .row { grid-column: 2; }
-@media (max-width: 760px) { .cta .wrap { grid-template-columns: 1fr; } .cta .row { grid-column: auto; } }
-.cta .row { display: flex; flex-wrap: wrap; gap: 10px; }
-.cta .btn { border-color: var(--bg); }
-.cta .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
-.cta .btn.ghost { color: var(--bg); }
-footer { font-size: 13px; color: var(--muted); }
-footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
+/* contact */
+.contact .wrap { padding-block: 56px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px 48px; }
+.contact .mono { color: var(--hi); }
+.contact h2 { font-size: clamp(40px, 6vw, 76px); font-weight: 900; font-variation-settings: "wdth" 70; text-transform: uppercase; line-height: .9; margin-top: 10px; }
+.contact .lead { margin-top: 14px; font-size: 18px; color: rgba(255,255,255,.85); }
+.clist { margin: 0; border: 3px solid var(--wline); min-width: 0; background: rgba(14,43,115,.5); }
+.clist div { display: grid; grid-template-columns: 110px minmax(0, 1fr); border-bottom: 2px solid var(--wline); }
+.clist div:last-child { border-bottom: 0; }
+.clist dt { font: 600 11px var(--mono); letter-spacing: .12em; color: var(--hi); padding: 14px; border-right: 2px solid var(--wline); text-transform: uppercase; }
+.clist dd { margin: 0; padding: 12px 14px; font-size: 18px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; overflow-wrap: anywhere; }
+.clist a { color: #fff; text-decoration: underline; text-decoration-color: var(--hi); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.clist a:hover { color: var(--hi); }
+.mini { font: 600 11.5px var(--mono); color: #fff; background: transparent; border: 1.5px solid rgba(255,255,255,.6); padding: 3px 9px; cursor: pointer; }
+.contact .acts { grid-column: 2; display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 760px) { .contact .wrap { grid-template-columns: 1fr; } .contact .acts { grid-column: auto; } .clist div { grid-template-columns: 1fr; } .clist dt { border-right: 0; padding-bottom: 0; } }
+footer { font: 600 11.5px var(--mono); color: var(--muted); }
+footer .wrap { padding-block: 18px calc(24px + env(safe-area-inset-bottom, 0px)); }
 
-/* reveal: content is visible by default; JS opts in only when motion is allowed */
-.js-reveal .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-.js-reveal .reveal.in { opacity: 1; transform: none; }
-.js-reveal .reveal .fill { transform: scaleX(0); transition: transform 1s .2s cubic-bezier(.2,.7,.2,1); }
-.js-reveal .reveal.in .fill { transform: scaleX(1); }
+/* motion: visible by default; JS opts in only when motion is allowed */
+.js-motion .sheet { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .8s cubic-bezier(.16,1,.3,1); }
+.js-motion .sheet.in { opacity: 1; transform: none; }
+.js-motion .sheet .fill { transform: scaleX(0); transition: transform 1s .3s cubic-bezier(.2,.7,.2,1); }
+.js-motion .sheet.in .fill { transform: scaleX(1); }
+.js-motion .rooms .room { opacity: 0; transform: scale(.96); animation: roomin .5s cubic-bezier(.16,1,.3,1) forwards; }
+@keyframes roomin { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .room .pulse { animation: none; }
   .canvas .flow { animation: none; stroke-dasharray: none; opacity: .5; }
 }
-@media print { nav.top, .cta, .actions { display: none; } }
+@media print { nav.top, .contact .acts { display: none; } }
 </style>
 </head>
 <body>
 
 <nav class="top gutter" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top"><i>RB</i>Rajat Baliyan</a>
-    <div class="links">
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="actions">
-      <a class="btn solid" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg><span class="lbl">Resume</span>
+    <a class="brand" href="#top"><i>RB</i><span>Rajat Baliyan</span></a>
+    <div class="navr">
+      <a class="plain" href="#contact">Contact</a>
+      <a class="btn" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Resume
       </a>
     </div>
   </div>
 </nav>
 
-<header class="hero gutter" id="top">
+<header class="hero bp gutter" id="top">
   <div class="wrap">
-    <span class="eyebrow">Portfolio · Program management &amp; operations</span>
-    <h1>Rajat Baliyan</h1>
-    <p class="role">Program Manager</p>
-    <p class="lede">I run programs end to end, find what's breaking with data, and build the fix myself.</p>
-    <div class="contact">
-      <span class="chip">Delhi, India</span>
-      <span class="chip"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com ↗</a></span>
-      <span class="chip"><a href="tel:+919999514895">+91 99995 14895</a></span>
-      <span class="chip"><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999 ↗</a></span>
+    <div class="left">
+      <span class="mono">Drawing set · Program management &amp; operations</span>
+      <h1><span>Rajat</span><span>Baliyan</span></h1>
+      <div class="role"><b>Program Manager</b><span class="dim" aria-hidden="true"></span></div>
+      <p class="lede">I run programs end to end, find what's breaking with data, and build the fix myself.</p>
+      <p class="note-hand">Civil engineer by training. I still think in plans.</p>
+      <div class="contacts">
+        <span>Delhi, India</span>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com</a>
+        <a href="tel:+919999514895">+91 99995 14895</a>
+        <a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
     </div>
-    <div class="stats">
-      <div class="stat"><b data-count="30" data-suffix="+">30+</b><span>production workflows built and run solo</span></div>
-      <div class="stat"><b>35% → 71%</b><span>webinar attendance after reminder redesign</span></div>
-      <div class="stat"><b data-count="4100" data-suffix="+">4,100+</b><span>event registrations run end to end</span></div>
-      <div class="stat"><b>–40%</b><span>support response time, at 95% CSAT</span></div>
+
+    <div class="plan">
+      <div class="ptop"><span class="mono">Floor plan · A-000 · tap a room</span></div>
+      <div class="dimline" aria-hidden="true"><span>30+ live workflows</span></div>
+      <nav class="rooms" aria-label="Case studies">
+        <a class="room big show" href="#showup"><span class="no">A-01</span><h3>Show-up system</h3><span class="m">RCA → 4 touchpoints</span><span class="door"></span></a>
+        <a class="room book" href="#booking"><span class="no">A-02</span><h3>Booking system</h3><span class="m">1 click</span><span class="door"></span></a>
+        <a class="room big back" href="#backstage"><span class="pulse" aria-hidden="true"></span><span class="no">A-03 · flagship</span><h3>Webinar backstage</h3><span class="m">pre → live → post · 4,100+ regs</span><span class="door"></span></a>
+        <a class="room grow" href="#growth"><span class="no">A-04</span><h3>Growth</h3><span class="m">push + social</span><span class="door"></span></a>
+        <a class="room bots" href="#bots"><span class="no">A-05</span><h3>WhatsApp bots</h3><span class="m">4 live</span><span class="door"></span></a>
+        <a class="room rep" href="#reporting"><span class="no">A-06</span><h3>Reporting + AI</h3><span class="m">3 auto reports/day</span><span class="door"></span></a>
+        <a class="room auto" href="#automation"><span class="no">A-07</span><h3>Backbone</h3><span class="m">Zapier → n8n</span><span class="door"></span></a>
+      </nav>
+      <div class="tblock" aria-label="Title block">
+        <div><span>DRAWN BY</span>R. BALIYAN</div>
+        <div><span>ROLE</span>PROGRAM MGR</div>
+        <div><span>SHEETS</span>A-01 → A-07</div>
+        <div><span>STATUS</span>LIVE</div>
+      </div>
     </div>
   </div>
 </header>
 
+<section class="keys gutter" aria-label="Headline numbers">
+  <div class="wrap">
+    <div class="key"><b>30+</b><span>production workflows, built and run solo</span></div>
+    <div class="key"><b>35%→71%</b><span>webinar attendance after reminder redesign</span></div>
+    <div class="key"><b>4,100+</b><span>event registrations run end to end</span></div>
+    <div class="key"><b>+823%</b><span>LinkedIn impressions in month one</span></div>
+  </div>
+</section>
+
 <main class="gutter">
 <div class="wrap">
 
-<!-- 1. Booking system -->
-<article class="sheet reveal" id="booking">
-  <div class="titleblock">
-    <div class="name"><span class="eyebrow">Program design · Automation</span><h2>Consultation booking system</h2><p class="one">Replaced manual scheduling between calling agents and expert advisors.</p></div>
-    <dl class="meta"><div><dt>Role</dt><dd>Owner: spec, build, rollout</dd></div><div><dt>Stack</dt><dd>n8n · Google Calendar · WhatsApp API · Sheets · Slack</dd></div><div><dt>Users</dt><dd>Pre-sales agents, 3 advisors</dd></div></dl>
+<!-- A-01 Show-up system -->
+<article class="sheet" id="showup">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-01</b></div>
+    <div class="sh-title"><span class="mono">Root cause analysis → reminder system</span><h2>Show-up system</h2></div>
+    <div class="sh-meta"><div><span>ROLE</span>Analysis + build</div><div><span>DATA</span>91 meetings</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
   </div>
-  <div class="body">
-    <section><span class="k">Problem</span><p>Bookings done by hand. Double bookings, missed reminders, no single record.</p></section>
-    <section><span class="k">What I did</span><ul><li>Live advisor availability from Google Calendar</li><li>One click: invite, WhatsApp, reminders, CRM row, Slack</li><li>Reschedules sync back every 10 min</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>Manual scheduling removed</strong> for 3 advisors.</p></section>
-  </div>
-  <div class="ba">
-    <div><span class="k">Before · agent does it by hand</span>
-      <ul class="steps"><li>Check the advisor's calendar link</li><li>Create the invite and add the homeowner</li><li>Send WhatsApp confirmation</li><li>Log the booking in the sheet</li><li>Remember to send reminders</li></ul></div>
-    <div class="arrow" aria-hidden="true">→</div>
-    <div class="after"><span class="k">After · agent picks a slot</span>
-      <ul class="steps"><li>Only free slots are shown</li><li>Invite, WhatsApp and sheet row happen automatically</li><li>1-hour and 5-minute reminders go out on their own</li><li>Reschedules sync back every 10 minutes</li></ul></div>
-  </div>
-  <div class="flows">
-    <div class="flowhead"><h3>Workflow: booking API</h3><span class="k">n8n · 3 webhook routes · 15 nodes</span></div>
-    <p class="hint">Hover or tap any node to see what it does.</p>
-    <div class="canvas"><svg data-flow="booking" role="img" aria-label="n8n workflow diagram of the booking API"></svg></div>
-    <div class="flowhead"><h3>Workflow: reminders and calendar sync</h3><span class="k">n8n · 2 scheduled jobs</span></div>
-    <div class="canvas"><svg data-flow="reminders" role="img" aria-label="n8n workflow diagram of reminders and calendar sync"></svg></div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Only 43% of consultations showed as completed.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Audited the data before blaming homeowners</li><li>Found lead time was the real driver of no-shows</li><li>Rebuilt the reminder chain around the meeting</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Booking window cut to next working day. Every meeting now gets 4 touchpoints.</p></section>
+    </div>
+    <div class="figrow">
+      <div class="fig">
+        <div class="figcap"><h3>Finding 1 · bad data</h3><span class="mono">52 recorded no-shows</span></div>
+        <div class="split" role="img" aria-label="36 of 52 were never updated, 16 were real no-shows"><span class="a" style="flex:36">36 never updated</span><span class="b" style="flex:16">16 real</span></div>
+        <p class="annot">Most "no-shows" were just stale statuses.</p>
+      </div>
+      <div class="fig">
+        <div class="figcap"><h3>Finding 2 · lead time</h3><span class="mono">show-up rate</span></div>
+        <div class="bars">
+          <div class="bar hi"><span>Same day</span><div class="track"><div class="fill" style="--w:70%"></div></div><span class="v">70%</span></div>
+          <div class="bar"><span>2+ days out</span><div class="track"><div class="fill" style="--w:29%"></div></div><span class="v">29%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="fig">
+      <div class="figcap"><h3>The fix · touchpoints around every meeting</h3><span class="mono">automated</span></div>
+      <div class="tl">
+        <div class="tp"><i>T0</i><div><b>Booked</b><span>today or next working day</span></div></div>
+        <div class="tp"><i>WA</i><div><b>Confirmation</b><span>WhatsApp, instantly</span></div></div>
+        <div class="tp"><i>−1h</i><div><b>Reminder</b><span>WhatsApp + join link</span></div></div>
+        <div class="tp voice"><i>−30m</i><div><b>Voice call</b><span>Malayalam, press 1 / 2</span></div></div>
+        <div class="tp"><i>−5m</i><div><b>Last nudge</b><span>WhatsApp</span></div></div>
+        <div class="tp meet"><i>●</i><div><b>Meeting</b><span>status nudge if not updated</span></div></div>
+      </div>
+    </div>
+    <div class="fig">
+      <div class="figcap"><h3>Workflow · reminders + confirmation call</h3><span class="mono">n8n · runs every minute · 13 nodes</span></div>
+      <p class="hint">Hover or tap any node to see what it does.</p>
+      <div class="canvas"><svg data-flow="showup" role="img" aria-label="Workflow diagram: reminders and confirmation call"></svg></div>
+    </div>
   </div>
 </article>
 
-<!-- 2. No-show RCA -->
-<article class="sheet reveal" id="noshow">
-  <div class="titleblock">
-    <div class="name"><span class="eyebrow">Root cause analysis</span><h2>Why consultations were no-shows</h2><p class="one">Two weeks of meetings, one dashboard number that looked alarming.</p></div>
-    <dl class="meta"><div><dt>Role</dt><dd>Analysis and recommendations</dd></div><div><dt>Data</dt><dd>91 meetings, 2-week window</dd></div><div><dt>Tools</dt><dd>Google Sheets · Python · CRM data</dd></div></dl>
+<!-- A-02 Booking -->
+<article class="sheet" id="booking">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-02</b></div>
+    <div class="sh-title"><span class="mono">Program design + automation</span><h2>Consultation booking system</h2></div>
+    <div class="sh-meta"><div><span>ROLE</span>Owner</div><div><span>USERS</span>Agents + 3 advisors</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
   </div>
-  <div class="body">
-    <section><span class="k">Problem</span><p>Only 43% of consultations showed as completed.</p></section>
-    <section><span class="k">What I did</span><ul><li>Checked the data first: most "no-shows" were never updated</li><li>Split show-up by lead time, agent, slot, watch time</li><li>Only lead time and 60+ min watch time mattered</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>Booking window cut to next working day</strong>, plus an automated confirmation call.</p></section>
-  </div>
-  <div class="chartbox">
-    <span class="k">Finding 1 · what the 52 recorded no-shows really were</span>
-    <div class="split" role="img" aria-label="36 of 52 were stale statuses, 16 were real no-shows">
-      <span style="flex:36; background:var(--muted)">36 never updated</span><span style="flex:16; background:var(--accent)">16 real</span>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Bookings done by hand. Double bookings, no single record.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Live advisor availability from Google Calendar</li><li>One click: invite, WhatsApp, CRM row, Slack</li><li>Priority slots held for high-intent leads</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Manual scheduling removed for 3 advisors.</p></section>
     </div>
-    <span class="k" style="margin-top:6px">Finding 2 · show-up rate by booking lead time</span>
-    <div class="bars">
-      <div class="bar ok"><span>Same day</span><div class="track"><div class="fill" style="--w:70%"></div></div><span class="v">70%</span></div>
-      <div class="bar"><span>2+ days ahead</span><div class="track"><div class="fill" style="--w:29%"></div></div><span class="v">29%</span></div>
+    <div class="rev">
+      <div class="r0"><span class="tag">REV 0 · REMOVED</span><ul><li>Check the advisor's calendar link</li><li>Create the invite by hand</li><li>Send WhatsApp confirmation</li><li>Log it in the sheet</li></ul><span class="hand">too many manual steps</span></div>
+      <div class="r1"><span class="tag">REV 1 · CURRENT</span><ul><li>Agent picks a free slot</li><li>Invite, WhatsApp and sheet row happen on their own</li><li>Reschedules sync back every 10 minutes</li><li>Slot taken? The page says so before booking</li></ul></div>
     </div>
-  </div>
-  <div class="flows">
-    <div class="flowhead"><h3>Workflow: 30-minute confirmation call</h3><span class="k">n8n · runs every minute · voice + WhatsApp</span></div>
-    <div class="canvas"><svg data-flow="confirm" role="img" aria-label="n8n workflow diagram of the confirmation call"></svg></div>
-    <p class="note">Added after we found no-shows got every WhatsApp reminder, but no call.</p>
+    <div class="fig">
+      <div class="figcap"><h3>Workflow · booking API</h3><span class="mono">n8n · 3 routes · 15 nodes</span></div>
+      <div class="canvas"><svg data-flow="booking" role="img" aria-label="Workflow diagram: booking API"></svg></div>
+    </div>
   </div>
 </article>
 
-<!-- 3. Webinar program -->
-<article class="sheet reveal" id="webinars">
-  <div class="titleblock">
-    <div class="name"><span class="eyebrow">Program &amp; event operations</span><h2>Webinar program, registration to sale</h2><p class="one">The main lead source for the expert-consultation program.</p></div>
-    <dl class="meta"><div><dt>Role</dt><dd>Ran operations and reporting</dd></div><div><dt>Scale</dt><dd>22+ events · 4,100+ registrations</dd></div><div><dt>Tools</dt><dd>WhatsApp API · Voice · Email · Sheets</dd></div></dl>
+<!-- A-03 Webinar backstage -->
+<article class="sheet" id="backstage">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-03</b></div>
+    <div class="sh-title"><span class="mono">Flagship · program + event operations</span><h2>Webinar backstage</h2></div>
+    <div class="sh-meta"><div><span>SCALE</span>22+ events</div><div><span>REGS</span>4,100+</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
   </div>
-  <div class="body">
-    <section><span class="k">Problem</span><p>Most registrants never joined. Drop-offs were invisible.</p></section>
-    <section><span class="k">What I did</span><ul><li>Re-timed WhatsApp, voice and email reminders</li><li>Nightly funnel + cohorts across 28+ webinars</li><li>Proved build stage, not house size, drove disqualification</li></ul></section>
-    <section class="result"><span class="k">Result</span><p>Attendance <strong>~35% → 71%</strong> at peak.</p></section>
-  </div>
-  <div class="chartbox">
-    <span class="k">Webinar attendance rate</span>
-    <div class="bars">
-      <div class="bar"><span>Before redesign</span><div class="track"><div class="fill" style="--w:35%"></div></div><span class="v">~35%</span></div>
-      <div class="bar ok"><span>After (peak)</span><div class="track"><div class="fill" style="--w:71%"></div></div><span class="v">71%</span></div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Most registrants never joined. Nobody saw where people dropped.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Built every step before, during and after the session</li><li>Turned attendance into same-night booking invites</li><li>Used data to change slots, forms and reminder caps</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Attendance ~35% → 71% at peak.</p></section>
     </div>
-  </div>
-  <div class="flows">
-    <div class="flowhead"><h3>Workflow: hourly lead push with dedupe</h3><span class="k">n8n · hourly · WhatsApp leads → CRM sheet</span></div>
-    <div class="canvas"><svg data-flow="leads" role="img" aria-label="n8n workflow diagram of the hourly lead push"></svg></div>
+    <div class="fig">
+      <div class="figcap"><h3>Plan · the backstage, room by room</h3><span class="mono">pre → live → post</span></div>
+      <div class="stage">
+        <div class="zone">
+          <span class="mono">Pre-show</span>
+          <div class="cell"><b>Own registration pages</b><span>Moved off Luma; form captures size, build stage, timeline</span></div>
+          <div class="cell"><b>Instant confirmation</b><span>WhatsApp + Google Calendar invite + same-day email</span></div>
+          <div class="cell"><b>Smart reminder pool</b><span>Skips leads already qualified or booked; caps reminders by invite count</span></div>
+          <div class="cell key"><b>Slot plan from data</b><span>Tue 7 PM Kerala only, Fri 9 PM NRI + Kerala</span></div>
+        </div>
+        <div class="zone live">
+          <span class="mono">On stage</span>
+          <h4>Live session</h4>
+          <p>Join log with watch time for every attendee</p>
+        </div>
+        <div class="zone">
+          <span class="mono">Post-show</span>
+          <div class="cells2">
+            <div class="cell"><b>Nightly import</b><span>first, latest and count of sessions + watch time</span></div>
+            <div class="cell key"><b>30+ min → booking invite</b><span>same night, after my approval</span></div>
+            <div class="cell"><b>No phone? Email form</b><span>collects WhatsApp + project details</span></div>
+            <div class="cell"><b>Missed it? Nurture</b><span>2 messages + "Call me back" button</span></div>
+            <div class="cell"><b>3-button rating</b><span>"Loved it" gets the app review link</span></div>
+            <div class="cell"><b>Nightly funnel</b><span>registered → attended → consult → sale</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="figrow">
+      <div class="fig">
+        <div class="figcap"><h3>Why the slot split</h3><span class="mono">serious NRI attendees / session</span></div>
+        <div class="bars">
+          <div class="bar"><span>7 PM mixed</span><div class="track"><div class="fill" style="--w:32%"></div></div><span class="v">9</span></div>
+          <div class="bar hi"><span>9 PM NRI</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="v">28</span></div>
+        </div>
+        <p class="annot">7 PM in India is 5:30 PM in the Gulf.</p>
+      </div>
+      <div class="fig">
+        <div class="figcap"><h3>Attendance rate</h3><span class="mono">before / after</span></div>
+        <div class="bars">
+          <div class="bar"><span>Before</span><div class="track"><div class="fill" style="--w:35%"></div></div><span class="v">~35%</span></div>
+          <div class="bar hi"><span>After (peak)</span><div class="track"><div class="fill" style="--w:71%"></div></div><span class="v">71%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="fig">
+      <div class="figcap"><h3>Workflow · same-night booking invite</h3><span class="mono">n8n · 8:30 PM–2 AM · human approval</span></div>
+      <div class="canvas"><svg data-flow="autobook" role="img" aria-label="Workflow diagram: post-webinar booking invite"></svg></div>
+    </div>
   </div>
 </article>
 
-<!-- 4. Reporting & AI -->
-<article class="sheet reveal" id="reporting">
-  <div class="titleblock">
-    <div class="name"><span class="eyebrow">Reporting · AI with human approval</span><h2>Daily team reporting and support summaries</h2><p class="one">Numbers and issues reach the team without anyone compiling them.</p></div>
-    <dl class="meta"><div><dt>Role</dt><dd>Designed and built</dd></div><div><dt>Cadence</dt><dd>2 PM status · 8 PM summary · nightly report</dd></div><div><dt>Stack</dt><dd>n8n · Call-log API · OpenAI · Slack · Sheets</dd></div></dl>
+<!-- A-04 Growth -->
+<article class="sheet" id="growth">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-04</b></div>
+    <div class="sh-title"><span class="mono">Push notifications + social media</span><h2>Growth</h2></div>
+    <div class="sh-meta"><div><span>CHANNELS</span>App · WA · LI · IG · X</div><div><span>TOOLS</span>Firebase · CleverTap</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
   </div>
-  <div class="body">
-    <section><span class="k">Problem</span><p>Managers chased agents for numbers. Support issues got lost.</p></section>
-    <section><span class="k">What I did</span><ul><li>Auto mid-day and end-of-day reports per agent</li><li>8 PM AI support summary, approved by me</li><li>Full report in Sheets, short summary in Slack</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>No more manual status requests.</strong></p></section>
-  </div>
-  <div class="chartbox">
-    <span class="k">Before · status gathered by asking, any time of day</span>
-    <div class="day before" role="img" aria-label="Before: ad-hoc status requests through the day">
-      <div class="axis"></div>
-      <div class="ev" style="left:8%"><i></i><b>"Numbers?"</b></div><div class="ev" style="left:30%"><i></i><b>"Update?"</b></div><div class="ev" style="left:52%"><i></i><b>"Calls?"</b></div><div class="ev" style="left:74%"><i></i><b>"Status?"</b></div>
-      <span class="tick" style="left:0%">10 AM</span><span class="tick" style="left:50%">5 PM</span><span class="tick" style="left:100%">midnight</span>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Same push for everyone. Social had no plan and no numbers.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Planned pushes by region, user type and Plus status</li><li>Ran a monthly content calendar across LinkedIn, Instagram, X</li><li>Tested formats and kept what the numbers backed</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>+12% notification CTR. LinkedIn +823% in month one.</p></section>
     </div>
-    <span class="k" style="color:var(--good)">After · three automatic touchpoints</span>
-    <div class="day" role="img" aria-label="After: 2 PM status, 8 PM support summary, nightly report">
-      <div class="axis"></div>
-      <div class="ev" style="left:28.6%"><i></i><b>2 PM status</b></div><div class="ev" style="left:71.4%"><i></i><b>8 PM support</b></div><div class="ev" style="left:96%"><i></i><b>Nightly</b></div>
-      <span class="tick" style="left:0%">10 AM</span><span class="tick" style="left:50%">5 PM</span><span class="tick" style="left:100%">midnight</span>
+    <div class="fig">
+      <div class="figcap"><h3>Push plan · who gets what</h3><span class="mono">app + WhatsApp</span></div>
+      <div class="tablewrap">
+        <table class="matrix">
+          <thead><tr><th>Push</th><th>Audience</th><th>Goal</th><th>Stage</th></tr></thead>
+          <tbody>
+            <tr><td><b>Daily app push</b><span>Firebase</span></td><td>Each region × homeowner / service pro</td><td>Daily engagement with local content</td><td><b class="live">Live</b></td></tr>
+            <tr><td><b>Community invite</b><span>WhatsApp, Malayalam</span></td><td>New Kerala Plus trials, every 15 min</td><td>Welcome into the member community</td><td><b class="live">Live</b></td></tr>
+            <tr><td><b>Plus vs non-Plus split</b><span>CleverTap</span></td><td>Paid members vs free users</td><td>Same content, paywall does the upsell</td><td><b>Planned</b></td></tr>
+            <tr><td><b>Play Store rating ask</b><span>CleverTap journey</span></td><td>Renewed, active Plus members only</td><td>Ratings from people who like the product</td><td><b>Built</b></td></tr>
+            <tr><td><b>Price discovery</b><span>deep link</span></td><td>Kerala users</td><td>Open Prices, tracked from view to purchase</td><td><b>Designed</b></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="flows">
-    <div class="flowhead"><h3>Workflow: AI support summary with approval</h3><span class="k">n8n · 2 workflows · Slack buttons</span></div>
-    <div class="canvas"><svg data-flow="support" role="img" aria-label="n8n workflow diagram of the AI support summary"></svg></div>
-    <div class="legend"><span><i style="background:var(--n-trigger)"></i>Trigger</span><span><i style="background:var(--n-data)"></i>Read / write data</span><span><i style="background:var(--n-logic)"></i>Logic / code</span><span><i style="background:var(--n-ai)"></i>AI</span><span><i style="background:var(--n-send)"></i>Send / notify</span></div>
+    <div class="figrow">
+      <div class="fig">
+        <div class="figcap"><h3>LinkedIn · format test</h3><span class="mono">impressions per post</span></div>
+        <div class="bars">
+          <div class="bar hi"><span>Text post</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="v">1,309</span></div>
+          <div class="bar"><span>Best image</span><div class="track"><div class="fill" style="--w:12.7%"></div></div><span class="v">166</span></div>
+        </div>
+        <p class="annot">So singles went text-only.</p>
+      </div>
+      <div class="fig">
+        <div class="figcap"><h3>Social, month on month</h3><span class="mono">organic, ₹0 ads</span></div>
+        <div class="chips"><span>+823% LinkedIn impressions</span><span>170K+ Instagram views / month</span><span>35+ creatives</span><span>Monthly report + next plan</span></div>
+        <p class="hint">Educational content for homeowners, written from real advisor conversations.</p>
+      </div>
+    </div>
   </div>
 </article>
 
-<section class="section-title reveal">
-  <span class="eyebrow">Also</span>
-  <h2>Operations groundwork</h2>
-</section>
-<div class="also reveal">
+<!-- A-05 Bots -->
+<article class="sheet" id="bots">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-05</b></div>
+    <div class="sh-title"><span class="mono">Conversations that run themselves</span><h2>WhatsApp bots</h2></div>
+    <div class="sh-meta"><div><span>BOTS</span>4 live</div><div><span>STACK</span>WATI · n8n · Sheets</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Leads and feedback arrived in chat and needed a person every time.</p></section>
+      <section><span class="mono">What I built</span><ul class="steps"><li>Lead qualifier for Instagram click-to-WhatsApp ads</li><li>Webinar → expert booking with a qualify gate</li><li>Consultation rating and multi-step task feedback</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Leads qualified and feedback logged without anyone typing.</p></section>
+    </div>
+    <div class="fig">
+      <div class="figcap"><h3>Workflow · task feedback bot</h3><span class="mono">n8n · 5 workflows · 1 router</span></div>
+      <div class="canvas"><svg data-flow="feedback" role="img" aria-label="Workflow diagram: task feedback bot"></svg></div>
+      <p class="annot">Learned the hard way: the button text decides if Meta treats a template as Utility or Marketing.</p>
+    </div>
+  </div>
+</article>
+
+<!-- A-06 Reporting -->
+<article class="sheet" id="reporting">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-06</b></div>
+    <div class="sh-title"><span class="mono">Reporting + AI with approval</span><h2>Daily reporting</h2></div>
+    <div class="sh-meta"><div><span>CADENCE</span>2 PM · 8 PM · nightly</div><div><span>STACK</span>n8n · OpenAI · Slack</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Managers chased agents for numbers. Support issues got lost.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Mid-day and end-of-day report per agent</li><li>8 PM AI support summary, approved by me</li><li>Full report in Sheets, short summary in Slack</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>No more manual status requests.</p></section>
+    </div>
+    <div class="fig">
+      <div class="figcap"><h3>Workflow · AI support summary</h3><span class="mono">n8n · 2 workflows · Slack buttons</span></div>
+      <div class="canvas"><svg data-flow="support" role="img" aria-label="Workflow diagram: AI support summary"></svg></div>
+    </div>
+  </div>
+</article>
+
+<!-- A-07 Automation backbone -->
+<article class="sheet" id="automation">
+  <div class="sh-head">
+    <div class="sh-no"><span>SHEET</span><b>A-07</b></div>
+    <div class="sh-title"><span class="mono">The plumbing behind everything</span><h2>Automation backbone</h2></div>
+    <div class="sh-meta"><div><span>WORKFLOWS</span>30+</div><div><span>MIGRATED</span>3 from Zapier</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Zapier lapsed. Matchmaking alerts and CRM deals stopped.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Rebuilt 3 matchmaking automations in n8n</li><li>Fire only on real status changes, never on re-reads</li><li>Circuit breaker stops runaway runs</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>No paid tool. Same flows, safer rules.</p></section>
+    </div>
+    <div class="fig">
+      <div class="figcap"><h3>Workflow · site visit → CRM deal</h3><span class="mono">n8n · every minute · simplified from 20 nodes</span></div>
+      <div class="canvas"><svg data-flow="matchmaking" role="img" aria-label="Workflow diagram: matchmaking site visit to CRM deal"></svg></div>
+      <div class="kinds"><span><i style="background:#E5484D"></i>Trigger</span><span><i style="background:#2D6CDF"></i>Data</span><span><i style="background:#7C5CDB"></i>Logic</span><span><i style="background:#D6336C"></i>AI</span><span><i style="background:#18936A"></i>Send</span></div>
+    </div>
+    <div class="chips"><span>Staging first, then live</span><span>Human approval before customer sends</span><span>Exact next row on shared sheets</span><span>No edits to live flows</span></div>
+  </div>
+</article>
+
+<div class="also">
   <div><h3>First SOPs</h3><p>Support, refunds, fraud, moderation. Errors down 15%.</p></div>
   <div><h3>Team leadership</h3><p>3–5 ops staff, 6–8 agents. Efficiency up ~25%.</p></div>
   <div><h3>Build vs. buy</h3><p>Cost models for AI calling and WhatsApp calling (~90% cheaper than ISD).</p></div>
@@ -411,22 +623,21 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
 </div>
 </main>
 
-<section class="cta gutter" id="contact">
+<section class="contact bp gutter" id="contact">
   <div class="wrap">
-    <div class="cta-head">
-      <span class="eyebrow">Contact</span>
-      <h2>Let's talk about your next program.</h2>
-      <p>Open to Program Manager and Business Operations roles.</p>
+    <div>
+      <span class="mono">Contact · final sheet</span>
+      <h2>Let's build your next program.</h2>
+      <p class="lead">Open to Program Manager and Business Operations roles.</p>
     </div>
-    <dl class="contact-list">
-      <div><dt>Email</dt><dd><a class="mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com</a>
-        <button class="mini copy" type="button" data-copy="rajatbaliyan9999@gmail.com" aria-label="Copy email">Copy</button></dd></div>
+    <dl class="clist">
+      <div><dt>Email</dt><dd><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com</a><button class="mini copy" type="button" data-copy="rajatbaliyan9999@gmail.com">Copy</button></dd></div>
       <div><dt>Phone</dt><dd><a href="tel:+919999514895">+91 99995 14895</a></dd></div>
       <div><dt>Location</dt><dd>Delhi, India · open to remote</dd></div>
-      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999 ↗</a></dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999</a></dd></div>
     </dl>
-    <div class="row">
-      <a class="btn solid" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">Email me</a>
+    <div class="acts">
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">Email me</a>
       <a class="btn ghost" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">Download resume</a>
     </div>
   </div>
@@ -437,16 +648,43 @@ footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px))
 <div class="tip" id="tip" hidden></div>
 
 <script>
-// Copy email button
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+// Copy email
 document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", async () => {
-  const old = b.innerHTML;
+  const old = b.textContent;
   try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied ✓"; }
   catch (e) { b.textContent = "Select & copy"; }
-  setTimeout(() => { b.innerHTML = old; }, 1600);
+  setTimeout(() => { b.textContent = old; }, 1600);
 }));
 
-// n8n-style drawings. Node: [id, label, sub, col, row, kind, what it does]. Edge: [from, to, label?]
+// Workflow drawings. Node: [id, label, sub, col, row, kind, what it does]. Edge: [from, to, label?]
 const FLOWS = {
+  showup: {
+    nodes: [
+      ["t","Schedule","every minute",0,1,"trigger","Runs every minute."],
+      ["d","Read meetings","today",1,1,"data","Reads today's booked consultations."],
+      ["w","Which touchpoint?","1 h · 30 m · 5 m",2,1,"logic","Works out which reminder is due for each meeting, and skips anything already sent or confirmed."],
+      ["m1","WhatsApp","1 hour before",3,0,"send","WhatsApp reminder with the join link."],
+      ["i","Indian number?","30 min before",3,1,"logic","The voice provider can only dial Indian numbers."],
+      ["m5","WhatsApp","5 min before",3,2,"send","Last WhatsApp nudge just before the meeting."],
+      ["c","Voice call","Malayalam, press 1/2",4,0.6,"send","Automated call in Malayalam: press 1 to confirm, 2 to reschedule."],
+      ["s","Slack","call manually",4,1.6,"send","International number: Slack asks the agent to call instead."],
+      ["u","Mark sent","sheet",5,1,"data","Marks each touchpoint as done so nothing repeats."],
+      ["kw","Webhook","keypress result",0,3,"trigger","Receives the homeowner's keypress from the call."],
+      ["kp","Map answer","confirm / reschedule",1,3,"logic","Turns the keypress into 'confirmed' or 'wants to reschedule'."],
+      ["ku","Update booking","sheet",2,3,"data","Updates the booking status."],
+      ["kl","Slack","agent follow-up",3,3,"send","Alerts the agent when a reschedule is needed."]
+    ],
+    edges: [["t","d"],["d","w"],["w","m1","1 h"],["w","i","30 m"],["w","m5","5 m"],["i","c","yes"],["i","s","no"],["m1","u"],["c","u"],["m5","u"],["kw","kp"],["kp","ku"],["ku","kl"]]
+  },
   booking: {
     nodes: [
       ["w1","Webhook","GET page",0,0,"trigger","Serves the booking page to agents, protected by an access code."],
@@ -467,49 +705,39 @@ const FLOWS = {
     ],
     edges: [["w1","r1"],["w2","a2"],["a2","c2"],["c2","k2"],["k2","r2"],["w3","v3"],["v3","e3","free"],["v3","x3","taken"],["e3","m3"],["m3","s3"],["s3","l3"],["l3","r3"]]
   },
-  reminders: {
+  autobook: {
     nodes: [
-      ["t1","Schedule","every minute",0,0,"trigger","Runs every minute."],
-      ["d1","Read meetings","next 2 hours",1,0,"data","Reads meetings starting in the next 2 hours."],
-      ["f1","Due now?","1 h / 5 min",2,0,"logic","Finds meetings exactly 1 hour or 5 minutes away that haven't been reminded yet."],
-      ["m1","WhatsApp","reminder",3,0,"send","Sends the WhatsApp reminder with the join link."],
-      ["u1","Mark sent","sheet",4,0,"data","Marks the reminder as sent so it never repeats."],
-      ["t2","Schedule","every 10 min",0,1.2,"trigger","Runs every 10 minutes."],
-      ["d2","Read events","advisor calendars",1,1.2,"data","Reads the advisors' calendar events."],
-      ["f2","Compare","with CRM rows",2,1.2,"logic","Compares calendars with the CRM sheet to spot moved or cancelled meetings."],
-      ["u2","Update rows","moved / cancelled",3,1.2,"data","Updates the sheet so reports stay correct."],
-      ["l2","Slack","change alert",4,1.2,"send","Tells the agent what changed."]
+      ["t","Schedule","every 5 min, night",0,0,"trigger","Runs every 5 minutes from 8:30 PM to 2 AM on webinar nights."],
+      ["r","Read attendees","after the session",1,0,"data","Reads the attendee list pushed in after the webinar ends."],
+      ["s","List settled?","count stable",2,0,"logic","Waits until the attendee count stops changing, so nobody is missed."],
+      ["m","Match phones","attendee → CRM",3,0,"logic","Matches each attendee to a phone number in the CRM."],
+      ["f","30+ min, new?","not yet booked",4,0,"logic","Keeps people who watched 30+ minutes and have no booking or invite yet."],
+      ["b","Build batch","saved in workflow",5,0,"data","Saves tonight's invite list inside the workflow."],
+      ["dm","Slack DM","approve page",6,0,"send","Sends me a page to review the list and approve it."],
+      ["w","Webhook","my approval",0,1.3,"trigger","Receives my Approve click."],
+      ["v","Re-check","still eligible?",1,1.3,"logic","Checks again that nobody booked in the meantime."],
+      ["wa","WhatsApp","booking invite",2,1.3,"send","Sends each attendee an approved WhatsApp invite to book a consultation."],
+      ["k","Mark invited","no repeats",3,1.3,"data","Marks people as invited so they never get it twice."]
     ],
-    edges: [["t1","d1"],["d1","f1"],["f1","m1","yes"],["m1","u1"],["t2","d2"],["d2","f2"],["f2","u2","changed"],["u2","l2"]]
+    edges: [["t","r"],["r","s"],["s","m","yes"],["m","f"],["f","b"],["b","dm"],["w","v"],["v","wa","yes"],["wa","k"]]
   },
-  confirm: {
+  feedback: {
     nodes: [
-      ["t","Schedule","every minute",0,0.5,"trigger","Runs every minute."],
-      ["d","Read bookings","today",1,0.5,"data","Reads today's bookings."],
-      ["f","25–35 min away?","skip confirmed",2,0.5,"logic","Picks meetings 25–35 minutes away; skips ones already confirmed or booked minutes ago."],
-      ["i","Indian number?","",3,0.5,"logic","The voice provider can only dial Indian numbers."],
-      ["c","Voice call","Malayalam, press 1/2",4,0,"send","Automated call in Malayalam: press 1 to confirm, 2 to reschedule."],
-      ["s","Slack","call manually",4,1,"send","International number: Slack asks the agent to call instead."],
-      ["u","Mark called","sheet",5,0,"data","Marks the call as made so it never repeats."],
-      ["w","Webhook","keypress result",0,2,"trigger","Receives the homeowner's keypress from the call."],
-      ["p","Map answer","confirm / reschedule",1,2,"logic","Turns the keypress into 'confirmed' or 'wants to reschedule'."],
-      ["u2","Update booking","sheet",2,2,"data","Updates the booking status."],
-      ["l","Slack","agent follow-up",3,2,"send","Alerts the agent when a reschedule is needed."]
+      ["w0","Webhook","task completed",0,0,"trigger","Fires when a service task is marked complete."],
+      ["q","Queue","feedback row",1,0,"data","Adds the homeowner to the feedback queue."],
+      ["t1","Schedule","9 PM daily",0,1,"trigger","Runs every night at 9 PM."],
+      ["rd","Read due","queue",1,1,"data","Picks people due for feedback today."],
+      ["wa","WhatsApp","rate the task",2,1,"send","Sends the rating template."],
+      ["rw","Webhook","WhatsApp reply",0,2,"trigger","Router: every WhatsApp reply comes in here."],
+      ["st","Which step?","conversation state",1,2,"logic","Looks up where this person is in the conversation."],
+      ["nx","Next question","rating → comment → NPS",2,2,"send","Asks the next question in order: rating, comment, NPS, referral."],
+      ["sv","Save answer","feedback sheet",3,2,"data","Writes the answer and the time of the reply."],
+      ["tn","Schedule","hourly",0,3,"trigger","Checks hourly for people who went quiet."],
+      ["nd","Quiet 12 h?","no reply",1,3,"logic","Finds chats with no reply for 12 hours."],
+      ["nu","Nudge","one reminder",2,3,"send","Sends one gentle reminder."],
+      ["sw","Nightly sweep","close stuck chats",3,3,"trigger","Closes conversations that stalled, so the bot never gets stuck."]
     ],
-    edges: [["t","d"],["d","f"],["f","i","due"],["i","c","yes"],["i","s","no"],["c","u"],["w","p"],["p","u2"],["u2","l"]]
-  },
-  leads: {
-    nodes: [
-      ["t","Schedule","every hour",0,0.5,"trigger","Runs every hour."],
-      ["a","Read leads","WhatsApp bot sheet",1,0,"data","Reads new leads captured by the WhatsApp bot."],
-      ["b","Read CRM","last rows",1,1,"data","Reads the CRM sheet to see which leads already exist."],
-      ["m","Dedupe & map","code",2,0.5,"logic","Removes duplicates by phone number and maps fields to CRM columns."],
-      ["i","New leads?","",3,0.5,"logic","Stops quietly if there is nothing new."],
-      ["w","Write rows","explicit last row",4,0.5,"data","Writes to the exact next empty row, because the team edits this sheet live."],
-      ["k","Mark pushed","source sheet",5,0.5,"data","Marks leads as pushed so they never repeat."],
-      ["s","Slack","new-lead alert",6,0.5,"send","Alerts sales about the new leads."]
-    ],
-    edges: [["t","a"],["t","b"],["a","m"],["b","m"],["m","i"],["i","w","yes"],["w","k"],["k","s"]]
+    edges: [["w0","q"],["t1","rd"],["rd","wa"],["rw","st"],["st","nx"],["nx","sv"],["tn","nd"],["nd","nu","yes"]]
   },
   support: {
     nodes: [
@@ -527,26 +755,35 @@ const FLOWS = {
       ["m2","Edit modal","then post",6,1.7,"send","Opens an edit box, then posts my edited version."]
     ],
     edges: [["t1","e1"],["e1","d1"],["d1","a1"],["t2","r2"],["r2","o2"],["o2","s2"],["s2","w2","waits"],["w2","i2"],["i2","p2","yes"],["i2","m2","edit"]]
+  },
+  matchmaking: {
+    nodes: [
+      ["t","Schedule","every minute",0,0,"trigger","Runs every minute."],
+      ["r","Read sheet","matchmaking tab",1,0,"data","Reads the matchmaking sheet."],
+      ["tr","Changed?","→ site visit",2,0,"logic","Fires only when advisor feedback newly changes to a site visit, never on re-reads."],
+      ["cb","Circuit breaker","> 25 rows → stop",3,0,"logic","If too many rows change at once, it stops instead of spamming."],
+      ["sl","Slack","thread reply",4,0,"send","Replies in the original allocation thread."],
+      ["dm","Group DM","advisor + agent",5,0,"send","Opens a group DM with the advisor and the allocation agent."],
+      ["mp","Map owner","advisor → CRM",6,0,"logic","Maps the advisor to their CRM owner."],
+      ["fa","Find / create","CRM account",7,0,"data","Finds the homeowner's account in Freshsales or creates it."],
+      ["dl","Create deal","Freshsales",8,0,"data","Creates the deal under the right owner."],
+      ["ac","Site visit","CRM activity",9,0,"data","Logs the site visit as an activity on the deal."],
+      ["fn","Slack","deal links",10,0,"send","Posts 'Connection created' with links to the deal."]
+    ],
+    edges: [["t","r"],["r","tr"],["tr","cb","yes"],["cb","sl","ok"],["sl","dm"],["dm","mp"],["mp","fa"],["fa","dl"],["dl","ac"],["ac","fn"]]
   }
 };
-const KIND = { trigger: "Trigger", data: "Data", logic: "Logic", send: "Send / notify", ai: "AI" };
-const NW = 116, NH = 42, CX = 150, RY = 96, PAD = 22;
-const NS = "http://www.w3.org/2000/svg";
+const KIND = { trigger: ["Trigger", "#E5484D"], data: ["Data", "#2D6CDF"], logic: ["Logic", "#7C5CDB"], send: ["Send / notify", "#18936A"], ai: ["AI", "#D6336C"] };
+const NW = 120, NH = 42, CX = 152, RY = 92, PAD = 22;
 const tip = document.getElementById("tip");
-function el(tag, attrs, parent) {
-  const e = document.createElementNS(NS, tag);
-  for (const k in attrs) e.setAttribute(k, attrs[k]);
-  if (parent) parent.appendChild(e);
-  return e;
-}
 function showTip(g, n) {
   tip.innerHTML = "";
-  const b = document.createElement("b"); b.textContent = KIND[n[5]] + " · " + n[1];
+  const b = document.createElement("b"); b.textContent = KIND[n[5]][0] + " · " + n[1];
   tip.append(b, document.createTextNode(n[6]));
   tip.hidden = false;
   const r = g.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
-  let x = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), innerWidth - tw - 8);
-  let y = r.top - th - 8; if (y < 64) y = r.bottom + 8;
+  const x = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), innerWidth - tw - 8);
+  let y = r.top - th - 10; if (y < 70) y = r.bottom + 10;
   tip.style.left = x + "px"; tip.style.top = y + "px";
 }
 function hideTip() { tip.hidden = true; document.querySelectorAll("g.node.sel").forEach(x => x.classList.remove("sel")); }
@@ -565,20 +802,18 @@ document.querySelectorAll("svg[data-flow]").forEach(svg => {
     el("path", { d, class: "wire" }, svg);
     el("path", { d, class: "flow", style: `animation-delay:${-(i * 0.17).toFixed(2)}s` }, svg);
     el("path", { d: `M${x2 - 7},${y2 - 4} L${x2},${y2} L${x2 - 7},${y2 + 4} Z`, class: "arrowhead" }, svg);
-    if (label) {
-      const tx = el("text", { x: mx, y: (y1 + y2) / 2 - 6, "text-anchor": "middle", class: "elabel" }, svg);
-      tx.textContent = label;
-    }
+    if (label) { const tx = el("text", { x: mx, y: (y1 + y2) / 2 - 6, "text-anchor": "middle", class: "elabel" }, svg); tx.textContent = label; }
   });
   f.nodes.forEach(n => {
     const [id, label, sub, , , kind] = n;
     const { x, y } = pos[id];
+    const col = KIND[kind][1];
     const g = el("g", { class: "node", tabindex: 0, role: "button", "aria-label": `${label}: ${n[6]}` }, svg);
-    el("rect", { x, y, width: NW, height: NH, rx: 7, fill: "var(--paper)", stroke: `var(--n-${kind})`, "stroke-width": 1.6, class: "box" }, g);
-    el("rect", { x, y, width: 5, height: NH, rx: 2, fill: `var(--n-${kind})` }, g);
-    const t = el("text", { x: x + NW / 2 + 2, y: y + (sub ? 18 : 25), "text-anchor": "middle", "font-size": 12.5, "font-weight": 600 }, g);
+    el("rect", { x, y, width: NW, height: NH, fill: "#FFFFFF", stroke: "#12245C", "stroke-width": 2, class: "box" }, g);
+    el("rect", { x, y: y + NH - 5, width: NW, height: 5, fill: col }, g);
+    const t = el("text", { x: x + NW / 2, y: y + (sub ? 17 : 24), "text-anchor": "middle", "font-size": 12.5, "font-weight": 800 }, g);
     t.textContent = label;
-    if (sub) { const s = el("text", { x: x + NW / 2 + 2, y: y + 33, "text-anchor": "middle", class: "sub" }, g); s.textContent = sub; }
+    if (sub) { const s = el("text", { x: x + NW / 2, y: y + 31, "text-anchor": "middle", class: "sub" }, g); s.textContent = sub; }
     g.addEventListener("mouseenter", () => showTip(g, n));
     g.addEventListener("mouseleave", hideTip);
     g.addEventListener("focus", () => showTip(g, n));
@@ -590,24 +825,13 @@ document.addEventListener("click", hideTip);
 addEventListener("scroll", hideTip, { passive: true });
 document.querySelectorAll(".canvas").forEach(c => c.addEventListener("scroll", hideTip, { passive: true }));
 
-// Scroll reveal + count-up, only when motion is allowed. Content stays visible without JS.
-const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Motion: rooms draw in, sheets slide up as they enter
 if (!calm && "IntersectionObserver" in window) {
-  document.documentElement.classList.add("js-reveal");
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
-  document.querySelectorAll(".reveal").forEach(x => io.observe(x));
-  document.querySelectorAll("[data-count]").forEach(b => {
-    const end = +b.dataset.count, suf = b.dataset.suffix || "", t0 = performance.now(), dur = 1100;
-    const step = now => { const p = Math.min(1, (now - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
-      b.textContent = v.toLocaleString("en-IN") + suf; if (p < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  });
+  document.documentElement.classList.add("js-motion");
+  document.querySelectorAll(".rooms .room").forEach((r, i) => { r.style.animationDelay = (0.08 * i) + "s"; });
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll(".sheet").forEach(x => io.observe(x));
 }
-
-// Highlight the nav link for the section in view
-const navLinks = [...document.querySelectorAll(".links a")];
-const secIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
-document.querySelectorAll("article[id], #contact").forEach(s => secIO.observe(s));
 </script>
 </body>
 </html>
