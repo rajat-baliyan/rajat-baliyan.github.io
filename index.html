@@ -3,13 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Rajat Baliyan: program and business operations portfolio. Case studies and workflow diagrams.">
+<title>Rajat Baliyan · Program Manager</title>
+<meta name="description" content="Program Manager portfolio: four case studies in program design, root cause analysis, event operations and automation, with workflow diagrams.">
 <meta name="robots" content="noindex">
-<title>Rajat Baliyan Portfolio</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rajat-baliyan.github.io/">
+<meta property="og:title" content="Rajat Baliyan · Program Manager">
+<meta property="og:description" content="Case studies in program design, root cause analysis and automation: booking system, no-show RCA, webinar program, daily reporting.">
+<meta property="og:image" content="https://rajat-baliyan.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rajat-baliyan.github.io/og.png">
+<meta name="theme-color" content="#14213D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213D'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='800' fill='%23FF8A4C' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a single drafting-sheet column; each project is a "sheet" with an engineering title block, then problem / work / result, then its workflow drawing. */
+/* Layout: drafting-sheet column. Sticky nav, header with number strip, then one "sheet" per case study:
+   title block → problem / work / result → before-after visual → animated workflow drawings. */
 :root {
   --bg: #F5F7F9;
   --paper: #FFFFFF;
@@ -20,6 +33,8 @@
   --accent: #D9480F;
   --accent-soft: #FFF0E6;
   --good: #2B8A3E;
+  --good-soft: #EAF6EC;
+  --nav-bg: rgba(245, 247, 249, .88);
   --n-trigger: #D9480F;
   --n-data: #1C7ED6;
   --n-logic: #7048E8;
@@ -28,49 +43,74 @@
   --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0E131B; --paper: #151C27; --ink: #E6EBF2; --muted: #9AA6B8; --line: #2A3445; --grid: #1B2330;
-    --accent: #FF8A4C; --accent-soft: #2A1C14; --good: #5CC27A;
+    --accent: #FF8A4C; --accent-soft: #2A1C14; --good: #5CC27A; --good-soft: #13261A; --nav-bg: rgba(14, 19, 27, .88);
     --n-trigger: #FF8A4C; --n-data: #5AA9F0; --n-logic: #9C84F5; --n-send: #5CC27A; --n-ai: #F06595;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0E131B; --paper: #151C27; --ink: #E6EBF2; --muted: #9AA6B8; --line: #2A3445; --grid: #1B2330;
-  --accent: #FF8A4C; --accent-soft: #2A1C14; --good: #5CC27A;
+  --accent: #FF8A4C; --accent-soft: #2A1C14; --good: #5CC27A; --good-soft: #13261A; --nav-bg: rgba(14, 19, 27, .88);
   --n-trigger: #FF8A4C; --n-data: #5AA9F0; --n-logic: #9C84F5; --n-send: #5CC27A; --n-ai: #F06595;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
-  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 0 48px;
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
-.wrap { max-width: 920px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
 p { margin: 0; }
 a { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 960px; margin: 0 auto; }
+.eyebrow, .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
+.eyebrow { color: var(--accent); }
+.k { color: var(--muted); }
+
+/* nav */
+nav.top { position: sticky; top: 0; z-index: 20; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+nav.top .wrap { display: flex; align-items: center; gap: 16px; height: 56px; }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--ink); text-decoration: none; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.brand i { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); color: var(--accent); font-style: normal; font-size: 12px; display: grid; place-items: center; }
+.links { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.links::-webkit-scrollbar { display: none; }
+.links a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
+.links a:hover, .links a.on { color: var(--ink); background: var(--grid); }
+.actions { display: flex; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font: 600 14px var(--font-body); text-decoration: none; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--ink); cursor: pointer; white-space: nowrap; }
+.btn.solid { background: var(--ink); color: var(--bg); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.solid:hover { background: var(--accent); border-color: var(--accent); }
+.icon-btn { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+.icon-btn svg { width: 18px; height: 18px; }
+@media (max-width: 760px) { .links { display: none; } .actions { margin-left: auto; } }
+@media (max-width: 400px) { .btn.solid .lbl { display: none; } }
 
 /* header */
-header {
-  padding-block: 56px 32px; border-bottom: 2px solid var(--ink);
+header.hero { border-bottom: 2px solid var(--ink);
   background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 24px 24px; background-position: -1px -1px;
-  display: flex; flex-direction: column; gap: 14px;
-}
-.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
-header h1 { font-size: clamp(40px, 7vw, 68px); font-weight: 800; letter-spacing: -.02em; }
-.lede { font-size: 19px; max-width: 62ch; color: var(--ink); }
-.contact { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: var(--paper); margin-top: 10px; }
-.stat { padding: 14px 16px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  background-size: 24px 24px; background-position: -1px -1px; }
+header.hero .wrap { padding-block: 56px 36px; display: flex; flex-direction: column; gap: 16px; }
+header h1 { font-size: clamp(44px, 8vw, 76px); font-weight: 800; letter-spacing: -.02em; }
+.role { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); font-weight: 600; color: var(--accent); margin-top: -6px; }
+.lede { font-size: 19px; max-width: 62ch; }
+.contact { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.chip { font-family: var(--font-mono); font-size: 13px; color: var(--muted); border: 1px solid var(--line); background: var(--paper); padding: 4px 10px; border-radius: 999px; display: inline-flex; gap: 6px; align-items: center; }
+button.chip { cursor: pointer; }
+.chip a { color: inherit; text-decoration: none; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--paper); margin-top: 8px; }
+.stat { padding: 16px 18px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .stat:last-child { border-right: 0; }
-.stat b { font-family: var(--font-display); font-size: 26px; font-variant-numeric: tabular-nums; }
+.stat b { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
 .stat span { font-size: 13px; color: var(--muted); line-height: 1.35; }
 @media (max-width: 640px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -78,52 +118,85 @@ header h1 { font-size: clamp(40px, 7vw, 68px); font-weight: 800; letter-spacing:
   .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
 }
 
+main .wrap { display: flex; flex-direction: column; gap: 44px; padding-block: 44px 56px; }
+
 /* sheets */
 .sheet { background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; }
 .titleblock { display: grid; grid-template-columns: 1fr auto; border-bottom: 1px solid var(--line); }
 .titleblock .name { padding: 22px 24px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .titleblock h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 800; }
 .titleblock .one { color: var(--muted); }
-.meta { border-left: 1px solid var(--line); display: grid; grid-template-rows: repeat(3, auto); font-size: 13px; min-width: 200px; }
+.meta { border-left: 1px solid var(--line); display: grid; font-size: 13px; min-width: 220px; margin: 0; }
 .meta div { padding: 8px 16px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; }
 .meta div:last-child { border-bottom: 0; }
-.meta dt, .k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.meta dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .meta dd { margin: 0; font-weight: 500; }
-@media (max-width: 680px) {
-  .titleblock { grid-template-columns: 1fr; }
-  .meta { border-left: 0; border-top: 1px solid var(--line); min-width: 0; }
-}
+@media (max-width: 680px) { .titleblock { grid-template-columns: 1fr; } .meta { border-left: 0; border-top: 1px solid var(--line); min-width: 0; } }
 .body { padding: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .body section { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .body ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
-.result { background: var(--accent-soft); margin: -8px; padding: 8px; }
-.result strong { color: var(--accent); }
+.result { background: var(--good-soft); margin: -8px; padding: 8px 10px; border-left: 3px solid var(--good); }
+.result strong { color: var(--good); }
 @media (max-width: 760px) { .body { grid-template-columns: 1fr; } }
 
-/* charts */
-.chart { padding: 0 24px 24px; display: flex; flex-direction: column; gap: 10px; }
-.bars { display: flex; flex-direction: column; gap: 8px; }
-.bar { display: grid; grid-template-columns: 150px minmax(0, 1fr) 48px; align-items: center; gap: 10px; font-size: 14px; }
-.bar .track { background: var(--grid); height: 18px; }
-.bar .fill { height: 100%; background: var(--muted); }
+/* before / after */
+.ba { margin: 0 24px 24px; border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; }
+.ba > div { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ba .arrow { display: grid; place-items: center; padding: 0 6px; color: var(--muted); border-inline: 1px dashed var(--line); font-size: 20px; }
+.ba .after { background: var(--good-soft); }
+.ba .after .k { color: var(--good); }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.steps li { display: flex; gap: 8px; align-items: baseline; }
+.steps li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--muted); transform: translateY(-1px); }
+.after .steps li::before { background: var(--good); }
+@media (max-width: 640px) { .ba { grid-template-columns: 1fr; } .ba .arrow { border-inline: 0; border-block: 1px dashed var(--line); padding: 4px; transform: rotate(90deg); } }
+
+.bars { display: flex; flex-direction: column; gap: 10px; }
+.bar { display: grid; grid-template-columns: 140px minmax(0, 1fr) 52px; align-items: center; gap: 10px; font-size: 14px; }
+.bar .track { background: var(--grid); height: 20px; overflow: hidden; }
+.bar .fill { height: 100%; background: var(--muted); width: var(--w); transform-origin: left; }
 .bar.hi .fill { background: var(--accent); }
-.bar .v { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
-@media (max-width: 480px) { .bar { grid-template-columns: 96px minmax(0, 1fr) 40px; font-size: 13px; } }
+.bar.ok .fill { background: var(--good); }
+.bar .v { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; font-weight: 500; }
+@media (max-width: 480px) { .bar { grid-template-columns: 96px minmax(0, 1fr) 44px; font-size: 13px; } }
+.split { height: 22px; display: flex; font-family: var(--font-mono); font-size: 11.5px; color: #fff; }
+.split span { display: flex; align-items: center; padding-left: 8px; white-space: nowrap; overflow: hidden; }
+.chartbox { margin: 0 24px 24px; border: 1px solid var(--line); padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; }
+.legend-inline { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--muted); }
+.legend-inline i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+
+/* day strip */
+.day { position: relative; height: 64px; margin: 8px 6px 0; }
+.day .axis { position: absolute; left: 0; right: 0; top: 30px; height: 2px; background: var(--line); }
+.day .tick { position: absolute; top: 40px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); transform: translateX(-50%); }
+.day .ev { position: absolute; top: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.day .ev b { font-size: 12px; font-weight: 600; white-space: nowrap; background: var(--paper); padding: 0 4px; }
+.day .ev i { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--accent); }
+.day.before .ev i { background: var(--muted); box-shadow: 0 0 0 1px var(--muted); }
+@media (max-width: 520px) { .day .ev b { font-size: 10.5px; } }
 
 /* workflow drawings */
 .flows { display: flex; flex-direction: column; gap: 14px; padding: 0 24px 24px; }
 .flowhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; border-top: 1px dashed var(--line); padding-top: 18px; }
 .flowhead h3 { font-size: 18px; font-weight: 600; }
-.flowhead .k { font-size: 11px; }
-.canvas { overflow-x: auto; border: 1px solid var(--line);
-  background-color: var(--bg);
+.hint { font-size: 13px; color: var(--muted); }
+.canvas { position: relative; overflow-x: auto; border: 1px solid var(--line); background-color: var(--bg);
   background-image: radial-gradient(var(--line) 1px, transparent 1.2px); background-size: 18px 18px; }
 .canvas svg { display: block; }
-.canvas text { font-family: var(--font-body); fill: var(--ink); }
+.canvas text { font-family: var(--font-body); fill: var(--ink); pointer-events: none; }
 .canvas .sub { fill: var(--muted); font-size: 10.5px; }
 .canvas .elabel { font-family: var(--font-mono); font-size: 10px; fill: var(--muted); }
+.canvas .wire { fill: none; stroke: var(--line); stroke-width: 1.6; }
+.canvas .flow { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 14; stroke-linecap: round; animation: run 1.4s linear infinite; opacity: .9; }
+.canvas .arrowhead { fill: var(--muted); }
+.canvas g.node { cursor: pointer; outline: none; }
+.canvas g.node rect.box { transition: stroke-width .15s, filter .15s; }
+.canvas g.node:hover rect.box, .canvas g.node:focus rect.box, .canvas g.node.sel rect.box { stroke-width: 3; }
+@keyframes run { to { stroke-dashoffset: -20; } }
+.tip { position: fixed; z-index: 30; max-width: 260px; background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.45; padding: 8px 10px; border-radius: 6px; pointer-events: none; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+.tip b { display: block; font-size: 12px; font-family: var(--font-mono); letter-spacing: .04em; opacity: .75; margin-bottom: 2px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); }
-.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; border-radius: 2px; }
 .note { font-size: 14px; color: var(--muted); max-width: 70ch; }
 
 .section-title { display: flex; flex-direction: column; gap: 6px; }
@@ -133,27 +206,78 @@ header h1 { font-size: clamp(40px, 7vw, 68px); font-weight: 800; letter-spacing:
 .also h3 { font-size: 17px; font-weight: 600; font-family: var(--font-body); }
 .also p { font-size: 14.5px; color: var(--muted); }
 @media (max-width: 760px) { .also { grid-template-columns: 1fr; } }
-footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+.cta { background: var(--ink); color: var(--bg); }
+.cta .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+.cta h2 { font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: var(--bg); }
+.cta p { color: var(--bg); opacity: .75; margin-top: 6px; }
+.cta .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cta .btn { border-color: var(--bg); }
+.cta .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cta .btn.ghost { color: var(--bg); }
+footer { font-size: 13px; color: var(--muted); }
+footer .wrap { padding-block: 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
+
+/* reveal: content is visible by default; JS opts in only when motion is allowed */
+.js-reveal .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.js-reveal .reveal.in { opacity: 1; transform: none; }
+.js-reveal .reveal .fill { transform: scaleX(0); transition: transform 1s .2s cubic-bezier(.2,.7,.2,1); }
+.js-reveal .reveal.in .fill { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .canvas .flow { animation: none; stroke-dasharray: none; opacity: .5; }
+}
+@media print { nav.top, .cta, .actions { display: none; } }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-<header>
-  <span class="eyebrow">Portfolio · Program &amp; Business Operations</span>
-  <h1>Rajat Baliyan</h1>
-  <p class="lede">I run programs end to end at a home-construction tech startup, find what is breaking in the funnel with data, and build the fix myself: processes, reports and automations that a sales and advisory team uses every day.</p>
-  <div class="contact"><span>Delhi, India</span><span>rajatbaliyan9999@gmail.com</span><span>linkedin.com/in/rajat-baliyan9999</span></div>
-  <div class="stats">
-    <div class="stat"><b>30+</b><span>production workflows built and run solo</span></div>
-    <div class="stat"><b>35% → 71%</b><span>webinar attendance after reminder redesign</span></div>
-    <div class="stat"><b>4,100+</b><span>event registrations run end to end</span></div>
-    <div class="stat"><b>–40%</b><span>support response time, at 95% CSAT</span></div>
+<nav class="top gutter" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><i>RB</i>Rajat Baliyan</a>
+    <div class="links">
+      <a href="#booking">Booking system</a>
+      <a href="#noshow">No-show RCA</a>
+      <a href="#webinars">Webinars</a>
+      <a href="#reporting">Reporting</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="actions">
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn solid" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg><span class="lbl">Resume</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero gutter" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Portfolio · Program management &amp; operations</span>
+    <h1>Rajat Baliyan</h1>
+    <p class="role">Program Manager</p>
+    <p class="lede">I run programs end to end at a home-construction tech startup, find what is breaking in the funnel with data, and build the fix myself: processes, reports and automations that a sales and advisory team uses every day.</p>
+    <div class="contact">
+      <span class="chip">Delhi, India</span>
+      <button class="chip copy" type="button" data-copy="rajatbaliyan9999@gmail.com" title="Copy email">rajatbaliyan9999@gmail.com <span aria-hidden="true">⧉</span></button>
+      <span class="chip"><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999 ↗</a></span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="30" data-suffix="+">30+</b><span>production workflows built and run solo</span></div>
+      <div class="stat"><b>35% → 71%</b><span>webinar attendance after reminder redesign</span></div>
+      <div class="stat"><b data-count="4100" data-suffix="+">4,100+</b><span>event registrations run end to end</span></div>
+      <div class="stat"><b>–40%</b><span>support response time, at 95% CSAT</span></div>
+    </div>
   </div>
 </header>
 
+<main class="gutter">
+<div class="wrap">
+
 <!-- 1. Booking system -->
-<article class="sheet" id="booking">
+<article class="sheet reveal" id="booking">
   <div class="titleblock">
     <div class="name"><span class="eyebrow">Program design · Automation</span><h2>Consultation booking system</h2><p class="one">Replaced manual scheduling between calling agents and expert advisors.</p></div>
     <dl class="meta"><div><dt>Role</dt><dd>Owner: spec, build, rollout</dd></div><div><dt>Stack</dt><dd>n8n · Google Calendar · WhatsApp API · Sheets · Slack</dd></div><div><dt>Users</dt><dd>Pre-sales agents, 3 advisors</dd></div></dl>
@@ -161,10 +285,18 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <div class="body">
     <section><span class="k">Problem</span><p>Agents booked homeowner consultations by hand from calendar links and WhatsApp. That caused double bookings, missed reminders and no single record of what was scheduled.</p></section>
     <section><span class="k">What I did</span><ul><li>Built a booking page that shows each advisor's live availability from Google Calendar.</li><li>One click creates the meeting, sends WhatsApp confirmation and 1-hour / 5-minute reminders, logs the CRM row and alerts Slack.</li><li>A sync job picks up reschedules and cancellations every 10 minutes; high-intent leads get held priority slots.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>Manual scheduling removed</strong> for 3 advisors. Every booking now has one record, automatic reminders and an owner. Booking rules were later tuned using the no-show analysis below.</p></section>
+    <section class="result"><span class="k">Result</span><p><strong>Manual scheduling removed</strong> for 3 advisors. Every booking now has one record, automatic reminders and an owner.</p></section>
+  </div>
+  <div class="ba">
+    <div><span class="k">Before · agent does it by hand</span>
+      <ul class="steps"><li>Check the advisor's calendar link</li><li>Create the invite and add the homeowner</li><li>Send WhatsApp confirmation</li><li>Log the booking in the sheet</li><li>Remember to send reminders</li></ul></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="after"><span class="k">After · agent picks a slot</span>
+      <ul class="steps"><li>Only free slots are shown</li><li>Invite, WhatsApp and sheet row happen automatically</li><li>1-hour and 5-minute reminders go out on their own</li><li>Reschedules sync back every 10 minutes</li></ul></div>
   </div>
   <div class="flows">
     <div class="flowhead"><h3>Workflow: booking API</h3><span class="k">n8n · 3 webhook routes · 15 nodes</span></div>
+    <p class="hint">Hover or tap any node to see what it does.</p>
     <div class="canvas"><svg data-flow="booking" role="img" aria-label="n8n workflow diagram of the booking API"></svg></div>
     <div class="flowhead"><h3>Workflow: reminders and calendar sync</h3><span class="k">n8n · 2 scheduled jobs</span></div>
     <div class="canvas"><svg data-flow="reminders" role="img" aria-label="n8n workflow diagram of reminders and calendar sync"></svg></div>
@@ -172,7 +304,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </article>
 
 <!-- 2. No-show RCA -->
-<article class="sheet" id="noshow">
+<article class="sheet reveal" id="noshow">
   <div class="titleblock">
     <div class="name"><span class="eyebrow">Root cause analysis</span><h2>Why consultations were no-shows</h2><p class="one">Two weeks of meetings, one dashboard number that looked alarming.</p></div>
     <dl class="meta"><div><dt>Role</dt><dd>Analysis and recommendations</dd></div><div><dt>Data</dt><dd>91 meetings, 2-week window</dd></div><div><dt>Tools</dt><dd>Google Sheets · Python · CRM data</dd></div></dl>
@@ -182,11 +314,15 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <section><span class="k">What I did</span><ul><li>Checked data quality first: 36 of 52 "no-shows" were meetings whose status was never updated.</li><li>Split show-up by how far ahead the meeting was booked, by agent, by time slot and by webinar watch time.</li><li>Found that only lead time and 60+ minutes of webinar watch time predicted show-up.</li></ul></section>
     <section class="result"><span class="k">Result</span><p><strong>Booking window cut to the next working day</strong>, a status-update nudge added, and later an automated confirmation call 30 minutes before each meeting.</p></section>
   </div>
-  <div class="chart">
-    <span class="k">Show-up rate by booking lead time</span>
+  <div class="chartbox">
+    <span class="k">Finding 1 · what the 52 recorded no-shows really were</span>
+    <div class="split" role="img" aria-label="36 of 52 were stale statuses, 16 were real no-shows">
+      <span style="flex:36; background:var(--muted)">36 never updated</span><span style="flex:16; background:var(--accent)">16 real</span>
+    </div>
+    <span class="k" style="margin-top:6px">Finding 2 · show-up rate by booking lead time</span>
     <div class="bars">
-      <div class="bar hi"><span>Same day</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="v">70%</span></div>
-      <div class="bar"><span>2+ days ahead</span><div class="track"><div class="fill" style="width:29%"></div></div><span class="v">29%</span></div>
+      <div class="bar ok"><span>Same day</span><div class="track"><div class="fill" style="--w:70%"></div></div><span class="v">70%</span></div>
+      <div class="bar"><span>2+ days ahead</span><div class="track"><div class="fill" style="--w:29%"></div></div><span class="v">29%</span></div>
     </div>
   </div>
   <div class="flows">
@@ -197,7 +333,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </article>
 
 <!-- 3. Webinar program -->
-<article class="sheet" id="webinars">
+<article class="sheet reveal" id="webinars">
   <div class="titleblock">
     <div class="name"><span class="eyebrow">Program &amp; event operations</span><h2>Webinar program, registration to sale</h2><p class="one">The main lead source for the expert-consultation program.</p></div>
     <dl class="meta"><div><dt>Role</dt><dd>Ran operations and reporting</dd></div><div><dt>Scale</dt><dd>22+ events · 4,100+ registrations</dd></div><div><dt>Tools</dt><dd>WhatsApp API · Voice · Email · Sheets</dd></div></dl>
@@ -205,16 +341,23 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <div class="body">
     <section><span class="k">Problem</span><p>Most registrants never joined, and nobody could see where people dropped between registering, attending, booking a consultation and buying.</p></section>
     <section><span class="k">What I did</span><ul><li>Re-sequenced WhatsApp, voice and email reminders and used one tracked join link.</li><li>Built a nightly funnel: registered → attended 30+ min → consultation → converted, plus cohort analysis across 28+ webinars.</li><li>Tested a registration cut on small homes: meetings stayed at ~11% of registrants, so I showed the real disqualifier was construction already started, which led to a form change.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p>Attendance rose from <strong>~35% to a peak of 71%</strong>. Leadership now reviews one funnel view every morning instead of asking for numbers.</p></section>
+    <section class="result"><span class="k">Result</span><p>Attendance rose from <strong>~35% to a peak of 71%</strong>. Leadership reviews one funnel view every morning instead of asking for numbers.</p></section>
+  </div>
+  <div class="chartbox">
+    <span class="k">Webinar attendance rate</span>
+    <div class="bars">
+      <div class="bar"><span>Before redesign</span><div class="track"><div class="fill" style="--w:35%"></div></div><span class="v">~35%</span></div>
+      <div class="bar ok"><span>After (peak)</span><div class="track"><div class="fill" style="--w:71%"></div></div><span class="v">71%</span></div>
+    </div>
   </div>
   <div class="flows">
-    <div class="flowhead"><h3>Workflow: hourly lead push with dedupe</h3><span class="k">n8n · runs hourly · WhatsApp leads → CRM sheet</span></div>
+    <div class="flowhead"><h3>Workflow: hourly lead push with dedupe</h3><span class="k">n8n · hourly · WhatsApp leads → CRM sheet</span></div>
     <div class="canvas"><svg data-flow="leads" role="img" aria-label="n8n workflow diagram of the hourly lead push"></svg></div>
   </div>
 </article>
 
 <!-- 4. Reporting & AI -->
-<article class="sheet" id="reporting">
+<article class="sheet reveal" id="reporting">
   <div class="titleblock">
     <div class="name"><span class="eyebrow">Reporting · AI with human approval</span><h2>Daily team reporting and support summaries</h2><p class="one">Numbers and issues reach the team without anyone compiling them.</p></div>
     <dl class="meta"><div><dt>Role</dt><dd>Designed and built</dd></div><div><dt>Cadence</dt><dd>2 PM status · 8 PM summary · nightly report</dd></div><div><dt>Stack</dt><dd>n8n · Call-log API · OpenAI · Slack · Sheets</dd></div></dl>
@@ -222,107 +365,240 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <div class="body">
     <section><span class="k">Problem</span><p>Managers asked agents for call counts and meeting status several times a day. Support issues lived in chat threads and were lost by evening.</p></section>
     <section><span class="k">What I did</span><ul><li>Mid-day and end-of-day reports per agent: calls, connected, talk time, meetings booked and done, with a 2-week trend chart.</li><li>An 8 PM AI summary of the day's support issues that I approve or edit before it posts to the team channel.</li><li>Kept reports in a sheet tab and sent only a short summary to Slack, after feedback that alerts were crowding the channel.</li></ul></section>
-    <section class="result"><span class="k">Result</span><p><strong>No more manual status requests.</strong> Every customer-facing or team-wide message from automation passes a human check first.</p></section>
+    <section class="result"><span class="k">Result</span><p><strong>No more manual status requests.</strong> Every team-wide message from automation passes a human check first.</p></section>
+  </div>
+  <div class="chartbox">
+    <span class="k">Before · status gathered by asking, any time of day</span>
+    <div class="day before" role="img" aria-label="Before: ad-hoc status requests through the day">
+      <div class="axis"></div>
+      <div class="ev" style="left:8%"><i></i><b>"Numbers?"</b></div><div class="ev" style="left:30%"><i></i><b>"Update?"</b></div><div class="ev" style="left:52%"><i></i><b>"Calls?"</b></div><div class="ev" style="left:74%"><i></i><b>"Status?"</b></div>
+      <span class="tick" style="left:0%">10 AM</span><span class="tick" style="left:50%">5 PM</span><span class="tick" style="left:100%">midnight</span>
+    </div>
+    <span class="k" style="color:var(--good)">After · three automatic touchpoints</span>
+    <div class="day" role="img" aria-label="After: 2 PM status, 8 PM support summary, nightly report">
+      <div class="axis"></div>
+      <div class="ev" style="left:28.6%"><i></i><b>2 PM status</b></div><div class="ev" style="left:71.4%"><i></i><b>8 PM support</b></div><div class="ev" style="left:96%"><i></i><b>Nightly</b></div>
+      <span class="tick" style="left:0%">10 AM</span><span class="tick" style="left:50%">5 PM</span><span class="tick" style="left:100%">midnight</span>
+    </div>
   </div>
   <div class="flows">
-    <div class="flowhead"><h3>Workflow: AI support summary with approval</h3><span class="k">n8n · 2 workflows · Slack interactive buttons</span></div>
+    <div class="flowhead"><h3>Workflow: AI support summary with approval</h3><span class="k">n8n · 2 workflows · Slack buttons</span></div>
     <div class="canvas"><svg data-flow="support" role="img" aria-label="n8n workflow diagram of the AI support summary"></svg></div>
     <div class="legend"><span><i style="background:var(--n-trigger)"></i>Trigger</span><span><i style="background:var(--n-data)"></i>Read / write data</span><span><i style="background:var(--n-logic)"></i>Logic / code</span><span><i style="background:var(--n-ai)"></i>AI</span><span><i style="background:var(--n-send)"></i>Send / notify</span></div>
   </div>
 </article>
 
-<section class="section-title">
+<section class="section-title reveal">
   <span class="eyebrow">Also</span>
   <h2>Operations groundwork</h2>
 </section>
-<div class="also">
-  <div><h3>First SOPs</h3><p>Wrote the company's first SOPs for support, refunds, fraud investigation and content moderation. Errors in execution fell 15%.</p></div>
+<div class="also reveal">
+  <div><h3>First SOPs</h3><p>Wrote the company's first SOPs for support, refunds, fraud investigation and content moderation. Execution errors fell 15%.</p></div>
   <div><h3>Team leadership</h3><p>Led 3–5 ops staff and 6–8 calling agents: rosters, shifts, weekly reviews and coaching. Team efficiency up ~25%.</p></div>
   <div><h3>Build vs. buy</h3><p>Cost models for an AI voice-calling agent and WhatsApp calling for international leads (about 90% cheaper than ISD).</p></div>
 </div>
 
-<footer>Diagrams are redrawn from the live n8n workflows with names, IDs, phone numbers and credentials removed. Figures are percentages or counts from internal reports; no customer data is shown.</footer>
 </div>
+</main>
+
+<section class="cta gutter" id="contact">
+  <div class="wrap">
+    <div><h2>Let's talk about your next program.</h2><p>Open to Program Manager and Business Operations roles.</p></div>
+    <div class="row">
+      <button class="btn solid copy" type="button" data-copy="rajatbaliyan9999@gmail.com">Copy email</button>
+      <a class="btn ghost" href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn ghost" href="Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="gutter"><div class="wrap">Diagrams are redrawn from live n8n workflows with names, IDs, phone numbers and credentials removed. Figures are percentages or counts from internal reports; no customer data is shown.</div></footer>
+
+<div class="tip" id="tip" hidden></div>
 
 <script>
-// n8n-style drawings. Each node: [id, label, sub, col, row, kind]; edges: [from, to, label?]
+// Theme toggle: explicit choice wins over the system setting and is remembered per browser.
+(function () {
+  const root = document.documentElement, btn = document.getElementById("theme");
+  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+  btn.addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  });
+})();
+
+// Copy email buttons
+document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", async () => {
+  const old = b.innerHTML;
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied ✓"; }
+  catch (e) { b.textContent = b.dataset.copy; }
+  setTimeout(() => { b.innerHTML = old; }, 1600);
+}));
+
+// n8n-style drawings. Node: [id, label, sub, col, row, kind, what it does]. Edge: [from, to, label?]
 const FLOWS = {
   booking: {
     nodes: [
-      ["w1","Webhook","GET page",0,0,"trigger"],["r1","Respond","booking page HTML",1,0,"send"],
-      ["w2","Webhook","GET /slots",0,1,"trigger"],["a2","Check access","code",1,1,"logic"],["c2","Free/busy","advisor calendars",2,1,"data"],["k2","Apply rules","hours, holds, T+1",3,1,"logic"],["r2","Respond","open slots",4,1,"send"],
-      ["w3","Webhook","POST /book",0,2.3,"trigger"],["v3","Validate","slot still free?",1,2.3,"logic"],["e3","Create event","Google Calendar",2,2,"data"],["x3","Respond","slot taken",2,3,"send"],
-      ["m3","WhatsApp","confirmation",3,2,"send"],["s3","Append row","CRM sheet",4,2,"data"],["l3","Slack","agent alert",5,2,"send"],["r3","Respond","booked",6,2,"send"]
+      ["w1","Webhook","GET page",0,0,"trigger","Serves the booking page to agents, protected by an access code."],
+      ["r1","Respond","booking page HTML",1,0,"send","Returns the page straight from n8n, so no separate hosting is needed."],
+      ["w2","Webhook","GET /slots",0,1,"trigger","Agent picks an advisor and a date; the page asks for open slots."],
+      ["a2","Check access","code",1,1,"logic","Rejects any request without a valid access code."],
+      ["c2","Free/busy","advisor calendars",2,1,"data","Reads each advisor's real calendar availability."],
+      ["k2","Apply rules","hours, holds, T+1",3,1,"logic","Applies working hours, held priority slots and the today + next working day window."],
+      ["r2","Respond","open slots",4,1,"send","Returns only bookable slots to the page."],
+      ["w3","Webhook","POST /book",0,2.3,"trigger","Agent submits the homeowner's details for the chosen slot."],
+      ["v3","Validate","slot still free?",1,2.3,"logic","Re-checks the slot so two agents can't book the same time."],
+      ["e3","Create event","Google Calendar",2,2,"data","Creates the meeting on the advisor's calendar with a meeting link."],
+      ["x3","Respond","slot taken",2,3,"send","Asks the agent to pick another slot."],
+      ["m3","WhatsApp","confirmation",3,2,"send","Sends the homeowner an approved WhatsApp confirmation."],
+      ["s3","Append row","CRM sheet",4,2,"data","Logs the booking in the CRM sheet for reporting."],
+      ["l3","Slack","agent alert",5,2,"send","Alerts the agent and advisor in Slack."],
+      ["r3","Respond","booked",6,2,"send","Shows the agent a success screen."]
     ],
     edges: [["w1","r1"],["w2","a2"],["a2","c2"],["c2","k2"],["k2","r2"],["w3","v3"],["v3","e3","free"],["v3","x3","taken"],["e3","m3"],["m3","s3"],["s3","l3"],["l3","r3"]]
   },
   reminders: {
     nodes: [
-      ["t1","Schedule","every minute",0,0,"trigger"],["d1","Read meetings","next 2 hours",1,0,"data"],["f1","Due now?","1 h / 5 min",2,0,"logic"],["m1","WhatsApp","reminder",3,0,"send"],["u1","Mark sent","sheet",4,0,"data"],
-      ["t2","Schedule","every 10 min",0,1.2,"trigger"],["d2","Read events","advisor calendars",1,1.2,"data"],["f2","Compare","with CRM rows",2,1.2,"logic"],["u2","Update rows","moved / cancelled",3,1.2,"data"],["l2","Slack","change alert",4,1.2,"send"]
+      ["t1","Schedule","every minute",0,0,"trigger","Runs every minute."],
+      ["d1","Read meetings","next 2 hours",1,0,"data","Reads meetings starting in the next 2 hours."],
+      ["f1","Due now?","1 h / 5 min",2,0,"logic","Finds meetings exactly 1 hour or 5 minutes away that haven't been reminded yet."],
+      ["m1","WhatsApp","reminder",3,0,"send","Sends the WhatsApp reminder with the join link."],
+      ["u1","Mark sent","sheet",4,0,"data","Marks the reminder as sent so it never repeats."],
+      ["t2","Schedule","every 10 min",0,1.2,"trigger","Runs every 10 minutes."],
+      ["d2","Read events","advisor calendars",1,1.2,"data","Reads the advisors' calendar events."],
+      ["f2","Compare","with CRM rows",2,1.2,"logic","Compares calendars with the CRM sheet to spot moved or cancelled meetings."],
+      ["u2","Update rows","moved / cancelled",3,1.2,"data","Updates the sheet so reports stay correct."],
+      ["l2","Slack","change alert",4,1.2,"send","Tells the agent what changed."]
     ],
     edges: [["t1","d1"],["d1","f1"],["f1","m1","yes"],["m1","u1"],["t2","d2"],["d2","f2"],["f2","u2","changed"],["u2","l2"]]
   },
   confirm: {
     nodes: [
-      ["t","Schedule","every minute",0,0.5,"trigger"],["d","Read bookings","today",1,0.5,"data"],["f","25–35 min away?","skip confirmed",2,0.5,"logic"],["i","Indian number?","",3,0.5,"logic"],
-      ["c","Voice call","Malayalam, press 1/2",4,0,"send"],["s","Slack","call manually",4,1,"send"],["u","Mark called","sheet",5,0,"data"],
-      ["w","Webhook","keypress result",0,2,"trigger"],["p","Map answer","confirm / reschedule",1,2,"logic"],["u2","Update booking","sheet",2,2,"data"],["l","Slack","agent follow-up",3,2,"send"]
+      ["t","Schedule","every minute",0,0.5,"trigger","Runs every minute."],
+      ["d","Read bookings","today",1,0.5,"data","Reads today's bookings."],
+      ["f","25–35 min away?","skip confirmed",2,0.5,"logic","Picks meetings 25–35 minutes away; skips ones already confirmed or booked minutes ago."],
+      ["i","Indian number?","",3,0.5,"logic","The voice provider can only dial Indian numbers."],
+      ["c","Voice call","Malayalam, press 1/2",4,0,"send","Automated call in Malayalam: press 1 to confirm, 2 to reschedule."],
+      ["s","Slack","call manually",4,1,"send","International number: Slack asks the agent to call instead."],
+      ["u","Mark called","sheet",5,0,"data","Marks the call as made so it never repeats."],
+      ["w","Webhook","keypress result",0,2,"trigger","Receives the homeowner's keypress from the call."],
+      ["p","Map answer","confirm / reschedule",1,2,"logic","Turns the keypress into 'confirmed' or 'wants to reschedule'."],
+      ["u2","Update booking","sheet",2,2,"data","Updates the booking status."],
+      ["l","Slack","agent follow-up",3,2,"send","Alerts the agent when a reschedule is needed."]
     ],
     edges: [["t","d"],["d","f"],["f","i","due"],["i","c","yes"],["i","s","no"],["c","u"],["w","p"],["p","u2"],["u2","l"]]
   },
   leads: {
     nodes: [
-      ["t","Schedule","every hour",0,0.5,"trigger"],["a","Read leads","WhatsApp bot sheet",1,0,"data"],["b","Read CRM","last rows",1,1,"data"],["m","Dedupe & map","code",2,0.5,"logic"],
-      ["i","New leads?","",3,0.5,"logic"],["w","Write rows","explicit last row",4,0.5,"data"],["k","Mark pushed","source sheet",5,0.5,"data"],["s","Slack","new-lead alert",6,0.5,"send"]
+      ["t","Schedule","every hour",0,0.5,"trigger","Runs every hour."],
+      ["a","Read leads","WhatsApp bot sheet",1,0,"data","Reads new leads captured by the WhatsApp bot."],
+      ["b","Read CRM","last rows",1,1,"data","Reads the CRM sheet to see which leads already exist."],
+      ["m","Dedupe & map","code",2,0.5,"logic","Removes duplicates by phone number and maps fields to CRM columns."],
+      ["i","New leads?","",3,0.5,"logic","Stops quietly if there is nothing new."],
+      ["w","Write rows","explicit last row",4,0.5,"data","Writes to the exact next empty row, because the team edits this sheet live."],
+      ["k","Mark pushed","source sheet",5,0.5,"data","Marks leads as pushed so they never repeat."],
+      ["s","Slack","new-lead alert",6,0.5,"send","Alerts sales about the new leads."]
     ],
     edges: [["t","a"],["t","b"],["a","m"],["b","m"],["m","i"],["i","w","yes"],["w","k"],["k","s"]]
   },
   support: {
     nodes: [
-      ["t1","Schedule","every 15 min",0,0,"trigger"],["e1","Read executions","WhatsApp bot",1,0,"data"],["d1","Dedupe","checkpoint",2,0,"logic"],["a1","Append","support log",3,0,"data"],
-      ["t2","Schedule","8 PM daily",0,1.2,"trigger"],["r2","Read log","today",1,1.2,"data"],["o2","Summarise","OpenAI",2,1.2,"ai"],["s2","Slack DM","Confirm / Edit",3,1.2,"send"],
-      ["w2","Webhook","button click",4,1.2,"trigger"],["i2","Confirmed?","",5,1.2,"logic"],["p2","Post","team channel",6,0.8,"send"],["m2","Edit modal","then post",6,1.7,"send"]
+      ["t1","Schedule","every 15 min",0,0,"trigger","Runs every 15 minutes."],
+      ["e1","Read executions","WhatsApp bot",1,0,"data","Reads the support bot's recent conversations through the n8n API."],
+      ["d1","Dedupe","checkpoint",2,0,"logic","Skips messages already logged, using a saved checkpoint."],
+      ["a1","Append","support log",3,0,"data","Adds new messages to the support log sheet."],
+      ["t2","Schedule","8 PM daily",0,1.2,"trigger","Runs every day at 8 PM."],
+      ["r2","Read log","today",1,1.2,"data","Reads today's support log."],
+      ["o2","Summarise","OpenAI",2,1.2,"ai","AI groups the day's issues into a short summary."],
+      ["s2","Slack DM","Confirm / Edit",3,1.2,"send","Sends me the draft with Confirm and Edit buttons."],
+      ["w2","Webhook","button click",4,1.2,"trigger","Receives my button click."],
+      ["i2","Confirmed?","",5,1.2,"logic","Checks whether I confirmed or want to edit."],
+      ["p2","Post","team channel",6,0.8,"send","Posts the approved summary to the support channel."],
+      ["m2","Edit modal","then post",6,1.7,"send","Opens an edit box, then posts my edited version."]
     ],
     edges: [["t1","e1"],["e1","d1"],["d1","a1"],["t2","r2"],["r2","o2"],["o2","s2"],["s2","w2","waits"],["w2","i2"],["i2","p2","yes"],["i2","m2","edit"]]
   }
 };
-const NW = 116, NH = 58, CX = 150, RY = 96, PAD = 22;
+const KIND = { trigger: "Trigger", data: "Data", logic: "Logic", send: "Send / notify", ai: "AI" };
+const NW = 116, NH = 42, CX = 150, RY = 96, PAD = 22;
 const NS = "http://www.w3.org/2000/svg";
+const tip = document.getElementById("tip");
 function el(tag, attrs, parent) {
   const e = document.createElementNS(NS, tag);
   for (const k in attrs) e.setAttribute(k, attrs[k]);
   if (parent) parent.appendChild(e);
   return e;
 }
+function showTip(g, n) {
+  tip.innerHTML = "";
+  const b = document.createElement("b"); b.textContent = KIND[n[5]] + " · " + n[1];
+  tip.append(b, document.createTextNode(n[6]));
+  tip.hidden = false;
+  const r = g.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), innerWidth - tw - 8);
+  let y = r.top - th - 8; if (y < 64) y = r.bottom + 8;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true; document.querySelectorAll("g.node.sel").forEach(x => x.classList.remove("sel")); }
 document.querySelectorAll("svg[data-flow]").forEach(svg => {
   const f = FLOWS[svg.dataset.flow];
   const pos = {};
   let maxC = 0, maxR = 0;
   f.nodes.forEach(([id, , , c, r]) => { pos[id] = { x: PAD + c * CX, y: PAD + r * RY }; maxC = Math.max(maxC, c); maxR = Math.max(maxR, r); });
-  const W = PAD * 2 + maxC * CX + NW, H = PAD * 2 + maxR * RY + NH + 16;
+  const W = PAD * 2 + maxC * CX + NW, H = PAD * 2 + maxR * RY + NH;
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.setAttribute("width", W); svg.setAttribute("height", H);
-  f.edges.forEach(([a, b, label]) => {
+  f.edges.forEach(([a, b, label], i) => {
     const s = pos[a], t = pos[b];
-    const x1 = s.x + NW, y1 = s.y + NH / 2 - 8, x2 = t.x, y2 = t.y + NH / 2 - 8, mx = (x1 + x2) / 2;
-    el("path", { d: `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2 - 6},${y2}`, fill: "none", stroke: "var(--muted)", "stroke-width": 1.4 }, svg);
-    el("path", { d: `M${x2 - 7},${y2 - 4} L${x2},${y2} L${x2 - 7},${y2 + 4} Z`, fill: "var(--muted)" }, svg);
+    const x1 = s.x + NW, y1 = s.y + NH / 2, x2 = t.x, y2 = t.y + NH / 2, mx = (x1 + x2) / 2;
+    const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2 - 6},${y2}`;
+    el("path", { d, class: "wire" }, svg);
+    el("path", { d, class: "flow", style: `animation-delay:${-(i * 0.17).toFixed(2)}s` }, svg);
+    el("path", { d: `M${x2 - 7},${y2 - 4} L${x2},${y2} L${x2 - 7},${y2 + 4} Z`, class: "arrowhead" }, svg);
     if (label) {
-      const tx = el("text", { x: mx, y: (y1 + y2) / 2 - 5, "text-anchor": "middle", class: "elabel" }, svg);
+      const tx = el("text", { x: mx, y: (y1 + y2) / 2 - 6, "text-anchor": "middle", class: "elabel" }, svg);
       tx.textContent = label;
     }
   });
-  f.nodes.forEach(([id, label, sub, , , kind]) => {
+  f.nodes.forEach(n => {
+    const [id, label, sub, , , kind] = n;
     const { x, y } = pos[id];
-    const g = el("g", {}, svg);
-    el("rect", { x, y, width: NW, height: NH - 16, rx: 7, fill: "var(--paper)", stroke: `var(--n-${kind})`, "stroke-width": 1.6 }, g);
-    el("rect", { x, y, width: 5, height: NH - 16, rx: 2, fill: `var(--n-${kind})` }, g);
-    const t = el("text", { x: x + NW / 2 + 2, y: y + 18, "text-anchor": "middle", "font-size": 12.5, "font-weight": 600 }, g);
+    const g = el("g", { class: "node", tabindex: 0, role: "button", "aria-label": `${label}: ${n[6]}` }, svg);
+    el("rect", { x, y, width: NW, height: NH, rx: 7, fill: "var(--paper)", stroke: `var(--n-${kind})`, "stroke-width": 1.6, class: "box" }, g);
+    el("rect", { x, y, width: 5, height: NH, rx: 2, fill: `var(--n-${kind})` }, g);
+    const t = el("text", { x: x + NW / 2 + 2, y: y + (sub ? 18 : 25), "text-anchor": "middle", "font-size": 12.5, "font-weight": 600 }, g);
     t.textContent = label;
     if (sub) { const s = el("text", { x: x + NW / 2 + 2, y: y + 33, "text-anchor": "middle", class: "sub" }, g); s.textContent = sub; }
+    g.addEventListener("mouseenter", () => showTip(g, n));
+    g.addEventListener("mouseleave", hideTip);
+    g.addEventListener("focus", () => showTip(g, n));
+    g.addEventListener("blur", hideTip);
+    g.addEventListener("click", e => { e.stopPropagation(); const on = g.classList.contains("sel"); hideTip(); if (!on) { g.classList.add("sel"); showTip(g, n); } });
   });
 });
+document.addEventListener("click", hideTip);
+addEventListener("scroll", hideTip, { passive: true });
+document.querySelectorAll(".canvas").forEach(c => c.addEventListener("scroll", hideTip, { passive: true }));
+
+// Scroll reveal + count-up, only when motion is allowed. Content stays visible without JS.
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!calm && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("js-reveal");
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".reveal").forEach(x => io.observe(x));
+  document.querySelectorAll("[data-count]").forEach(b => {
+    const end = +b.dataset.count, suf = b.dataset.suffix || "", t0 = performance.now(), dur = 1100;
+    const step = now => { const p = Math.min(1, (now - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      b.textContent = v.toLocaleString("en-IN") + suf; if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}
+
+// Highlight the nav link for the section in view
+const navLinks = [...document.querySelectorAll(".links a")];
+const secIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
+document.querySelectorAll("article[id], #contact").forEach(s => secIO.observe(s));
 </script>
 </body>
 </html>
