@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rajat Baliyan · Program Manager</title>
+<meta name="description" content="Program Manager portfolio drawn as blueprints: webinar backstage, pre-sales booking site, show-up system, plus growth, bots, reporting and automation.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rajat-baliyan.github.io/blueprint/">
+<meta property="og:title" content="Rajat Baliyan · Program Manager">
+<meta property="og:description" content="Programs and the automation behind them, drawn as blueprints.">
+<meta property="og:image" content="https://rajat-baliyan.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rajat-baliyan.github.io/og.png">
+<meta name="theme-color" content="#163E9E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23163E9E'/%3E%3Crect x='8' y='8' width='48' height='48' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='22' font-weight='800' fill='%23FFD84D' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&family=Architects+Daughter&display=swap">
+<style>
+/* Concept: a drawing set. The hero is a blueprint floor plan of Rajat's work (one room per program, the rooms are the navigation).
+   Each case study is a whiteprint sheet with a title block; old processes appear as red-line revisions.
+   Single deliberate look: cyanotype blue + white linework for hero/contact, blue ink on drafting paper for sheets. */
+:root {
+  --blue: #163E9E;
+  --blue-deep: #0E2B73;
+  --wline: rgba(255,255,255,.92);
+  --wgrid: rgba(255,255,255,.07);
+  --wgrid2: rgba(255,255,255,.14);
+  --paper: #F6F7FA;
+  --sheet: #FFFFFF;
+  --ink: #12245C;
+  --muted: #5A6788;
+  --rule: #C7D0E6;
+  --pgrid: #E6EAF4;
+  --hi: #FFD84D;
+  --red: #E5484D;
+  --green: #18936A;
+  --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --hand: "Architects Daughter", "Comic Sans MS", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; -webkit-text-size-adjust: 100%; }
+h1, h2, h3 { margin: 0; font-family: var(--display); line-height: 1; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--hi); outline-offset: 3px; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1200px; margin: 0 auto; }
+.mono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
+.hand { font-family: var(--hand); }
+
+/* nav */
+nav.top { position: sticky; top: 0; z-index: 20; background: var(--blue); color: #fff; border-bottom: 2px solid var(--wline); padding-top: env(safe-area-inset-top, 0px); }
+nav.top .wrap { display: flex; align-items: center; gap: 14px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 17px; font-variation-settings: "wdth" 85; }
+.brand i { width: 34px; height: 34px; border: 2px solid #fff; display: grid; place-items: center; font: 800 13px var(--display); font-style: normal; color: var(--hi); }
+.navr { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.navr a.plain { text-decoration: none; font-weight: 700; padding: 6px 10px; }
+.navr a.plain:hover { text-decoration: underline; text-underline-offset: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 800 15px var(--body); text-decoration: none; padding: 9px 15px; border: 2px solid var(--hi); background: var(--hi); color: var(--blue-deep); cursor: pointer; white-space: nowrap; }
+.btn:hover { background: #fff; border-color: #fff; }
+.btn.ghost { background: transparent; color: #fff; border-color: #fff; }
+.btn.ghost:hover { background: rgba(255,255,255,.12); }
+@media (max-width: 420px) { .brand span { display: none; } }
+
+/* blueprint surfaces */
+.bp { background-color: var(--blue); color: #fff;
+  background-image: linear-gradient(var(--wgrid2) 1px, transparent 1px), linear-gradient(90deg, var(--wgrid2) 1px, transparent 1px),
+                    linear-gradient(var(--wgrid) 1px, transparent 1px), linear-gradient(90deg, var(--wgrid) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px; }
+
+/* hero */
+.hero .wrap { padding-block: 44px 36px; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px 44px; align-items: start; }
+.hero .left { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding-top: 8px; }
+.hero .mono { color: var(--hi); }
+h1 { font-size: clamp(64px, 9vw, 128px); font-weight: 900; font-variation-settings: "wdth" 70; letter-spacing: -.01em; line-height: .84; text-transform: uppercase; }
+h1 span { display: block; }
+.role { display: flex; align-items: center; gap: 12px; }
+.role b { font: 800 22px var(--display); font-variation-settings: "wdth" 85; letter-spacing: .04em; text-transform: uppercase; }
+.role .dim { flex: 1; height: 0; border-top: 2px solid var(--wline); position: relative; min-width: 40px; }
+.role .dim::before, .role .dim::after { content: ""; position: absolute; top: -8px; height: 14px; border-left: 2px solid var(--wline); }
+.role .dim::before { left: 0; } .role .dim::after { right: 0; }
+.lede { font-size: 21px; line-height: 1.4; max-width: 30ch; font-weight: 500; }
+.note-hand { font-family: var(--hand); color: var(--hi); font-size: 18px; transform: rotate(-2deg); width: fit-content; }
+.contacts { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 600 13.5px var(--mono); }
+.contacts a { text-decoration: none; border-bottom: 1.5px solid rgba(255,255,255,.6); }
+.contacts a:hover { color: var(--hi); border-color: var(--hi); }
+
+/* floor plan */
+.plan { min-width: 0; }
+.plan .ptop { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin-bottom: 10px; }
+.dimline { position: relative; height: 22px; margin: 0 0 8px; border-bottom: 1.5px solid var(--wline); }
+.dimline::before, .dimline::after { content: ""; position: absolute; bottom: -7px; height: 12px; border-left: 1.5px solid var(--wline); }
+.dimline::before { left: 0; } .dimline::after { right: 0; }
+.dimline span { position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%); font: 600 12px var(--mono); background: var(--blue); padding: 0 8px; white-space: nowrap; }
+.rooms { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: minmax(96px, auto);
+  grid-template-areas: "show show book back back back" "show show book back back back" "grow bots bots rep rep auto";
+  border: 5px solid var(--wline); background: rgba(14,43,115,.55); }
+.room { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; padding: 12px 14px; text-decoration: none; color: #fff;
+  border: 2px solid var(--wline); margin: -1px; min-width: 0; transition: background .2s; }
+.room:hover, .room:focus-visible { background: rgba(255,216,77,.16); }
+.room .no { font: 600 11px var(--mono); letter-spacing: .1em; color: var(--hi); }
+.room h3 { font-size: 19px; font-weight: 800; font-variation-settings: "wdth" 80; text-transform: uppercase; letter-spacing: .02em; line-height: 1.05; }
+.room .m { font: 600 13px var(--mono); color: rgba(255,255,255,.85); }
+.room .door { position: absolute; width: 26px; height: 26px; border: 2px solid var(--wline); border-top: 0; border-right: 0; border-radius: 0 0 0 26px; right: 10px; bottom: -2px; background: transparent; opacity: .7; }
+.room.big h3 { font-size: clamp(22px, 2.6vw, 30px); }
+.room.show { grid-area: show; } .room.book { grid-area: book; } .room.back { grid-area: back; } .room.grow { grid-area: grow; }
+.room.bots { grid-area: bots; } .room.rep { grid-area: rep; } .room.auto { grid-area: auto; }
+.room .pulse { position: absolute; top: 12px; right: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--hi); box-shadow: 0 0 0 0 rgba(255,216,77,.7); animation: pulse 2.4s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 12px rgba(255,216,77,0); } 100% { box-shadow: 0 0 0 0 rgba(255,216,77,0); } }
+.tblock { display: grid; grid-template-columns: repeat(4, auto); justify-content: end; margin-top: 10px; border: 2px solid var(--wline); width: fit-content; margin-left: auto; font: 600 11px var(--mono); }
+.tblock div { padding: 6px 10px; border-right: 2px solid var(--wline); display: flex; flex-direction: column; gap: 1px; }
+.tblock div:last-child { border-right: 0; }
+.tblock span { color: rgba(255,255,255,.6); font-size: 9.5px; letter-spacing: .12em; }
+@media (max-width: 960px) { .hero .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 620px) {
+  .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "back back" "show book" "show book" "grow bots" "rep auto"; }
+  .room h3 { font-size: 16px; } .room.big h3 { font-size: 22px; }
+  .tblock { grid-template-columns: repeat(2, auto); } .tblock div:nth-child(2) { border-right: 0; } .tblock div:nth-child(-n+2) { border-bottom: 2px solid var(--wline); }
+}
+
+/* key numbers */
+.keys { background: var(--blue-deep); color: #fff; border-block: 2px solid var(--wline); }
+.keys .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.key { padding: 20px 18px; border-right: 1px dashed rgba(255,255,255,.35); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.key:last-child { border-right: 0; }
+.key:first-child { padding-left: 0; }
+.key b { font: 900 clamp(30px, 3.6vw, 46px) var(--display); font-variation-settings: "wdth" 72; color: var(--hi); white-space: nowrap; }
+.key span { font-size: 14px; color: rgba(255,255,255,.82); line-height: 1.35; }
+@media (max-width: 760px) { .keys .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); } .key:nth-child(odd) { padding-left: 0; } .key:nth-child(2) { border-right: 0; } .key:nth-child(-n+2) { border-bottom: 1px dashed rgba(255,255,255,.35); } }
+
+/* sheets */
+main .wrap { display: flex; flex-direction: column; gap: 56px; padding-block: 56px 72px; }
+.sheet { background: var(--sheet); border: 2px solid var(--ink); position: relative; scroll-margin-top: 76px;
+  background-image: linear-gradient(var(--pgrid) 1px, transparent 1px), linear-gradient(90deg, var(--pgrid) 1px, transparent 1px); background-size: 24px 24px; }
+.sheet::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--rule); pointer-events: none; }
+.sh-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; border-bottom: 2px solid var(--ink); background: var(--sheet); position: relative; }
+.sh-no { background: var(--blue); color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 16px 20px; min-width: 120px; }
+.sh-no span { font: 600 10px var(--mono); letter-spacing: .14em; color: var(--hi); }
+.sh-no b { font: 900 44px var(--display); font-variation-settings: "wdth" 70; line-height: 1; }
+.sh-title { padding: 16px 22px; display: flex; flex-direction: column; justify-content: center; gap: 6px; min-width: 0; }
+.sh-title .mono { color: var(--muted); }
+.sh-title h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 900; font-variation-settings: "wdth" 75; text-transform: uppercase; letter-spacing: .005em; }
+.sh-meta { border-left: 2px solid var(--ink); display: grid; font: 600 11.5px var(--mono); min-width: 210px; }
+.sh-meta div { padding: 6px 14px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px; }
+.sh-meta div:last-child { border-bottom: 0; }
+.sh-meta span { color: var(--muted); letter-spacing: .08em; }
+.live { color: var(--green); }
+@media (max-width: 760px) { .sh-head { grid-template-columns: auto minmax(0, 1fr); } .sh-meta { grid-column: 1 / -1; border-left: 0; border-top: 2px solid var(--ink); min-width: 0; } .sh-no { min-width: 0; padding: 14px; } .sh-no b { font-size: 34px; } }
+.sh-body { position: relative; padding: 26px; display: flex; flex-direction: column; gap: 26px; }
+.pwr { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr) minmax(0, .9fr); gap: 0; border: 2px solid var(--ink); background: var(--sheet); }
+.pwr > section { padding: 18px 20px; border-right: 2px solid var(--ink); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.pwr > section:last-child { border-right: 0; }
+.pwr .mono { color: var(--muted); }
+.prob p { font-size: 20px; font-weight: 700; line-height: 1.3; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; font-weight: 500; line-height: 1.35; }
+.steps li::before { content: counter(s, decimal-leading-zero); font: 600 11px var(--mono); color: #fff; background: var(--blue); height: 22px; display: grid; place-items: center; }
+.res { background: var(--hi); }
+.res p { font-size: 21px; font-weight: 800; line-height: 1.25; }
+.res .mono { color: var(--ink); }
+@media (max-width: 860px) { .pwr { grid-template-columns: 1fr; } .pwr > section { border-right: 0; border-bottom: 2px solid var(--ink); } .pwr > section:last-child { border-bottom: 0; } }
+
+/* redline revision (old vs new) */
+.rev { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 2px solid var(--ink); background: var(--sheet); }
+.rev > div { padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.rev .r0 { border-right: 2px solid var(--ink); }
+.rev .tag { font: 600 11px var(--mono); letter-spacing: .1em; width: fit-content; padding: 3px 8px; border: 1.5px solid currentColor; }
+.rev .r0 .tag { color: var(--red); }
+.rev .r1 .tag { color: var(--green); }
+.rev ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.rev li { font-size: 15.5px; display: flex; gap: 10px; align-items: baseline; }
+.rev .r0 li { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.rev .r0 li::before { content: "✕"; color: var(--red); font-weight: 800; text-decoration: none; display: inline-block; }
+.rev .r1 li::before { content: "✓"; color: var(--green); font-weight: 800; }
+.rev .r0 .hand { color: var(--red); font-size: 16px; transform: rotate(-1.5deg); }
+@media (max-width: 680px) { .rev { grid-template-columns: 1fr; } .rev .r0 { border-right: 0; border-bottom: 2px solid var(--ink); } }
+
+/* figures */
+.fig { border: 2px solid var(--ink); background: var(--sheet); padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.figcap { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.figcap .mono { color: var(--muted); }
+.figcap h3 { font-size: 20px; font-weight: 800; font-variation-settings: "wdth" 85; }
+.figrow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; }
+@media (max-width: 860px) { .figrow { grid-template-columns: 1fr; } }
+.bars { display: flex; flex-direction: column; gap: 10px; }
+.bar { display: grid; grid-template-columns: 132px minmax(0, 1fr) 64px; gap: 12px; align-items: center; font-weight: 600; font-size: 15px; }
+.track { height: 22px; border: 2px solid var(--ink); background: var(--paper); }
+.fill { height: 100%; width: var(--w); background: repeating-linear-gradient(45deg, #9AA6C4 0 6px, #B6C0D8 6px 12px); transform-origin: left; }
+.bar.hi .fill { background: var(--blue); }
+.bar .v { font: 600 16px var(--mono); text-align: right; }
+@media (max-width: 520px) { .bar { grid-template-columns: 92px minmax(0, 1fr) 54px; font-size: 13.5px; } }
+.split { display: flex; height: 32px; border: 2px solid var(--ink); font: 600 12.5px var(--mono); }
+.split span { display: flex; align-items: center; padding-left: 10px; white-space: nowrap; overflow: hidden; }
+.split .a { background: repeating-linear-gradient(45deg, #9AA6C4 0 6px, #B6C0D8 6px 12px); border-right: 2px solid var(--ink); }
+.split .b { background: var(--red); color: #fff; }
+
+/* touchpoint timeline */
+.tl { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; padding-top: 6px; }
+.tl::before { content: ""; position: absolute; left: 4%; right: 4%; top: 28px; border-top: 3px solid var(--blue); }
+.tp { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 0 6px; min-width: 0; }
+.tp i { width: 44px; height: 44px; border: 3px solid var(--blue); background: var(--sheet); display: grid; place-items: center; font-style: normal; font: 800 12px var(--mono); color: var(--blue); position: relative; z-index: 1; }
+.tp.voice i { background: var(--hi); }
+.tp.meet i { background: var(--blue); color: #fff; }
+.tp > div { display: flex; flex-direction: column; gap: 2px; }
+.tp b { font-size: 14.5px; font-weight: 800; line-height: 1.2; }
+.tp span { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+@media (max-width: 760px) {
+  .tl { grid-template-columns: 1fr; gap: 12px; }
+  .tl::before { left: 22px; right: auto; top: 10px; bottom: 10px; border-top: 0; border-left: 3px solid var(--blue); }
+  .tp { flex-direction: row; text-align: left; align-items: center; gap: 12px; }
+  .tp > div { display: flex; flex-direction: column; }
+}
+
+/* backstage floor plan */
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .55fr) minmax(0, 1.25fr); border: 4px solid var(--ink); background: var(--sheet); }
+.zone { padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; border-right: 4px solid var(--ink); }
+.zone:last-child { border-right: 0; }
+.zone > .mono { color: var(--blue); font-weight: 600; }
+.zone.live { background: var(--blue); color: #fff; justify-content: center; text-align: center; }
+.zone.live > .mono { color: var(--hi); }
+.zone.live h4 { font: 900 30px var(--display); font-variation-settings: "wdth" 70; text-transform: uppercase; margin: 0; }
+.zone.live p { font-size: 14px; color: rgba(255,255,255,.85); }
+.cell { border: 2px solid var(--ink); padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; background: var(--paper); }
+.cell b { font-size: 15px; font-weight: 800; line-height: 1.25; }
+.cell span { font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+.cell.key { background: #FFF4C2; }
+.cells2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+@media (max-width: 900px) { .stage { grid-template-columns: 1fr; } .zone { border-right: 0; border-bottom: 4px solid var(--ink); } .zone:last-child { border-bottom: 0; } }
+@media (max-width: 520px) { .cells2 { grid-template-columns: 1fr; } }
+
+/* push matrix */
+.matrix { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.matrix th, .matrix td { border: 2px solid var(--ink); padding: 8px 10px; text-align: left; vertical-align: top; }
+.matrix th { font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; background: var(--paper); color: var(--muted); }
+.matrix td b { display: block; font-weight: 800; }
+.matrix td span { color: var(--muted); font-size: 13px; }
+.tablewrap { overflow-x: auto; }
+
+/* workflow drawings */
+.canvas { position: relative; overflow-x: auto; border: 2px solid var(--ink); background-color: var(--paper);
+  background-image: linear-gradient(var(--pgrid) 1px, transparent 1px), linear-gradient(90deg, var(--pgrid) 1px, transparent 1px); background-size: 18px 18px; }
+.canvas svg { display: block; }
+.canvas text { font-family: var(--body); fill: var(--ink); pointer-events: none; }
+.canvas .sub { fill: var(--muted); font-size: 10.5px; }
+.canvas .elabel { font-family: var(--mono); font-size: 10px; fill: var(--red); }
+.canvas .wire { fill: none; stroke: #9AA6C4; stroke-width: 1.8; }
+.canvas .flow { fill: none; stroke: var(--blue); stroke-width: 2.4; stroke-dasharray: 6 14; stroke-linecap: round; animation: run 1.4s linear infinite; }
+.canvas .arrowhead { fill: var(--ink); }
+.canvas g.node { cursor: pointer; outline: none; }
+.canvas g.node:hover rect.box, .canvas g.node:focus rect.box, .canvas g.node.sel rect.box { stroke-width: 3.5; }
+@keyframes run { to { stroke-dashoffset: -20; } }
+.kinds { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.kinds i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid var(--ink); }
+.hint { font-size: 14px; color: var(--muted); }
+.tip { position: fixed; z-index: 30; max-width: 260px; background: var(--ink); color: #fff; font-size: 13.5px; line-height: 1.45; padding: 9px 11px; pointer-events: none; border: 2px solid var(--hi); }
+.tip b { display: block; font: 600 10.5px var(--mono); letter-spacing: .08em; color: var(--hi); margin-bottom: 2px; text-transform: uppercase; }
+.annot { font-family: var(--hand); color: var(--red); font-size: 17px; line-height: 1.3; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { font: 600 12px var(--mono); border: 1.5px solid var(--ink); padding: 4px 9px; background: var(--sheet); }
+
+/* also */
+.also { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.also div { background: var(--sheet); border: 2px solid var(--ink); padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.also h3 { font-size: 20px; font-weight: 800; font-variation-settings: "wdth" 85; }
+.also p { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 760px) { .also { grid-template-columns: 1fr; } }
+
+/* contact */
+.contact .wrap { padding-block: 56px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px 48px; }
+.contact .mono { color: var(--hi); }
+.contact h2 { font-size: clamp(40px, 6vw, 76px); font-weight: 900; font-variation-settings: "wdth" 70; text-transform: uppercase; line-height: .9; margin-top: 10px; }
+.contact .lead { margin-top: 14px; font-size: 18px; color: rgba(255,255,255,.85); }
+.clist { margin: 0; border: 3px solid var(--wline); min-width: 0; background: rgba(14,43,115,.5); }
+.clist div { display: grid; grid-template-columns: 110px minmax(0, 1fr); border-bottom: 2px solid var(--wline); }
+.clist div:last-child { border-bottom: 0; }
+.clist dt { font: 600 11px var(--mono); letter-spacing: .12em; color: var(--hi); padding: 14px; border-right: 2px solid var(--wline); text-transform: uppercase; }
+.clist dd { margin: 0; padding: 12px 14px; font-size: 18px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; overflow-wrap: anywhere; }
+.clist a { color: #fff; text-decoration: underline; text-decoration-color: var(--hi); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.clist a:hover { color: var(--hi); }
+.mini { font: 600 11.5px var(--mono); color: #fff; background: transparent; border: 1.5px solid rgba(255,255,255,.6); padding: 3px 9px; cursor: pointer; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; display: block; }
+.who { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.frame { margin: 0 0 14px; border: 2px solid var(--wline); padding: 8px; background: rgba(14,43,115,.5); }
+.portrait { width: 170px; height: 210px; object-fit: cover; object-position: 50% 15%; display: block; background: #EFE7DA; }
+.frame figcaption { font: 600 10.5px var(--mono); letter-spacing: .1em; color: var(--hi); margin-top: 8px; }
+@media (max-width: 520px) { .portrait { width: 130px; height: 160px; } }
+.contact .acts { grid-column: 2; display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 760px) { .contact .wrap { grid-template-columns: 1fr; } .contact .acts { grid-column: auto; } .clist div { grid-template-columns: 1fr; } .clist dt { border-right: 0; padding-bottom: 0; } }
+footer { font: 600 11.5px var(--mono); color: var(--muted); }
+footer .wrap { padding-block: 18px calc(24px + env(safe-area-inset-bottom, 0px)); }
+
+/* motion: visible by default; JS opts in only when motion is allowed */
+.js-motion .sheet { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .8s cubic-bezier(.16,1,.3,1); }
+.js-motion .sheet.in { opacity: 1; transform: none; }
+.js-motion .sheet .fill { transform: scaleX(0); transition: transform 1s .3s cubic-bezier(.2,.7,.2,1); }
+.js-motion .sheet.in .fill { transform: scaleX(1); }
+.js-motion .rooms .room { opacity: 0; transform: scale(.96); animation: roomin .5s cubic-bezier(.16,1,.3,1) forwards; }
+@keyframes roomin { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .room .pulse { animation: none; }
+  .canvas .flow { animation: none; stroke-dasharray: none; opacity: .5; }
+}
+@media print { nav.top, .contact .acts { display: none; } }
+</style>
+<style>
+/* v4 additions: featured-first structure, dropdowns, demo, dashboard, system map */
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.ctas .btn { font-size: 16px; padding: 11px 18px; }
+.room.f { background: rgba(255,216,77,.08); }
+.room .feat { font: 600 10px var(--mono); letter-spacing: .12em; color: var(--blue-deep); background: var(--hi); padding: 2px 6px; width: fit-content; }
+.shead { display: flex; flex-direction: column; gap: 6px; }
+.shead .mono { color: var(--blue); font-weight: 600; }
+.shead h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 900; font-variation-settings: "wdth" 72; text-transform: uppercase; }
+.shead p { color: var(--muted); max-width: 62ch; }
+.sh-meta { min-width: 180px; }
+
+/* dropdowns */
+details.more { border: 2px solid var(--ink); background: var(--sheet); }
+details.more > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; font: 800 16px var(--body); }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary .chev { width: 30px; height: 30px; border: 2px solid var(--ink); display: grid; place-items: center; font-size: 14px; transition: transform .2s; flex: none; }
+details.more[open] > summary .chev { transform: rotate(180deg); background: var(--hi); }
+details.more > summary:hover { background: #FFF8D6; }
+details.more > summary small { font: 600 11px var(--mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+details.more .inner { padding: 0 18px 18px; display: flex; flex-direction: column; gap: 18px; }
+.swipe { display: none; font: 600 11px var(--mono); color: var(--muted); letter-spacing: .08em; }
+@media (max-width: 760px) { .swipe { display: block; } }
+
+/* booking site demo */
+.demo { border: 2px solid var(--ink); background: var(--sheet); display: flex; flex-direction: column; }
+.demo .bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 2px solid var(--ink); background: var(--paper); font: 600 11.5px var(--mono); color: var(--muted); }
+.demo .bar i { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink); }
+.demo .bar span { margin-left: 8px; }
+.demo .bar em { margin-left: auto; font-style: normal; background: var(--hi); color: var(--ink); padding: 2px 6px; }
+.demo .ui { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.demo .pick { padding: 16px; display: flex; flex-direction: column; gap: 14px; border-right: 2px solid var(--ink); min-width: 0; }
+.demo .step { font: 600 11px var(--mono); letter-spacing: .1em; color: var(--muted); }
+.demo .row { display: flex; gap: 8px; flex-wrap: wrap; }
+.demo .adv, .demo .day, .demo .slot { font: 600 13.5px var(--body); border: 2px solid var(--ink); background: var(--sheet); padding: 7px 11px; cursor: pointer; color: var(--ink); }
+.demo .adv[aria-pressed="true"], .demo .day[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.demo .day { display: flex; flex-direction: column; align-items: center; min-width: 64px; line-height: 1.2; }
+.demo .day small { font: 600 11px var(--mono); color: var(--green); }
+.demo .day[aria-pressed="true"] small { color: #7CE0A3; }
+.demo .day[disabled] { opacity: .45; cursor: not-allowed; }
+.demo .slots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.demo .slot { text-align: center; padding: 8px 4px; font-family: var(--mono); font-size: 13px; }
+.demo .slot.taken { text-decoration: line-through; color: var(--muted); background: var(--paper); cursor: not-allowed; border-style: dashed; }
+.demo .slot.held { background: #FFF4C2; }
+.demo .slot[aria-pressed="true"] { background: var(--blue); color: #fff; border-color: var(--blue); }
+.demo .legend2 { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--muted); }
+.demo .legend2 i { display: inline-block; width: 12px; height: 12px; border: 1.5px solid var(--ink); margin-right: 5px; vertical-align: -1px; }
+.demo .out { padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; background: var(--paper); }
+.demo .sum { font-weight: 700; line-height: 1.35; }
+.demo .sum span { color: var(--muted); font-weight: 500; }
+.demo .book { font: 800 15px var(--body); background: var(--hi); border: 2px solid var(--ink); padding: 10px 14px; cursor: pointer; }
+.demo .book:disabled { opacity: .5; cursor: not-allowed; }
+.demo .checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.demo .checks li { display: flex; gap: 10px; align-items: center; font-size: 14.5px; color: var(--muted); }
+.demo .checks li::before { content: ""; width: 18px; height: 18px; border: 2px solid var(--rule); flex: none; }
+.demo .checks li.done { color: var(--ink); font-weight: 600; }
+.demo .checks li.done::before { content: "✓"; border-color: var(--green); background: var(--green); color: #fff; font-size: 12px; display: grid; place-items: center; }
+@media (max-width: 760px) { .demo .ui { grid-template-columns: 1fr; } .demo .pick { border-right: 0; border-bottom: 2px solid var(--ink); } .demo .slots { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* sample dashboard */
+.dash { border: 2px solid var(--ink); background: var(--sheet); }
+.dash .dh { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 10px 14px; border-bottom: 2px solid var(--ink); background: var(--blue); color: #fff; }
+.dash .dh b { font-weight: 800; }
+.dash .dh em { font: 600 11px var(--mono); font-style: normal; background: var(--hi); color: var(--ink); padding: 2px 6px; }
+.dash table { width: 100%; border-collapse: collapse; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.dash th, .dash td { padding: 9px 12px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+.dash th:first-child, .dash td:first-child { text-align: left; }
+.dash th { font: 600 10.5px var(--mono); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+.dash tr.tot td { font-weight: 800; border-top: 2px solid var(--ink); border-bottom: 0; }
+.dash .spark { display: block; }
+
+/* system map */
+.arch { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1.1fr) 44px minmax(0, 1fr); align-items: stretch; }
+.arch .col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.arch .col > .mono { color: var(--muted); }
+.arch .blk { border: 2px solid var(--ink); background: var(--sheet); padding: 8px 10px; font-size: 14px; font-weight: 600; line-height: 1.3; }
+.arch .blk span { display: block; font-weight: 400; color: var(--muted); font-size: 12.5px; }
+.arch .core { background: var(--blue); color: #fff; border: 2px solid var(--ink); padding: 14px; display: flex; flex-direction: column; gap: 10px; justify-content: center; height: 100%; }
+.arch .core b { font: 900 30px var(--display); font-variation-settings: "wdth" 72; text-transform: uppercase; line-height: 1; }
+.arch .core .chips span { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.arch .pipe { position: relative; }
+.arch .pipe::before { content: ""; position: absolute; left: 4px; right: 4px; top: 50%; border-top: 3px dashed var(--blue); }
+.arch .pipe::after { content: "▶"; position: absolute; right: -2px; top: 50%; transform: translateY(-52%); color: var(--blue); font-size: 13px; }
+@media (max-width: 860px) {
+  .arch { grid-template-columns: 1fr; }
+  .arch .pipe { height: 28px; }
+  .arch .pipe::before { left: 50%; right: auto; top: 2px; bottom: 2px; border-top: 0; border-left: 3px dashed var(--blue); }
+  .arch .pipe::after { content: "▼"; left: 50%; right: auto; top: auto; bottom: -6px; transform: translateX(-46%); }
+}
+
+/* supporting cards */
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.card { background: var(--sheet); border: 2px solid var(--ink); display: flex; flex-direction: column; min-width: 0; scroll-margin-top: 76px; }
+.card .ch { display: grid; grid-template-columns: auto minmax(0, 1fr); border-bottom: 2px solid var(--ink); }
+.card .ch .n { background: var(--blue); color: #fff; padding: 10px 14px; font: 900 24px var(--display); font-variation-settings: "wdth" 70; display: grid; place-items: center; }
+.card .ch div { padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.card .ch .mono { color: var(--muted); font-size: 10.5px; }
+.card .ch h3 { font-size: 24px; font-weight: 900; font-variation-settings: "wdth" 75; text-transform: uppercase; }
+.card .cb { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.card .one { font-size: 17px; font-weight: 600; line-height: 1.4; }
+.card .win { background: var(--hi); border: 2px solid var(--ink); padding: 8px 12px; font-weight: 800; }
+.card details.more { border-width: 2px; }
+@media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+.extras { display: flex; flex-wrap: wrap; gap: 10px; }
+.extras span { border: 2px solid var(--ink); background: var(--sheet); padding: 8px 12px; font-size: 14.5px; }
+.extras b { font-weight: 800; }
+.toolkit { border-top: 2px solid var(--ink); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.toolkit .mono { color: var(--muted); margin-right: 6px; }
+</style>
+</head>
+<body>
+
+<nav class="top gutter" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Rajat Baliyan, back to top"><img class="avatar" src="../avatar.jpg" alt="" width="40" height="40"></a>
+    <div class="navr">
+      <a class="plain" href="#contact">Contact</a>
+      <a class="btn" href="../Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Resume
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero bp gutter" id="top">
+  <div class="wrap">
+    <div class="left">
+      <span class="mono">Drawing set · Program management &amp; operations</span>
+      <h1><span>Rajat</span><span>Baliyan</span></h1>
+      <div class="role"><b>Program Manager</b><span class="dim" aria-hidden="true"></span></div>
+      <p class="lede">I run programs end to end, find what's breaking with data, and build the fix myself.</p>
+      <p class="note-hand">Civil engineer by training. I still think in plans.</p>
+      <div class="ctas">
+        <a class="btn" href="../Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">Download resume</a>
+        <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="ptop"><span class="mono">Floor plan · tap a room</span></div>
+      <div class="dimline" aria-hidden="true"><span>30+ live workflows</span></div>
+      <nav class="rooms" aria-label="Projects">
+        <a class="room big f show" href="#showup"><span class="no">A-03</span><h3>Show-up system</h3><span class="m">RCA → 4 touchpoints</span><span class="door"></span></a>
+        <a class="room f book" href="#booking"><span class="no">A-02</span><h3>Booking site</h3><span class="m">1 click</span><span class="door"></span></a>
+        <a class="room big f back" href="#backstage"><span class="pulse" aria-hidden="true"></span><span class="no">A-01</span><h3>Webinar backstage</h3><span class="m">pre → live → post · 4,100+ regs</span><span class="door"></span></a>
+        <a class="room grow" href="#growth"><span class="no">B-01</span><h3>Growth</h3><span class="m">push + social</span><span class="door"></span></a>
+        <a class="room bots" href="#bots"><span class="no">B-02</span><h3>WhatsApp bots</h3><span class="m">4 live</span><span class="door"></span></a>
+        <a class="room rep" href="#reporting"><span class="no">B-03</span><h3>Reporting + AI</h3><span class="m">3 auto reports/day</span><span class="door"></span></a>
+        <a class="room auto" href="#automation"><span class="no">B-04</span><h3>Backbone</h3><span class="m">Zapier → n8n</span><span class="door"></span></a>
+      </nav>
+      <div class="tblock" aria-label="Title block">
+        <div><span>DRAWN BY</span>R. BALIYAN</div>
+        <div><span>ROLE</span>PROGRAM MGR</div>
+        <div><span>EXPERIENCE</span>3.5 YEARS</div>
+        <div><span>STATUS</span>OPEN TO ROLES</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="keys gutter" aria-label="Headline numbers">
+  <div class="wrap">
+    <div class="key"><b>30+</b><span>production workflows, built and run solo</span></div>
+    <div class="key"><b>35%→71%</b><span>webinar attendance after reminder redesign</span></div>
+    <div class="key"><b>70% vs 29%</b><span>show-up, same-day vs 2+ days out: found by RCA</span></div>
+    <div class="key"><b>+823%</b><span>LinkedIn impressions in month one</span></div>
+  </div>
+</section>
+
+<main class="gutter">
+<div class="wrap">
+
+<div class="shead"><h2>Programs</h2></div>
+
+<!-- A-01 Webinar backstage -->
+<article class="sheet" id="backstage">
+  <div class="sh-head">
+    <div class="sh-no"><b>A-01</b></div>
+    <div class="sh-title"><span class="mono">Program + event operations</span><h2>Webinar backstage</h2></div>
+    <div class="sh-meta"><div><span>SCALE</span>22+ events · 4,100+ regs</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Most registrants never joined. Nobody saw where people dropped.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Built every step before, during and after the session</li><li>Turned attendance into same-night booking invites</li><li>Used data to change slots, forms and reminder caps</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Attendance ~35% → 71% at peak.</p></section>
+    </div>
+    <div class="stage">
+      <div class="zone">
+        <span class="mono">Pre-show</span>
+        <div class="cell"><b>Own registration pages</b><span>Form captures size, build stage, timeline</span></div>
+        <div class="cell"><b>Instant confirmation</b><span>WhatsApp + calendar invite + email</span></div>
+        <div class="cell"><b>Smart reminder pool</b><span>Skips booked leads; caps reminders by invite count</span></div>
+        <div class="cell key"><b>Slot plan from data</b><span>Tue 7 PM Kerala · Fri 9 PM NRI + Kerala</span></div>
+      </div>
+      <div class="zone live"><span class="mono">On stage</span><h4>Live session</h4><p>Watch time logged for every attendee</p></div>
+      <div class="zone">
+        <span class="mono">Post-show</span>
+        <div class="cells2">
+          <div class="cell"><b>Nightly import</b><span>sessions + watch time per person</span></div>
+          <div class="cell key"><b>30+ min → booking invite</b><span>same night, after my approval</span></div>
+          <div class="cell"><b>No phone? Email form</b><span>collects WhatsApp + project details</span></div>
+          <div class="cell"><b>Missed it? Nurture</b><span>2 messages + "Call me back"</span></div>
+          <div class="cell"><b>3-button rating</b><span>"Loved it" gets the review link</span></div>
+          <div class="cell"><b>Nightly funnel</b><span>registered → attended → consult → sale</span></div>
+        </div>
+      </div>
+    </div>
+    <details class="more">
+      <summary><span>See the data + workflow</span><small>2 charts · 11-node workflow</small><span class="chev" aria-hidden="true">▼</span></summary>
+      <div class="inner">
+        <div class="figrow">
+          <div class="fig">
+            <div class="figcap"><h3>Why the slot split</h3><span class="mono">serious NRI attendees / session</span></div>
+            <div class="bars">
+              <div class="bar"><span>7 PM mixed</span><div class="track"><div class="fill" style="--w:32%"></div></div><span class="v">9</span></div>
+              <div class="bar hi"><span>9 PM NRI</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="v">28</span></div>
+            </div>
+            <p class="annot">7 PM in India is 5:30 PM in the Gulf.</p>
+          </div>
+          <div class="fig">
+            <div class="figcap"><h3>Attendance rate</h3><span class="mono">before / after</span></div>
+            <div class="bars">
+              <div class="bar"><span>Before</span><div class="track"><div class="fill" style="--w:35%"></div></div><span class="v">~35%</span></div>
+              <div class="bar hi"><span>After (peak)</span><div class="track"><div class="fill" style="--w:71%"></div></div><span class="v">71%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="fig">
+          <div class="figcap"><h3>Workflow · same-night booking invite</h3><span class="mono">11 nodes · human approval</span></div>
+          <span class="swipe">Swipe to see the full workflow →</span>
+          <div class="canvas"><svg data-flow="autobook" role="img" aria-label="Workflow diagram: post-webinar booking invite"></svg></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- A-02 Pre-sales booking site -->
+<article class="sheet" id="booking">
+  <div class="sh-head">
+    <div class="sh-no"><b>A-02</b></div>
+    <div class="sh-title"><span class="mono">Internal product · built and shipped in a day</span><h2>Pre-sales booking site</h2></div>
+    <div class="sh-meta"><div><span>USERS</span>Agents + 3 advisors</div><div><span>STATUS</span><b class="live">● LIVE, DAILY USE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Agents booked by hand from calendar links. Double bookings, no single record.</p></section>
+      <section><span class="mono">What I built</span><ul class="steps"><li>A booking site showing each advisor's live free slots</li><li>Priority slots held for leads who watched 30+ min</li><li>Booking window: today + next working day (from the RCA)</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Manual scheduling removed for 3 advisors.</p></section>
+    </div>
+    <div class="demo" id="demo">
+      <div class="bar"><i></i><i></i><i></i><span>booking site · pre-sales</span><em>Try it · sample data</em></div>
+      <div class="ui">
+        <div class="pick">
+          <span class="step">01 · Advisor</span>
+          <div class="row" id="advs"></div>
+          <span class="step">02 · Date</span>
+          <div class="row" id="days"></div>
+          <span class="step">03 · Time</span>
+          <div class="slots" id="slots"></div>
+          <div class="legend2"><span><i></i>free</span><span><i style="background:#FFF4C2"></i>held for 30+ min watchers</span><span><i style="background:var(--paper);border-style:dashed"></i>taken</span></div>
+        </div>
+        <div class="out">
+          <span class="step">04 · Book</span>
+          <p class="sum" id="sum">Pick a slot. <span>Taken slots can't be booked, so no double bookings.</span></p>
+          <button class="book" id="bookbtn" type="button" disabled>Book consultation</button>
+          <ul class="checks" id="checks">
+            <li>Calendar invite with meeting link</li>
+            <li>WhatsApp confirmation to homeowner</li>
+            <li>Row added to CRM sheet</li>
+            <li>Slack alert to agent + advisor</li>
+            <li>1-hour and 5-minute reminders queued</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <details class="more">
+      <summary><span>See the before/after + workflow</span><small>15-node API · 2 sync jobs</small><span class="chev" aria-hidden="true">▼</span></summary>
+      <div class="inner">
+        <div class="rev">
+          <div class="r0"><span class="tag">REV 0 · REMOVED</span><ul><li>Check the advisor's calendar link</li><li>Create the invite by hand</li><li>Send WhatsApp confirmation</li><li>Log it in the sheet</li></ul><span class="hand">too many manual steps</span></div>
+          <div class="r1"><span class="tag">REV 1 · CURRENT</span><ul><li>Agent picks a free slot</li><li>Invite, WhatsApp and sheet row happen on their own</li><li>Reschedules sync back every 10 minutes</li><li>Same engine powers a public page for NRI self-booking</li></ul></div>
+        </div>
+        <div class="fig">
+          <div class="figcap"><h3>Workflow · booking API</h3><span class="mono">3 routes · 15 nodes</span></div>
+          <span class="swipe">Swipe to see the full workflow →</span>
+          <div class="canvas"><svg data-flow="booking" role="img" aria-label="Workflow diagram: booking API"></svg></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- A-03 Show-up system -->
+<article class="sheet" id="showup">
+  <div class="sh-head">
+    <div class="sh-no"><b>A-03</b></div>
+    <div class="sh-title"><span class="mono">Root cause analysis → reminder system</span><h2>Show-up system</h2></div>
+    <div class="sh-meta"><div><span>DATA</span>91 meetings</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="pwr">
+      <section class="prob"><span class="mono">Problem</span><p>Only 43% of consultations showed as completed.</p></section>
+      <section><span class="mono">What I did</span><ul class="steps"><li>Audited the data before blaming homeowners</li><li>Found lead time was the real driver</li><li>Rebuilt the reminder chain around each meeting</li></ul></section>
+      <section class="res"><span class="mono">Result</span><p>Next-working-day booking. 4 touchpoints per meeting.</p></section>
+    </div>
+    <div class="figrow">
+      <div class="fig">
+        <div class="figcap"><h3>Finding 1 · bad data</h3><span class="mono">52 recorded no-shows</span></div>
+        <div class="split" role="img" aria-label="36 of 52 were never updated, 16 were real no-shows"><span class="a" style="flex:36">36 never updated</span><span class="b" style="flex:16">16 real</span></div>
+      </div>
+      <div class="fig">
+        <div class="figcap"><h3>Finding 2 · lead time</h3><span class="mono">show-up rate</span></div>
+        <div class="bars">
+          <div class="bar hi"><span>Same day</span><div class="track"><div class="fill" style="--w:70%"></div></div><span class="v">70%</span></div>
+          <div class="bar"><span>2+ days out</span><div class="track"><div class="fill" style="--w:29%"></div></div><span class="v">29%</span></div>
+        </div>
+      </div>
+    </div>
+    <details class="more">
+      <summary><span>See the touchpoints + workflow</span><small>timeline · 13-node workflow</small><span class="chev" aria-hidden="true">▼</span></summary>
+      <div class="inner">
+        <div class="fig">
+          <div class="figcap"><h3>Touchpoints around every meeting</h3><span class="mono">automated</span></div>
+          <div class="tl">
+            <div class="tp"><i>T0</i><div><b>Booked</b><span>today or next working day</span></div></div>
+            <div class="tp"><i>WA</i><div><b>Confirmation</b><span>WhatsApp, instantly</span></div></div>
+            <div class="tp"><i>−1h</i><div><b>Reminder</b><span>WhatsApp + join link</span></div></div>
+            <div class="tp voice"><i>−30m</i><div><b>Voice call</b><span>Malayalam, press 1 / 2</span></div></div>
+            <div class="tp"><i>−5m</i><div><b>Last nudge</b><span>WhatsApp</span></div></div>
+            <div class="tp meet"><i>●</i><div><b>Meeting</b><span>status nudge if not updated</span></div></div>
+          </div>
+        </div>
+        <div class="fig">
+          <div class="figcap"><h3>Workflow · reminders + confirmation call</h3><span class="mono">every minute · 13 nodes</span></div>
+          <span class="swipe">Swipe to see the full workflow →</span>
+          <div class="canvas"><svg data-flow="showup" role="img" aria-label="Workflow diagram: reminders and confirmation call"></svg></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- System map -->
+<article class="sheet" id="system">
+  <div class="sh-head">
+    <div class="sh-no"><b>S-00</b></div>
+    <div class="sh-title"><span class="mono">How it all connects</span><h2>System map</h2></div>
+    <div class="sh-meta"><div><span>WORKFLOWS</span>30+</div><div><span>STATUS</span><b class="live">● LIVE</b></div></div>
+  </div>
+  <div class="sh-body">
+    <div class="arch">
+      <div class="col"><span class="mono">In</span>
+        <div class="blk">Website forms<span>registrations, bookings</span></div>
+        <div class="blk">WhatsApp replies<span>bots, button taps</span></div>
+        <div class="blk">Calendars<span>advisor availability</span></div>
+        <div class="blk">Call logs + attendance<span>agents, webinars</span></div>
+      </div>
+      <div class="pipe" aria-hidden="true"></div>
+      <div class="col"><div class="core"><span class="mono" style="color:var(--hi)">Automation core</span><b>n8n</b><p>Schedules, webhooks and one router for every WhatsApp reply. Staging first, then live.</p><div class="chips"><span>OpenAI</span><span>Voice calls</span><span>Approvals</span></div></div></div>
+      <div class="pipe" aria-hidden="true"></div>
+      <div class="col"><span class="mono">Out</span>
+        <div class="blk">Google Sheets<span>CRM rows + reports</span></div>
+        <div class="blk">Slack<span>alerts + approve buttons</span></div>
+        <div class="blk">WhatsApp + email<span>confirmations, reminders</span></div>
+        <div class="blk">CRM + push<span>deals, app notifications</span></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<div class="shead"><h2>More work</h2><p>Open any card for the detail.</p></div>
+
+<div class="cards">
+  <!-- B-01 Growth -->
+  <article class="card" id="growth">
+    <div class="ch"><span class="n">B-01</span><div><span class="mono">Push notifications + social</span><h3>Growth</h3></div></div>
+    <div class="cb">
+      <p class="one">Planned pushes by region, user type and Plus status, and ran organic LinkedIn, Instagram and X.</p>
+      <p class="win">+823% LinkedIn · 170K+ IG views/month · +12% push CTR</p>
+      <details class="more">
+        <summary><span>Push plan + format test</span><span class="chev" aria-hidden="true">▼</span></summary>
+        <div class="inner">
+          <div class="tablewrap">
+            <table class="matrix">
+              <thead><tr><th>Push</th><th>Audience</th><th>Stage</th></tr></thead>
+              <tbody>
+                <tr><td><b>Daily app push</b></td><td>Region × homeowner / service pro</td><td><b class="live">Live</b></td></tr>
+                <tr><td><b>Community invite</b><span>WhatsApp, Malayalam</span></td><td>New Kerala Plus trials</td><td><b class="live">Live</b></td></tr>
+                <tr><td><b>Play Store rating ask</b></td><td>Renewed, active Plus members</td><td><b>Built</b></td></tr>
+                <tr><td><b>Plus vs non-Plus split</b></td><td>Paid vs free users</td><td><b>Planned</b></td></tr>
+                <tr><td><b>Price discovery</b></td><td>Kerala users, deep link</td><td><b>Designed</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="fig">
+            <div class="figcap"><h3>LinkedIn format test</h3><span class="mono">impressions</span></div>
+            <div class="bars">
+              <div class="bar hi"><span>Text post</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="v">1,309</span></div>
+              <div class="bar"><span>Best image</span><div class="track"><div class="fill" style="--w:12.7%"></div></div><span class="v">166</span></div>
+            </div>
+            <p class="annot">So singles went text-only.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- B-02 Bots -->
+  <article class="card" id="bots">
+    <div class="ch"><span class="n">B-02</span><div><span class="mono">Conversations that run themselves</span><h3>WhatsApp bots</h3></div></div>
+    <div class="cb">
+      <p class="one">Lead qualifier for Instagram ads, webinar → expert booking, consultation rating and multi-step task feedback.</p>
+      <p class="win">4 bots live · no one typing replies</p>
+      <details class="more">
+        <summary><span>Task feedback bot</span><span class="chev" aria-hidden="true">▼</span></summary>
+        <div class="inner">
+          <span class="swipe">Swipe to see the full workflow →</span>
+          <div class="canvas"><svg data-flow="feedback" role="img" aria-label="Workflow diagram: task feedback bot"></svg></div>
+          <p class="annot">Learned the hard way: the button text decides if Meta treats a template as Utility or Marketing.</p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- B-03 Reporting -->
+  <article class="card" id="reporting">
+    <div class="ch"><span class="n">B-03</span><div><span class="mono">Reporting + AI with approval</span><h3>Daily reporting</h3></div></div>
+    <div class="cb">
+      <p class="one">Mid-day and end-of-day reports per agent, plus an 8 PM AI support summary I approve before it posts.</p>
+      <p class="win">No more manual status requests</p>
+      <details class="more">
+        <summary><span>Sample dashboard + AI workflow</span><span class="chev" aria-hidden="true">▼</span></summary>
+        <div class="inner">
+          <div class="dash">
+            <div class="dh"><b>Pre-sales · end of day</b><em>sample data</em></div>
+            <div class="tablewrap">
+              <table>
+                <thead><tr><th>Agent</th><th>Calls</th><th>Connected</th><th>Talk min</th><th>Booked</th><th>Done</th><th>6-day trend</th></tr></thead>
+                <tbody>
+                  <tr><td>Agent A</td><td>142</td><td>46</td><td>71</td><td>5</td><td>3</td><td><svg class="spark" width="70" height="20" aria-hidden="true"><polyline points="0,15 14,12 28,13 42,8 56,9 70,4" fill="none" stroke="#163E9E" stroke-width="2"/><circle cx="70" cy="4" r="2.5" fill="#163E9E"/></svg></td></tr>
+                  <tr><td>Agent B</td><td>128</td><td>39</td><td>64</td><td>4</td><td>3</td><td><svg class="spark" width="70" height="20" aria-hidden="true"><polyline points="0,10 14,13 28,9 42,11 56,7 70,8" fill="none" stroke="#163E9E" stroke-width="2"/><circle cx="70" cy="8" r="2.5" fill="#163E9E"/></svg></td></tr>
+                  <tr class="tot"><td>Team</td><td>270</td><td>85</td><td>135</td><td>9</td><td>6</td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <span class="swipe">Swipe to see the full workflow →</span>
+          <div class="canvas"><svg data-flow="support" role="img" aria-label="Workflow diagram: AI support summary"></svg></div>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- B-04 Backbone -->
+  <article class="card" id="automation">
+    <div class="ch"><span class="n">B-04</span><div><span class="mono">The plumbing behind everything</span><h3>Automation backbone</h3></div></div>
+    <div class="cb">
+      <p class="one">Rebuilt 3 matchmaking automations in n8n when Zapier lapsed: sheet change → Slack → CRM deal.</p>
+      <p class="win">No paid tool · safer rules</p>
+      <details class="more">
+        <summary><span>Site visit → CRM deal</span><span class="chev" aria-hidden="true">▼</span></summary>
+        <div class="inner">
+          <span class="swipe">Swipe to see the full workflow →</span>
+          <div class="canvas"><svg data-flow="matchmaking" role="img" aria-label="Workflow diagram: matchmaking site visit to CRM deal"></svg></div>
+          <div class="chips"><span>Fires on real changes only</span><span>Circuit breaker</span><span>Staging first</span><span>Human approval before customer sends</span></div>
+        </div>
+      </details>
+    </div>
+  </article>
+</div>
+
+<div class="extras">
+  <span><b>First SOPs</b> · support, refunds, fraud, moderation · errors −15%</span>
+  <span><b>Team lead</b> · 3–5 ops staff, 6–8 agents · efficiency +25%</span>
+  <span><b>Build vs. buy</b> · AI + WhatsApp calling cost models</span>
+</div>
+
+<div class="toolkit">
+  <span class="mono">Toolkit</span>
+  <div class="chips"><span>n8n</span><span>WhatsApp API (WATI)</span><span>Google Sheets + Apps Script</span><span>Google Calendar</span><span>Slack</span><span>OpenAI</span><span>Exotel</span><span>Freshsales</span><span>CleverTap</span><span>Firebase</span><span>Metabase</span></div>
+</div>
+
+</div>
+</main>
+
+<section class="contact bp gutter" id="contact">
+  <div class="wrap">
+    <div class="who">
+      <figure class="frame"><img class="portrait" src="../rajat.jpg" alt="Rajat Baliyan" width="682" height="900" loading="lazy"><figcaption>R. BALIYAN · PROGRAM MANAGER</figcaption></figure>
+      <span class="mono">Contact</span>
+      <h2>Let's build your next program.</h2>
+      <p class="lead">Open to Program Manager and Business Operations roles.</p>
+    </div>
+    <dl class="clist">
+      <div><dt>Email</dt><dd><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">rajatbaliyan9999@gmail.com</a><button class="mini copy" type="button" data-copy="rajatbaliyan9999@gmail.com">Copy</button></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+919999514895">+91 99995 14895</a></dd></div>
+      <div><dt>Location</dt><dd>Delhi, India · open to remote</dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">linkedin.com/in/rajat-baliyan9999</a></dd></div>
+    </dl>
+    <div class="acts">
+      <a class="btn" href="../Rajat_Baliyan_Resume.pdf" download="Rajat_Baliyan_Resume.pdf">Download resume</a>
+      <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajatbaliyan9999@gmail.com&amp;su=Hello%20Rajat" target="_blank" rel="noopener">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/rajat-baliyan9999" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="gutter"><div class="wrap">Diagrams redrawn from live workflows; names, IDs and customer data removed. Demo and dashboard use sample data.</div></footer>
+
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+// Copy email
+document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", async () => {
+  const old = b.textContent;
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied ✓"; }
+  catch (e) { b.textContent = "Select & copy"; }
+  setTimeout(() => { b.textContent = old; }, 1600);
+}));
+
+// Booking site demo (sample data)
+(function demo() {
+  const ADV = ["Advisor A", "Advisor B", "Advisor C"];
+  const DAYS = [["Today", 3], ["Tomorrow", 5], ["Day 3", 0]];
+  const TIMES = ["10:30", "11:30", "12:30", "2:30", "3:30", "4:30", "6:30", "8:00"];
+  const TAKEN = { 0: [1, 4], 1: [0, 2, 5], 2: [3] };
+  const HELD = { 0: [6], 1: [3], 2: [0, 7] };
+  let a = 0, d = 0, s = null, busy = false;
+  const advs = document.getElementById("advs"), days = document.getElementById("days"), slots = document.getElementById("slots");
+  const sum = document.getElementById("sum"), btn = document.getElementById("bookbtn"), checks = [...document.querySelectorAll("#checks li")];
+  function mk(cls, label, pressed, onclick, disabled) {
+    const b = document.createElement("button"); b.type = "button"; b.className = cls; b.setAttribute("aria-pressed", pressed ? "true" : "false");
+    if (typeof label === "string") b.textContent = label; else b.append(...label);
+    if (disabled) b.disabled = true; else b.addEventListener("click", onclick);
+    return b;
+  }
+  function reset() { s = null; btn.disabled = true; checks.forEach(c => c.classList.remove("done")); btn.textContent = "Book consultation"; }
+  function render() {
+    advs.replaceChildren(...ADV.map((n, i) => mk("adv", n, i === a, () => { a = i; reset(); render(); })));
+    days.replaceChildren(...DAYS.map(([n, c], i) => {
+      const t = document.createElement("span"); t.textContent = n; const sm = document.createElement("small"); sm.textContent = c ? c + " open" : "outside window";
+      return mk("day", [t, sm], i === d, () => { d = i; reset(); render(); }, !c);
+    }));
+    const key = (a + d) % 3;
+    slots.replaceChildren(...TIMES.map((t, i) => {
+      const taken = TAKEN[key].includes(i), held = HELD[key].includes(i);
+      const b = mk("slot" + (taken ? " taken" : "") + (held ? " held" : ""), t, i === s, () => {
+        s = i; checks.forEach(c => c.classList.remove("done")); btn.disabled = false; btn.textContent = "Book consultation";
+        sum.replaceChildren(document.createTextNode(ADV[a] + " · " + DAYS[d][0] + " · " + t + " "), Object.assign(document.createElement("span"), { textContent: held ? "Held slot: offered first to 30+ min webinar watchers." : "Free slot." }));
+        render();
+      }, taken);
+      if (taken) b.setAttribute("aria-label", t + " taken");
+      return b;
+    }));
+  }
+  btn.addEventListener("click", () => {
+    if (busy || s === null) return;
+    busy = true; btn.disabled = true; btn.textContent = "Booking…";
+    checks.forEach((c, i) => setTimeout(() => { c.classList.add("done"); if (i === checks.length - 1) { btn.textContent = "Booked ✓"; busy = false; } }, calm ? 0 : 380 * (i + 1)));
+  });
+  render();
+})();
+
+const FLOWS = {
+  showup: {
+    nodes: [
+      ["t","Schedule","every minute",0,1,"trigger","Runs every minute."],
+      ["d","Read meetings","today",1,1,"data","Reads today's booked consultations."],
+      ["w","Which touchpoint?","1 h · 30 m · 5 m",2,1,"logic","Works out which reminder is due for each meeting, and skips anything already sent or confirmed."],
+      ["m1","WhatsApp","1 hour before",3,0,"send","WhatsApp reminder with the join link."],
+      ["i","Indian number?","30 min before",3,1,"logic","The voice provider can only dial Indian numbers."],
+      ["m5","WhatsApp","5 min before",3,2,"send","Last WhatsApp nudge just before the meeting."],
+      ["c","Voice call","Malayalam, press 1/2",4,0.6,"send","Automated call in Malayalam: press 1 to confirm, 2 to reschedule."],
+      ["s","Slack","call manually",4,1.6,"send","International number: Slack asks the agent to call instead."],
+      ["u","Mark sent","sheet",5,1,"data","Marks each touchpoint as done so nothing repeats."],
+      ["kw","Webhook","keypress result",0,3,"trigger","Receives the homeowner's keypress from the call."],
+      ["kp","Map answer","confirm / reschedule",1,3,"logic","Turns the keypress into 'confirmed' or 'wants to reschedule'."],
+      ["ku","Update booking","sheet",2,3,"data","Updates the booking status."],
+      ["kl","Slack","agent follow-up",3,3,"send","Alerts the agent when a reschedule is needed."]
+    ],
+    edges: [["t","d"],["d","w"],["w","m1","1 h"],["w","i","30 m"],["w","m5","5 m"],["i","c","yes"],["i","s","no"],["m1","u"],["c","u"],["m5","u"],["kw","kp"],["kp","ku"],["ku","kl"]]
+  },
+  booking: {
+    nodes: [
+      ["w1","Webhook","GET page",0,0,"trigger","Serves the booking page to agents, protected by an access code."],
+      ["r1","Respond","booking page HTML",1,0,"send","Returns the page straight from n8n, so no separate hosting is needed."],
+      ["w2","Webhook","GET /slots",0,1,"trigger","Agent picks an advisor and a date; the page asks for open slots."],
+      ["a2","Check access","code",1,1,"logic","Rejects any request without a valid access code."],
+      ["c2","Free/busy","advisor calendars",2,1,"data","Reads each advisor's real calendar availability."],
+      ["k2","Apply rules","hours, holds, T+1",3,1,"logic","Applies working hours, held priority slots and the today + next working day window."],
+      ["r2","Respond","open slots",4,1,"send","Returns only bookable slots to the page."],
+      ["w3","Webhook","POST /book",0,2.3,"trigger","Agent submits the homeowner's details for the chosen slot."],
+      ["v3","Validate","slot still free?",1,2.3,"logic","Re-checks the slot so two agents can't book the same time."],
+      ["e3","Create event","Google Calendar",2,2,"data","Creates the meeting on the advisor's calendar with a meeting link."],
+      ["x3","Respond","slot taken",2,3,"send","Asks the agent to pick another slot."],
+      ["m3","WhatsApp","confirmation",3,2,"send","Sends the homeowner an approved WhatsApp confirmation."],
+      ["s3","Append row","CRM sheet",4,2,"data","Logs the booking in the CRM sheet for reporting."],
+      ["l3","Slack","agent alert",5,2,"send","Alerts the agent and advisor in Slack."],
+      ["r3","Respond","booked",6,2,"send","Shows the agent a success screen."]
+    ],
+    edges: [["w1","r1"],["w2","a2"],["a2","c2"],["c2","k2"],["k2","r2"],["w3","v3"],["v3","e3","free"],["v3","x3","taken"],["e3","m3"],["m3","s3"],["s3","l3"],["l3","r3"]]
+  },
+  autobook: {
+    nodes: [
+      ["t","Schedule","every 5 min, night",0,0,"trigger","Runs every 5 minutes from 8:30 PM to 2 AM on webinar nights."],
+      ["r","Read attendees","after the session",1,0,"data","Reads the attendee list pushed in after the webinar ends."],
+      ["s","List settled?","count stable",2,0,"logic","Waits until the attendee count stops changing, so nobody is missed."],
+      ["m","Match phones","attendee → CRM",3,0,"logic","Matches each attendee to a phone number in the CRM."],
+      ["f","30+ min, new?","not yet booked",4,0,"logic","Keeps people who watched 30+ minutes and have no booking or invite yet."],
+      ["b","Build batch","saved in workflow",5,0,"data","Saves tonight's invite list inside the workflow."],
+      ["dm","Slack DM","approve page",6,0,"send","Sends me a page to review the list and approve it."],
+      ["w","Webhook","my approval",0,1.3,"trigger","Receives my Approve click."],
+      ["v","Re-check","still eligible?",1,1.3,"logic","Checks again that nobody booked in the meantime."],
+      ["wa","WhatsApp","booking invite",2,1.3,"send","Sends each attendee an approved WhatsApp invite to book a consultation."],
+      ["k","Mark invited","no repeats",3,1.3,"data","Marks people as invited so they never get it twice."]
+    ],
+    edges: [["t","r"],["r","s"],["s","m","yes"],["m","f"],["f","b"],["b","dm"],["w","v"],["v","wa","yes"],["wa","k"]]
+  },
+  feedback: {
+    nodes: [
+      ["w0","Webhook","task completed",0,0,"trigger","Fires when a service task is marked complete."],
+      ["q","Queue","feedback row",1,0,"data","Adds the homeowner to the feedback queue."],
+      ["t1","Schedule","9 PM daily",0,1,"trigger","Runs every night at 9 PM."],
+      ["rd","Read due","queue",1,1,"data","Picks people due for feedback today."],
+      ["wa","WhatsApp","rate the task",2,1,"send","Sends the rating template."],
+      ["rw","Webhook","WhatsApp reply",0,2,"trigger","Router: every WhatsApp reply comes in here."],
+      ["st","Which step?","conversation state",1,2,"logic","Looks up where this person is in the conversation."],
+      ["nx","Next question","rating → comment → NPS",2,2,"send","Asks the next question in order: rating, comment, NPS, referral."],
+      ["sv","Save answer","feedback sheet",3,2,"data","Writes the answer and the time of the reply."],
+      ["tn","Schedule","hourly",0,3,"trigger","Checks hourly for people who went quiet."],
+      ["nd","Quiet 12 h?","no reply",1,3,"logic","Finds chats with no reply for 12 hours."],
+      ["nu","Nudge","one reminder",2,3,"send","Sends one gentle reminder."],
+      ["sw","Nightly sweep","close stuck chats",3,3,"trigger","Closes conversations that stalled, so the bot never gets stuck."]
+    ],
+    edges: [["w0","q"],["t1","rd"],["rd","wa"],["rw","st"],["st","nx"],["nx","sv"],["tn","nd"],["nd","nu","yes"]]
+  },
+  support: {
+    nodes: [
+      ["t1","Schedule","every 15 min",0,0,"trigger","Runs every 15 minutes."],
+      ["e1","Read executions","WhatsApp bot",1,0,"data","Reads the support bot's recent conversations through the n8n API."],
+      ["d1","Dedupe","checkpoint",2,0,"logic","Skips messages already logged, using a saved checkpoint."],
+      ["a1","Append","support log",3,0,"data","Adds new messages to the support log sheet."],
+      ["t2","Schedule","8 PM daily",0,1.2,"trigger","Runs every day at 8 PM."],
+      ["r2","Read log","today",1,1.2,"data","Reads today's support log."],
+      ["o2","Summarise","OpenAI",2,1.2,"ai","AI groups the day's issues into a short summary."],
+      ["s2","Slack DM","Confirm / Edit",3,1.2,"send","Sends me the draft with Confirm and Edit buttons."],
+      ["w2","Webhook","button click",4,1.2,"trigger","Receives my button click."],
+      ["i2","Confirmed?","",5,1.2,"logic","Checks whether I confirmed or want to edit."],
+      ["p2","Post","team channel",6,0.8,"send","Posts the approved summary to the support channel."],
+      ["m2","Edit modal","then post",6,1.7,"send","Opens an edit box, then posts my edited version."]
+    ],
+    edges: [["t1","e1"],["e1","d1"],["d1","a1"],["t2","r2"],["r2","o2"],["o2","s2"],["s2","w2","waits"],["w2","i2"],["i2","p2","yes"],["i2","m2","edit"]]
+  },
+  matchmaking: {
+    nodes: [
+      ["t","Schedule","every minute",0,0,"trigger","Runs every minute."],
+      ["r","Read sheet","matchmaking tab",1,0,"data","Reads the matchmaking sheet."],
+      ["tr","Changed?","→ site visit",2,0,"logic","Fires only when advisor feedback newly changes to a site visit, never on re-reads."],
+      ["cb","Circuit breaker","> 25 rows → stop",3,0,"logic","If too many rows change at once, it stops instead of spamming."],
+      ["sl","Slack","thread reply",4,0,"send","Replies in the original allocation thread."],
+      ["dm","Group DM","advisor + agent",5,0,"send","Opens a group DM with the advisor and the allocation agent."],
+      ["mp","Map owner","advisor → CRM",6,0,"logic","Maps the advisor to their CRM owner."],
+      ["fa","Find / create","CRM account",7,0,"data","Finds the homeowner's account in Freshsales or creates it."],
+      ["dl","Create deal","Freshsales",8,0,"data","Creates the deal under the right owner."],
+      ["ac","Site visit","CRM activity",9,0,"data","Logs the site visit as an activity on the deal."],
+      ["fn","Slack","deal links",10,0,"send","Posts 'Connection created' with links to the deal."]
+    ],
+    edges: [["t","r"],["r","tr"],["tr","cb","yes"],["cb","sl","ok"],["sl","dm"],["dm","mp"],["mp","fa"],["fa","dl"],["dl","ac"],["ac","fn"]]
+  }
+};
+const KIND = { trigger: ["Trigger", "#E5484D"], data: ["Data", "#2D6CDF"], logic: ["Logic", "#7C5CDB"], send: ["Send / notify", "#18936A"], ai: ["AI", "#D6336C"] };
+const NW = 120, NH = 42, CX = 152, RY = 92, PAD = 22;
+const tip = document.getElementById("tip");
+function showTip(g, n) {
+  tip.innerHTML = "";
+  const b = document.createElement("b"); b.textContent = KIND[n[5]][0] + " · " + n[1];
+  tip.append(b, document.createTextNode(n[6]));
+  tip.hidden = false;
+  const r = g.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+  const x = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), innerWidth - tw - 8);
+  let y = r.top - th - 10; if (y < 70) y = r.bottom + 10;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true; document.querySelectorAll("g.node.sel").forEach(x => x.classList.remove("sel")); }
+document.querySelectorAll("svg[data-flow]").forEach(svg => {
+  const f = FLOWS[svg.dataset.flow];
+  const pos = {};
+  let maxC = 0, maxR = 0;
+  f.nodes.forEach(([id, , , c, r]) => { pos[id] = { x: PAD + c * CX, y: PAD + r * RY }; maxC = Math.max(maxC, c); maxR = Math.max(maxR, r); });
+  const W = PAD * 2 + maxC * CX + NW, H = PAD * 2 + maxR * RY + NH;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("width", W); svg.setAttribute("height", H);
+  f.edges.forEach(([a, b, label], i) => {
+    const s = pos[a], t = pos[b];
+    const x1 = s.x + NW, y1 = s.y + NH / 2, x2 = t.x, y2 = t.y + NH / 2, mx = (x1 + x2) / 2;
+    const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2 - 6},${y2}`;
+    el("path", { d, class: "wire" }, svg);
+    el("path", { d, class: "flow", style: `animation-delay:${-(i * 0.17).toFixed(2)}s` }, svg);
+    el("path", { d: `M${x2 - 7},${y2 - 4} L${x2},${y2} L${x2 - 7},${y2 + 4} Z`, class: "arrowhead" }, svg);
+    if (label) { const tx = el("text", { x: mx, y: (y1 + y2) / 2 - 6, "text-anchor": "middle", class: "elabel" }, svg); tx.textContent = label; }
+  });
+  f.nodes.forEach(n => {
+    const [id, label, sub, , , kind] = n;
+    const { x, y } = pos[id];
+    const col = KIND[kind][1];
+    const g = el("g", { class: "node", tabindex: 0, role: "button", "aria-label": `${label}: ${n[6]}` }, svg);
+    el("rect", { x, y, width: NW, height: NH, fill: "#FFFFFF", stroke: "#12245C", "stroke-width": 2, class: "box" }, g);
+    el("rect", { x, y: y + NH - 5, width: NW, height: 5, fill: col }, g);
+    const t = el("text", { x: x + NW / 2, y: y + (sub ? 17 : 24), "text-anchor": "middle", "font-size": 12.5, "font-weight": 800 }, g);
+    t.textContent = label;
+    if (sub) { const s = el("text", { x: x + NW / 2, y: y + 31, "text-anchor": "middle", class: "sub" }, g); s.textContent = sub; }
+    g.addEventListener("mouseenter", () => showTip(g, n));
+    g.addEventListener("mouseleave", hideTip);
+    g.addEventListener("focus", () => showTip(g, n));
+    g.addEventListener("blur", hideTip);
+    g.addEventListener("click", e => { e.stopPropagation(); const on = g.classList.contains("sel"); hideTip(); if (!on) { g.classList.add("sel"); showTip(g, n); } });
+  });
+});
+document.addEventListener("click", hideTip);
+addEventListener("scroll", hideTip, { passive: true });
+document.querySelectorAll(".canvas").forEach(c => c.addEventListener("scroll", hideTip, { passive: true }));
+
+// Motion: rooms draw in, sheets slide up as they enter
+if (!calm && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("js-motion");
+  document.querySelectorAll(".rooms .room").forEach((r, i) => { r.style.animationDelay = (0.08 * i) + "s"; });
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll(".sheet").forEach(x => io.observe(x));
+}
+</script>
+</body>
+</html>
